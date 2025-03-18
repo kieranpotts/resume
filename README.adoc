@@ -10,7 +10,32 @@ Before running the build scripts, install and start *Docker Desktop*.
 
 On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are not sufficient.
 
+Make sure each of the `run/*` scripts are executable:
+
+[source,sh]
+----
+chmod +x run/*
+----
+
+=== Starting
+
+To start the Docker container, run:
+
+[source,sh]
+----
+./run/start
+----
+
 === Building
+
+=== Stopping
+
+To stop the Docker container, run:
+
+[source,sh]
+----
+./run/stop
+----
 
 == Acknowledgements
 
