@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mkdir -p dist
+
+exec docker exec -it latex_daemon pdflatex \
+  -output-directory dist \
+  src/cv.tex
