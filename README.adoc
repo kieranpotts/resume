@@ -1,6 +1,6 @@
-= CV
+= Résumé
 
-*Source content and build scripts for my résumé, compiled from LaTeX.*
+*Source content and build scripts for my curriculum vitae (CV), compiled from LaTeX.*
 
 == Documentation
 
