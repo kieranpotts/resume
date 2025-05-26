@@ -10,11 +10,18 @@ The compilation scripts run in *Docker Desktop*.
 
 On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are insufficient.
 
-Make sure each of the `run/*` scripts are executable:
+The script to start the container will run the container under the current user and group. You should add your user to the `docker` group, which will allow you to run Docker commands without needing to use `sudo`.
 
 [source,sh]
 ----
-chmod +x run/*
+$ sudo usermod -aG docker [your-username]
+----
+
+Also, make sure that each of the `run/*` scripts are executable:
+
+[source,sh]
+----
+$ chmod +x run/*
 ----
 
 === Procedure
@@ -23,14 +30,16 @@ To start the Docker container, run:
 
 [source,sh]
 ----
-./run/start
+$ ./run/start
 ----
 
-To compile the CV in PDF format, run:
+The start script keeps the container running indefinitely (until it is explicitly stopped), so you can re-run the build command again and again, and each time it will be executed immediately without needing to restart the container.
+
+To build the CV to PDF format from the source Tex file, run:
 
 [source,sh]
 ----
-./run/build
+$ ./run/build
 ----
 
 The output file is `./dist/cv.pdf`.
@@ -39,7 +48,7 @@ To stop the Docker container, run:
 
 [source,sh]
 ----
-./run/stop
+$ ./run/stop
 ----
 
 === Reference resources
