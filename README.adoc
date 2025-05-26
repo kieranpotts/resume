@@ -6,9 +6,9 @@
 
 === Requirements
 
-Before running the build scripts, install and start *Docker Desktop*.
+The compilation scripts run in *Docker Desktop*.
 
-On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are not sufficient.
+On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are insufficient.
 
 Make sure each of the `run/*` scripts are executable:
 
@@ -17,7 +17,7 @@ Make sure each of the `run/*` scripts are executable:
 chmod +x run/*
 ----
 
-=== Starting
+=== Procedure
 
 To start the Docker container, run:
 
@@ -26,9 +26,14 @@ To start the Docker container, run:
 ./run/start
 ----
 
-=== Building
+To compile the CV in PDF format, run:
 
-=== Stopping
+[source,sh]
+----
+./run/build
+----
+
+The output file is `./dist/cv.pdf`.
 
 To stop the Docker container, run:
 
@@ -36,6 +41,11 @@ To stop the Docker container, run:
 ----
 ./run/stop
 ----
+
+=== Reference resources
+
+* https://linux.die.net/man/1/pdflatex[pdflatex man page]
+* Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex Docker image]
 
 == Acknowledgements
 
