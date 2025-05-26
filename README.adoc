@@ -44,8 +44,9 @@ To stop the Docker container, run:
 
 === Reference resources
 
-* https://linux.die.net/man/1/pdflatex[pdflatex man page]
-* Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex Docker image]
+* Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex Docker image] — The build scripts are based on the examples included in this repository.
+
+* https://linux.die.net/man/1/pdflatex[pdflatex man page] — The build scripts use `pdflatex` to compile the LaTeX source files into PDF format.
 
 ''''
 
