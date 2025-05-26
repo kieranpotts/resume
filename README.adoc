@@ -47,8 +47,6 @@ To stop the Docker container, run:
 * https://linux.die.net/man/1/pdflatex[pdflatex man page]
 * Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex Docker image]
 
-== Acknowledgements
-
 ''''
 
 Copyright © 2020-present Kieran Potts, all rights reserved
