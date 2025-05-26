@@ -23,7 +23,8 @@ IMAGE=blang/latex:ubuntu
 # – which is good practice for local builds.
 #
 # `/bin/sh -c "sleep infinity"` is run inside the container. This keeps the container running
-# indefinitely by executing a shell that sleeps forever. This setup is useful for creating a
-# persistent environment in which you can execute one-off commands (eg. build steps) quickly.
+# indefinitely by executing a shell that sleeps forever, effectively running the container as a
+# daemon (background process). This setup is useful for creating a persistent environment in which
+# you can execute one-off commands (eg. build steps) quickly.
 #
 exec docker run -d --rm --name latex_daemon -i --user="$(id -u):$(id -g)" --net=none -t -v $PWD:/data "$IMAGE" /bin/sh -c "sleep infinity"
