@@ -1,5 +1,29 @@
 #!/bin/sh
 
+# The `blang/latest` repository ships with three images:
+#
+# - `blang/latex:ubuntu` — Old but stable TexLive distribution with most needed packages (3.9GB).
+# - `blang/latex:ctanbasic` — Up-to-date, only basic packages, base for custom builds (500MB).
+# - `blang/latex:ctanfull` — Up-to-date, all packages (5.6GB).
+#
+# The second and third images use the "basic" and "full" schemes of the CTAN packages, respectively:
+# http://mirror.ctan.org/systems/texlive/tlnet/archive
+#
 IMAGE=blang/latex:ubuntu
 
+# Start a new Docker container in the background (detached mode, `-d`), removing it automatically
+# when it stops (`--rm`). The container is named `latex_daemon`. It is run interactively (`-i`)
+# with a pseudo-TTY (`-t`).
+#
+# The container is run under the current user and group, helping to avoid file permission issues
+# between the host and guest systems. The `-v $PWD:/data` option mounts the current working
+# directory (`$PWD`) from your host into the container at the `/data` path.
+#
+# The `--net=none` option disables networking for the container, isolating it from network access
+# – which is good practice for local builds.
+#
+# `/bin/sh -c "sleep infinity"` is run inside the container. This keeps the container running
+# indefinitely by executing a shell that sleeps forever. This setup is useful for creating a
+# persistent environment in which you can execute one-off commands (eg. build steps) quickly.
+#
 exec docker run -d --rm --name latex_daemon -i --user="$(id -u):$(id -g)" --net=none -t -v $PWD:/data "$IMAGE" /bin/sh -c "sleep infinity"
