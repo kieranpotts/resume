@@ -11,9 +11,9 @@
 #
 IMAGE=blang/latex:ubuntu
 
-# Start a new Docker container in the background (detached mode, `-d`), removing it automatically
-# when it stops (`--rm`). The container is named `latex_daemon`. It is run interactively (`-i`)
-# with a pseudo-TTY (`-t`).
+# Start a new Docker container in the background (detached mode, `-d`), removing any existing
+# instances of the container (`--rm`). The container is named `latex_daemon`. It is run
+# interactively (`-i`).
 #
 # The container is run under the current user and group, helping to avoid file permission issues
 # between the host and guest systems. The `-v $PWD:/data` option mounts the current working
