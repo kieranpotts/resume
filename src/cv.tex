@@ -1,62 +1,223 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\geometry{a4paper, margin=1in}
-\usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{hyperref}
 
-% Formatting section titles
+% Page geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=0.7in}
+
+% Hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  pdfborder={0 0 0}
+}
+
+% Underlines - the ulem package provides better consistency of
+% underlining styles than the standard LaTeX \underline command.
+\usepackage{ulem}
+
+% Formatting of section titles
+\usepackage{titlesec}
 \titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
 \titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
 
 \begin{document}
 
 \begin{center}
-    \textbf{\Huge{John Doe}} \\
-    \vspace{2mm}
-    \href{mailto:john.doe@example.com}{john.doe@example.com} \\
-    \href{https://www.linkedin.com/in/johndoe}{linkedin.com/in/johndoe} \\
-    (123) 456-7890
+  \textbf{\Huge{Kieran Potts}} \\
+  \vspace{2mm}
+  \textbf{Solution Architect · Computer Programmer · Technical Writer} \\
+  \vspace{2mm}
+  \href{https://linkedin.com/in/kieranpotts}{\uline{linkedin.com/in/kieranpotts}} · \href{https://github.com/kieranpotts}{\uline{github.com/kieranpotts}} · \href{https://kieranpotts.com/}{\uline{kieranpotts.com}} \\
+  \href{mailto:hello@kieranpotts.com}{\uline{hello@kieranpotts.com}} · +44~(0)7706~130~393 · Bristol, UK
 \end{center}
 
 \vspace{5mm}
 
-\section*{Education}
-\noindent
-\textbf{Bachelor of Science in Computer Science} \hfill \textit{Graduation: May 2024}\\
-University of Example \hfill City, State\\
+% TODO: Swap this section for an introduction or summary with key technologies in bold.
+\section*{Technical specialisations}
 
-\section*{Experience}
-\noindent
-\textbf{Software Engineering Intern} \hfill \textit{June 2023 - August 2023}\\
-Example Company \hfill City, State\\
-\begin{itemize}[leftmargin=0.15in]
-    \item Developed and maintained web applications using JavaScript, HTML, and CSS.
-    \item Collaborated with cross-functional teams to design and implement new features.
-    \item Conducted code reviews and provided feedback to ensure code quality.
+\begin{itemize}
+  \item Full-stack web application design
+  \item React, Vue, and single-page application architecture
+  \item HTTP and GraphQL APIs
+  \item JavaScript, TypeScript, and Node.js
+  \item Java and Spring Framework
+  \item PHP and Laravel
 \end{itemize}
 
-\section*{Skills}
-\begin{itemize}[leftmargin=0.15in]
-    \item \textbf{Programming Languages}: Python, Java, C++
-    \item \textbf{Web Development}: HTML, CSS, JavaScript, React
-    \item \textbf{Tools}: Git, Docker, Jenkins
+\section*{Current certifications}
+
+\begin{itemize}
+  \item \href{https://www.credly.com/badges/9801eabb-75e4-4533-a63b-4560c0abae49/}{\uline{AWS Certified Cloud Practitioner}} \hfill March 2025
+  \item \href{https://www.credly.com/badges/4ffff536-6b68-40b1-8686-5ffd7f548447/}{\uline{GitHub Actions Certification}} \hfill October 2024
 \end{itemize}
 
-\section*{Projects}
-\noindent
-\textbf{Personal Website} \hfill \textit{March 2023 - Present}\\
-\begin{itemize}[leftmargin=0.15in]
-    \item Designed and developed a personal website using HTML, CSS, and JavaScript.
-    \item Implemented responsive design to ensure compatibility with various devices.
-    \item Integrated a contact form to allow visitors to send messages directly from the website.
+\section*{Selected projects}
+
+% \subsection*{Newswire prototype \hfill \normalfont{freelance · 2024-present}}
+% \begin{itemize}
+%   \item Rapid development of a ``walking skeleton'' newswire service
+%   \item Single-page application built with custom React + Tailwind components based on shadcn/ui
+%   \item RESTful HTTP services written in Java on Spring Boot (authentication service written in Kotlin)
+% \end{itemize}
+
+\subsection*{LexisNexis Risk Solutions \hfill \normalfont{Software Developer III · contract · 2024-present}}
+\begin{itemize}
+  \item Supported the redesign of the company's flagship identity screening service
+  \item Iterated the design of a new API gateway service, written in PHP with Laravel
+  \item Extended back-end services written in a specialist data analytics tool, Enterprise Control Language
+  \item Additional data analysis scripts written in Go, aggregating data from a sharded database
+  \item Integrations with public service APIs such as the National Fraud Initiative (NFI)
+  \item Developed validation services for passports, driving licences, and national insurance numbers
+  \item Maintained 100\% code coverage through a combination of unit and integration tests
+  \item Integrated OpenTelemetry with the Elastic Stack for monitoring and observability
+  \item Configured CI/CD pipelines (GitHub Actions)
 \end{itemize}
 
-\section*{Certifications}
-\begin{itemize}[leftmargin=0.15in]
-    \item \textbf{Certified Kubernetes Administrator (CKA)} \hfill \textit{Issued: January 2024}
-    \item \textbf{AWS Certified Solutions Architect} \hfill \textit{Issued: December 2023}
+% NOTES:
+% ECL is similar in concept to Hadoop's MapReduce programming model. A declarative,
+% functional, data-oriented, programming language, it enables the processing of big
+% datasets in parallel across a computer cluster. It runs on HPCC (High Performance
+% Computing Cluster), an open source, massive parallel-processing computing platform,
+% owned and maintained by LexisNexis and specializing in big data processing and
+% analytics.
+
+\subsection*{LiveMore Mortgages \hfill \normalfont{Technical Lead · permanent · 2024}}
+\begin{itemize}
+  \item Planned and coordinated a successful big-bang deployment of a major new feature
+  \item Deployed multiple service updates to AWS, automated via CodeDeploy and GitHub Actions
+  \item Implemented Jira Service Desk with Slack integration to improve customer support management
+  \item Consolidated fragmented technical documentation into a single Confluence space
 \end{itemize}
+
+\subsection*{Specsavers \hfill \normalfont{Senior Software Developer at BJSS · permanent · 2021-2023}}
+\begin{itemize}
+  \item Rebuilt a monolithic desktop application as a distributed cloud service
+  \item Implemented a micro front-end architecture that supported SPA development across six teams
+  \item Maintained a Vue-based UI component library, documented using Storybook
+  \item Contributed to back-end services written in Java on the Spring Framework
+  \item Implemented a GraphQL API gateway service. Consulted on the design of client-server contracts
+  \item Collaborated with business analysts on software requirements specifications
+  \item Collaborated with QA engineers on automated UI tests using Selenium
+  \item Collaborated with platform engineers on Azure DevOps automation
+  \item Steered a cross-team technical standards alignment group
+  \item Proposed and gathered consensus for better ways of working
+\end{itemize}
+
+% NOTES:
+% Socrates is Specsavers' patient management system. The legacy version is a long-lived
+% desktop Java application. The new version, Socrates Cloud, is a centralized cloud
+% service, to be incrementally rolled out globally.
+
+\subsection*{Moorfields Eye Hospital \hfill \normalfont{Senior Software Developer at BJSS · permanent · 2021}}
+\begin{itemize}
+  \item Created a statically-generated web front-end using Nuxt
+  \item Contributed to a library of custom UI components built with Vue
+  \item Complied with WCAG Level AA accessibility guidelines
+  \item Set up automated accessibility tests using aXe, and visual regression tests using WebDriverIO
+  \item Conducted manual accessibility testing using assistive technologies such as NVDA
+\end{itemize}
+
+\subsection*{TimeTrack \hfill \normalfont{Technical Lead · freelance · 2020-2021}}
+\begin{itemize}
+  \item R\&D project to build a proof-of-concept automated time logging system
+  \item Coordinated a remote team of contractors and freelancers. Oversaw all design and development activities
+  \item Worked closely with the business owner on the core data processing algorithms
+  \item Established an RFC system to manage technical proposals and record key design decisions
+  \item Implemented a back-end service as a modular monolith, designed for extraction into services
+  \item Constructed a layered application architecture with an isolated domain model at the centre
+  \item Prototyped a single-page web application built with React and backed by an HTTP API gateway
+  \item Created extensions for Chromium browsers and Firefox, compiled from a single source
+  \item Repurposed a Material Design component library for the UI
+  \item Planned for scalability from the start, eg. denormalization and read-write segregation
+  \item Node.js workers were used to leverage multi-threading in the main request-response cycle
+  \item Long-running data processing tasks were queued in a job scheduling system
+\end{itemize}
+
+\subsection*{Zylo Performance \hfill \normalfont{Full-Stack Web Developer · freelance · 2020-2021}}
+\begin{itemize}
+  \item Developed and maintained a custom business process management system in Drupal
+  \item Integrated payment card processing (FideliPay) and Direct Debits (GoCardless)
+  \item Used Adobe XD to mock UI designs and plan user journeys
+\end{itemize}
+
+\subsection*{Maker DAO \hfill \normalfont{Front-End Web Developer · freelance · 2019-2020}}
+\begin{itemize}
+  \item Created a responsive, mobile-first WordPress theme
+  \item Adopted the utility-class methodology to CSS architecture
+  \item Contributed to copywriting and search engine optimisation
+\end{itemize}
+
+\subsection*{Redgate Software \hfill \normalfont{Technical Lead at Helastel · contract · 2018-2019}}
+\begin{itemize}
+  \item Led a project to transition the SQLServerCentral.com website to a new tech stack
+  \item Gathered requirements via client conversations and reverse engineering of the legacy system
+  \item Documented a complete target specification for the replacement system
+  \item Undertook rapid prototyping to help estimate costs and timelines, and mitigate delivery risks
+  \item Used monthly checkpoints to establish trust with the customer
+  \item Created dozens of custom WordPress plugins
+  \item Wrote shell scripts to automate the migration of 17 years of editorial and user-generated content
+  \item Switched-over with minimal downtime and no subsequent issues in production
+  \item The solution, delivered on time and to budget, met all functional and non-functional requirements
+\end{itemize}
+
+\subsection*{Fresenius Kabi \hfill \normalfont{Software Developer at Helastel · contract · 2018}}
+\begin{itemize}
+  \item Salvaged a failing software project
+  \item Identified and prioritised issues
+  \item Enhanced the accuracy of project estimation and delivery reports
+  \item Successfully delivered a custom CRM operating on the NHS IT network
+\end{itemize}
+
+\subsection*{DenGro \hfill \normalfont{Full-Stack Web Developer · contract · 2017}}
+\begin{itemize}
+  \item Helped launch an enterprise software-as-a-service built on Laravel
+  \item Collaborated with UX designers on critical user journeys
+  \item Redesigned the onboarding journey, where beta testing had revealed poor conversion rates
+  \item Refactored code to improve time-to-first render and other performance metrics
+  \item Made extensive use of Laravel job queues to offload processing from the main execution thread
+\end{itemize}
+
+\subsection*{CurrencyCloud \hfill \normalfont{Technical Writer · freelance · 2017}}
+\begin{itemize}
+  \item Rewrote all user-facing documentation to improve accuracy and readability
+  \item Reverse engineered CurrencyCloud's public web service to create a complete OpenAPI specification
+\end{itemize}
+
+\subsection*{Zapmap \hfill \normalfont{Full-Stack Web Developer · permanent · 2016-2017}}
+\begin{itemize}
+  \item Begun work to increment away from a tightly coupled monolith to a more modular, scalable design
+  \item Designed and implemented a new HTTP API, decoupling the client-side from the server-side
+  \item Supervised the development of iOS and Android clients
+  \item Worked with the data engineer to iterate the database design in a non-breaking way
+  \item Optimised slow-running SQL queries. Added load balancing and caching infrastructure
+  \item Administered physical Linux servers (CentOS)
+\end{itemize}
+
+\subsection*{investUP \hfill \normalfont{Front-End Web Developer · permanent · 2014-2016}}
+\begin{itemize}
+  \item Implemented a lightweight, responsive single-page web application
+  \item Created a custom framework inspired by Backbone's MV*-style architecture
+  \item Developed a custom UI component library with a living style guide
+  \item Implemented the "`cut the mustard`" progressive enhancement technique
+  \item Made extensive use of data visualisation to summarise financial data
+\end{itemize}
+
+\section*{Employment and education history}
+
+\begin{tabular}{l l}
+  2024-present & Contract Software Developer \\
+  2021-2023 & Senior Software Developer, BJSS \\
+  2017-2021 & Freelance/Contract Software Developer \\
+  2016-2017 & Full-Stack Web Developer, Zapmap \\
+  2014-2016 & Front-End Web Developer, investUP \\
+  2006-2014 & Freelance Web Developer \\
+  2006 & Public relations for Audible, Monument PR \\
+  2004-2005 & Technology Writer, Deputy Editor of PC Plus magazine, Future Publishing \\
+  2001-2003 & Staff Writer, ITP (Dubai) \\
+  1998-2001 & First-class honours in Human Geography, Leeds University
+ \end{tabular}
 
 \end{document}
