@@ -51,6 +51,18 @@ To stop the Docker container, run:
 $ ./run/stop
 ----
 
+=== Releasing
+
+To release a new version of the CV, run the following command, simple create and push a new tag:
+
+[source,sh]
+----
+$ git tag -a v[major].[minor].[patch] -m "v[major].[minor].[patch]"
+$ git push origin v[major].[minor].[patch]
+----
+
+The release workflow in GitHub Actions will automatically create a release at the tag point, and build the CV and attach it to the release.
+
 == Reference resources
 
 * https://linux.die.net/man/1/pdflatex[pdflatex man page] — The build scripts use `pdflatex` to compile the LaTeX source files into PDF format.
