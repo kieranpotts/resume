@@ -42,7 +42,7 @@ To build the CV to PDF format from the source Tex file, run:
 $ ./run/build
 ----
 
-The output file is `./dist/cv.pdf`.
+The output file is `./dist/kieran-potts-cv.pdf`.
 
 To stop the Docker container, run:
 
