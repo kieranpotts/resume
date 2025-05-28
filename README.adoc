@@ -51,15 +51,15 @@ To stop the Docker container, run:
 $ ./run/stop
 ----
 
-=== Reference resources
-
-* Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex Docker image] — The build scripts are based on the examples included in this repository.
+== Reference resources
 
 * https://linux.die.net/man/1/pdflatex[pdflatex man page] — The build scripts use `pdflatex` to compile the LaTeX source files into PDF format.
 
 == Acknowledgements
 
 The following resources provided valuable inspiration.
+
+* Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex Docker image] — The build scripts are based on the examples included in this repository
 
 * https://www.overleaf.com/latex/templates/tagged/cv[Overleaf CV templates]
 
