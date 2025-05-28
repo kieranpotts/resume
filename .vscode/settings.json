@@ -18,15 +18,9 @@
     100,
   ],
 
-  /* Wrap long code lines at the viewport or 100 characters, whichever is
-  narrowest. Same for documentation files. */
-  "editor.wordWrap": "bounded",
-  "editor.wordWrapColumn": 100,
+  /* Remove line wrap for everything except AsciiDoc. */
+  "editor.wordWrap": "off",
   "[asciidoc]": {
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100,
-  },
-  "[markdown]": {
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
   },
