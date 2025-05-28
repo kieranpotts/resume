@@ -1,0 +1,98 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*" # Triggers on version tags like v1.0.0, v2.1.3, etc.
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    # Only run if the trigger was a tag push.
+    if: github.ref_type == 'tag'
+
+    permissions:
+      contents: write # Required to create releases
+      packages: write # Required to upload packages
+
+    env:
+      IMAGE: blang/latex:ubuntu
+
+    steps:
+      - name: Checkout version tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }} # Checks out the specific tag
+          fetch-depth: 0 # Full history for proper versioning
+
+      #- name: Debugging
+      #  run: |
+      #    echo "GITHUB_REF: ${{ github.ref }}"
+      #    echo "GITHUB_REF_TYPE: $GITHUB_REF_TYPE || ${{ github.ref_type }}"
+      #
+      #    VERSION=${GITHUB_REF#refs/tags/v}
+      #    echo "version=$VERSION"
+      #    echo "tag=${GITHUB_REF#refs/tags/}"
+
+      - name: Extract version number from tag
+        id: version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Pull Docker image
+        run: |
+          docker pull $IMAGE
+
+      - name: Build PDF in Docker
+        run: |
+          docker run --rm \
+            --mount type=bind,source="${PWD}",target=/data \
+            --workdir /data \
+            $IMAGE \
+            bash -c "mkdir -p dist && pdflatex -output-directory dist src/cv.tex"
+
+      - name: Verify artifact was created
+        run: |
+          echo "Checking for built artifacts..."
+          ls -la dist/
+
+          if [ ! -f "dist/cv.pdf" ]; then
+            echo "Error: Main artifact not found!"
+            exit 1
+          fi
+
+          echo "Artifact verification successful!"
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: kieran-potts-cv.pdf
+          path: "dist/cv.pdf"
+          retention-days: 5
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          release_name: Release ${{ steps.version.outputs.tag }}
+          body: |
+            ## ${{ steps.version.outputs.version }}
+          draft: true
+          prerelease: true
+
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/cv.pdf
+          asset_name: cv-${{ steps.version.outputs.version }}.pdf
+          asset_content_type: application/pdf
