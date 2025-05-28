@@ -57,6 +57,24 @@ $ ./run/stop
 
 * https://linux.die.net/man/1/pdflatex[pdflatex man page] — The build scripts use `pdflatex` to compile the LaTeX source files into PDF format.
 
+== Acknowledgements
+
+The following resources provided valuable inspiration.
+
+* https://www.overleaf.com/latex/templates/tagged/cv[Overleaf CV templates]
+
+* https://github.com/posquit0/Awesome-CV[Awesome CV] — maintained by Byungjin Park and contributors
+
+* https://github.com/jankapunkt/latexcv[LaTex CV and Résumé Collection] — maintained by Jan Küster and contributors
+
+* https://github.com/jakegut/resume[Jake Gutierrez] and https://github.com/lcfyi/software-resume-template[Leslie Cheng's] résumé templates are based on https://github.com/sb2nov/resume/[Sourabh Bajaj's]
+
+* https://github.com/dnl-blkv/mcdowell-cv[Daniil Belyakov's "McDowell CV"], a LuaLaTeX class
+
+* https://github.com/billryan/resume[billryan's résumé template]
+
+* https://github.com/mliu7/latex-moderncv/[Mark Liu's latex-moderncv project]
+
 ''''
 
 Copyright © 2020-present Kieran Potts, all rights reserved
