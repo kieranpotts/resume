@@ -61,6 +61,8 @@ The following resources provided valuable inspiration.
 
 * Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex Docker image] — The build scripts are based on the examples included in this repository
 
+* https://andrewlock.net/building-latex-projects-on-windows-easily-with-docker/[Building LaTeX projects on Windows easily with Docker] by Andrew Lock
+
 * https://www.overleaf.com/latex/templates/tagged/cv[Overleaf CV templates]
 
 * https://github.com/posquit0/Awesome-CV[Awesome CV] — maintained by Byungjin Park and contributors
