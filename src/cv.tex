@@ -1,223 +1,496 @@
 \documentclass[a4paper,10pt]{article}
+
+%%  ==== PACKAGES ==================================================================================
+
+%%  UTF-8 encoding.
 \usepackage[utf8]{inputenc}
 
-% Page geometry
-\usepackage{geometry}
-\geometry{a4paper, margin=0.7in}
+%%  Page geometry - for fine control over the page layout.
+\usepackage[
+  ignoreheadfoot,   %%  Set margins without considering header and footer
+  top=1.5cm,        %%  Seperation between body and page edge from the top
+  bottom=1.5cm,     %%  Seperation between body and page edge from the bottom
+  left=2cm,         %%  Seperation between body and page edge from the left
+  right=2cm,        %%  Seperation between body and page edge from the right
+  footskip=1cm,     %%  Seperation between body and footer
+  %showframe        %%  Enable for debugging
+]{geometry}
+\geometry{a4paper}
 
-% Hyperlinks
+%%  Microtype - for fine-tuning text.
+\usepackage{microtype}
+
+%%  Customize the presentation of section headings using `\titleformat` and `\titlespacing`.
+\usepackage{titlesec}
+
+%%  Customization of lists.
+\usepackage{enumitem}
+
+%%  Hyperlinks.
+%%  Link text is black, but we've customized the underline color using a custom command, `\link`.
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
   urlcolor=black,
-  pdfborder={0 0 0}
 }
 
-% Underlines - the ulem package provides better consistency of
-% underlining styles than the standard LaTeX \underline command.
+%%  Underlines - the `ulem` package provides better consistency of
+%%  underlining styles than the standard LaTeX `\underline` command.
 \usepackage{ulem}
 
-% Formatting of section titles
-\usepackage{titlesec}
-\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
-\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+%%  To define custom colours.
+\usepackage{color}
+
+%%  Table colours.
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+
+%%  ==== GENERAL SETTINGS ==========================================================================
+
+\pagestyle{empty}              %%  No header or footer.
+\setcounter{secnumdepth}{0}    %%  No section numbering.
+\pagenumbering{gobble}         %%  No page numbering.
+
+\setlength{\parindent}{0pt}    %%  No indentation.
+\setlength{\parskip}{0pt}      %%  No space between paragraphs.
+\setlength{\topskip}{0pt}      %%  No top skip.
+\setlength{\columnsep}{0pt}    %%  Column separation.
+\setlength{\tabcolsep}{0pt}    %%  Tab column separation - removes paragraph indentation.
+
+%%  Controls vertical spacing for list-like environments, including "center" blocks.
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\setlength{\parsep}{0pt}
+
+%%  List customization (via `enumitem` package).
+%\setlist{noitemsep}    %%  Removes spacing from items but leaves space around whole lists.
+\setlist{nosep}         %%  Removes all vertical spacing within and around lists.
+
+\setlist[itemize]{leftmargin=0.7pc}     %%  Adjusts unordered list items left margin.
+\setlist[enumerate]{leftmargin=0.7pc}   %%  Adjusts ordered list items left margin.
+
+\setlength{\smallskipamount}{6pt}   %%  Adjusts \smallskip vspace.
+\setlength{\medskipamount}{12pt}    %%  Adjusts \medskip vspace.
+\setlength{\bigskipamount}{24pt}    %%  Adjusts \bigskip vspace.
+
+%%  ==== CUSTOM COLOURS ============================================================================
+
+%%  Link color - this is the color of the underline, the text is "black".
+\definecolor{link}{RGB}{185,185,185}
+
+%%  Quiet text color - used for dates and other less important text - NOT IN USE.
+%\definecolor{shhh}{RGB}{150,150,150}
+
+%%  Border color - used for table borders and titlerule under section headings.
+\definecolor{border}{RGB}{50,50,50}
+
+%%  ==== SECTION FORMATTING ========================================================================
+
+%%  Customize `\section` presentation. Add custom spacing above and below.
+\titleformat{\section}{
+  \vspace{24pt}\scshape\raggedright\large
+}{}{0em}{}[{\color{border}\titlerule[0.1pt] \vspace{12pt}}]
+
+%%  Remove default spacing above and below section headings.
+\titlespacing{\section}{0pt}{0pt}{0pt}
+
+%%  ==== CUSTOM COMMANDS ===========================================================================
+
+%%  \link{url}{text}
+%%  ------------------------------------------------------------------------------------------------
+%%  Creates a hyperlink with a custom underline color. The color of the link text itself is
+%%  defined via the `\hypersetup` command.
+%%
+%%  Arguments:
+%%  - `url`: The URL to link to.
+%%  - `text`: The text to display for the link.
+%%
+%%  Example:
+%%    \link{https://example.com}{Example Link}
+%%
+\newcommand{\link}[2]{
+  \textcolor{link}{\uline{\href{#1}{#2}}}
+}
+
+%%  \resumeHeading{text}
+%%  ------------------------------------------------------------------------------------------------
+%%  Creates a non-numbered `\section` heading.
+%%
+%%  The style of `\section` headings is customized via the `\titleformat` and `\titlespacing`
+%%  commands above.
+%%
+%%  Arguments:
+%%  - `text`: The text to display for the heading.
+%%
+%%  Example:
+%%    \resumeHeading{Heading title}
+%%
+\newcommand{\resumeHeading}[1]{
+  \section*{#1}
+}
+
+%%  \resumeSubheading[vspace]{company}{role}{employment-type}{dates}
+%%  ------------------------------------------------------------------------------------------------
+%%  Creates a custom sub-section heading. Used for job role headings.
+%%
+%%  Arguments:
+%%  - `vspace`: Space above the subheading - optional, default = 12pt.
+%%  - `company`: The name of the company or organization.
+%%  - `role`: The job title or role.
+%%  - `employment-type`: The type of employment (eg., contract, permanent).
+%%  - `dates`: The dates of employment (eg., 2023-present).
+%%
+%%  Example:
+%%    \resumeSubheading{ACME Corp}{Software Engineer}{contract}{2023-present}
+%%
+\newcommand{\resumeSubheading}[5][12pt]{
+  \vspace{#1}
+  {\scshape{#2}} \\
+  \textit{\small{#3}} \textit{\small{(#4)}} · \textit{\small{#5}}
+  \vspace{2pt}
+}
+
+%%  \resumeListStart
+%%  ------------------------------------------------------------------------------------------------
+%%  Starts a new unordered (bullet) list.
+%%
+%%  Example:
+%%    \resumeListStart
+%%
+\newcommand{\resumeListStart}{\begin{itemize}}
+
+%%  \resumeListEnd
+%%  ------------------------------------------------------------------------------------------------
+%%  Ends an unordered (bullet) list.
+%%
+%%  Example:
+%%    \resumeListEnd
+%%
+\newcommand{\resumeListEnd}{\end{itemize}}
+
+%%  \resumeItem{text}
+%%  ------------------------------------------------------------------------------------------------
+%%  Prints a single item in an unordered (bullet) list. Sets the bullet point to a middle dot (·),
+%%  applies a small font size, and adds a small vertical space after the item.
+%%
+%%  Arguments:
+%%  - `text`: The text to display for the list item.
+%%
+%%  Example:
+%%    \resumeItem{Lorem ipsum...}
+%%
+\newcommand{\resumeItem}[1]{
+  \item[\-·]\small{{#1\vspace{1pt}}}
+}
+
+%%  ==== DOCUMENT ==================================================================================
 
 \begin{document}
 
-\begin{center}
-  \textbf{\Huge{Kieran Potts}} \\
-  \vspace{2mm}
-  \textbf{Solution Architect · Computer Programmer · Technical Writer} \\
-  \vspace{2mm}
-  \href{https://linkedin.com/in/kieranpotts}{\uline{linkedin.com/in/kieranpotts}} · \href{https://github.com/kieranpotts}{\uline{github.com/kieranpotts}} · \href{https://kieranpotts.com/}{\uline{kieranpotts.com}} \\
-  \href{mailto:hello@kieranpotts.com}{\uline{hello@kieranpotts.com}} · +44~(0)7706~130~393 · Bristol, UK
-\end{center}
+  \begin{center}
+    {\scshape\MakeUppercase{\textls[-50]{\Huge Kieran Potts}}}
+  \end{center}
 
-\vspace{5mm}
+  \smallskip
 
-% TODO: Swap this section for an introduction or summary with key technologies in bold.
-\section*{Technical specialisations}
+  \begin{center}
+    {\scshape{Solution Architect}} · {\scshape{Computer Programmer}} · {\scshape{Technical Writer}}
+  \end{center}
 
-\begin{itemize}
-  \item Full-stack web application design
-  \item React, Vue, and single-page application architecture
-  \item HTTP and GraphQL APIs
-  \item JavaScript, TypeScript, and Node.js
-  \item Java and Spring Framework
-  \item PHP and Laravel
-\end{itemize}
+  \medskip
 
-\section*{Current certifications}
+  \begin{center}
+    20 years experience making web-based enterprise application software. Full-stack expertise.\\
+    Product-oriented mindset – collaborating directly with users and working across every phase of\\
+    the development lifecycle to deliver high quality solutions on time and on budget.\\
+  \end{center}
 
-\begin{itemize}
-  \item \href{https://www.credly.com/badges/9801eabb-75e4-4533-a63b-4560c0abae49/}{\uline{AWS Certified Cloud Practitioner}} \hfill March 2025
-  \item \href{https://www.credly.com/badges/4ffff536-6b68-40b1-8686-5ffd7f548447/}{\uline{GitHub Actions Certification}} \hfill October 2024
-\end{itemize}
+  \medskip
 
-\section*{Selected projects}
+  \begin{tabular*}{1\textwidth}{l@{\extracolsep{\fill}}r}
+    \link{https://linkedin.com/in/kieranpotts}{\small{linkedin.com/in/kieranpotts}}
+        & \link{mailto:hello@kieranpotts.com}{\small{hello@kieranpotts.com}}\\
+    \link{https://github.com/kieranpotts}{\small{github.com/kieranpotts}}
+        & \link{tel:+447706130393}{\small{+44 (0)7706 130 393}}\\
+    \link{https://kieranpotts.com/}{\small{kieranpotts.com}}
+        & \small{Bristol, UK}
+  \end{tabular*}
 
-% \subsection*{Newswire prototype \hfill \normalfont{freelance · 2024-present}}
-% \begin{itemize}
-%   \item Rapid development of a ``walking skeleton'' newswire service
-%   \item Single-page application built with custom React + Tailwind components based on shadcn/ui
-%   \item RESTful HTTP services written in Java on Spring Boot (authentication service written in Kotlin)
-% \end{itemize}
+  \resumeHeading{Technology Specialisations}
 
-\subsection*{LexisNexis Risk Solutions \hfill \normalfont{Software Developer III · contract · 2024-present}}
-\begin{itemize}
-  \item Supported the redesign of the company's flagship identity screening service
-  \item Iterated the design of a new API gateway service, written in PHP with Laravel
-  \item Extended back-end services written in a specialist data analytics tool, Enterprise Control Language
-  \item Additional data analysis scripts written in Go, aggregating data from a sharded database
-  \item Integrations with public service APIs such as the National Fraud Initiative (NFI)
-  \item Developed validation services for passports, driving licences, and national insurance numbers
-  \item Maintained 100\% code coverage through a combination of unit and integration tests
-  \item Integrated OpenTelemetry with the Elastic Stack for monitoring and observability
-  \item Configured CI/CD pipelines (GitHub Actions)
-\end{itemize}
+  \begin{minipage}[t]{0.5\textwidth}
+    \resumeListStart
+      \resumeItem{AWS, Terraform}
+      \resumeItem{GitHub Actions}
+      \resumeItem{JavaScript, TypeScript, Node.js}
+      \resumeItem{Java, Spring Framework}
+      \resumeItem{PHP, Laravel}
+    \resumeListEnd
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.5\textwidth}
+    \resumeListStart
+      \resumeItem{Web platform}
+      \resumeItem{HTTP APIs, GraphQL APIs}
+      \resumeItem{Single-Page Application (SPA) architecture}
+      \resumeItem{React \& Next / Vue \& Nuxt}
+      \resumeItem{Tailwind}
+    \resumeListEnd
+  \end{minipage}
 
-% NOTES:
-% ECL is similar in concept to Hadoop's MapReduce programming model. A declarative,
-% functional, data-oriented, programming language, it enables the processing of big
-% datasets in parallel across a computer cluster. It runs on HPCC (High Performance
-% Computing Cluster), an open source, massive parallel-processing computing platform,
-% owned and maintained by LexisNexis and specializing in big data processing and
-% analytics.
+  \begin{minipage}{\textwidth}
+    \resumeHeading{Current Certifications}
 
-\subsection*{LiveMore Mortgages \hfill \normalfont{Technical Lead · permanent · 2024}}
-\begin{itemize}
-  \item Planned and coordinated a successful big-bang deployment of a major new feature
-  \item Deployed multiple service updates to AWS, automated via CodeDeploy and GitHub Actions
-  \item Implemented Jira Service Desk with Slack integration to improve customer support management
-  \item Consolidated fragmented technical documentation into a single Confluence space
-\end{itemize}
+    \resumeListStart
+      \resumeItem{\link{https://www.credly.com/badges/9801eabb-75e4-4533-a63b-4560c0abae49/}{AWS Certified Cloud Practitioner} \hfill \textit{March 2025}}
+      \resumeItem{\link{https://www.credly.com/badges/4ffff536-6b68-40b1-8686-5ffd7f548447/}{GitHub Actions Certification} \hfill \textit{October 2024}}
+    \resumeListEnd
+  \end{minipage}
 
-\subsection*{Specsavers \hfill \normalfont{Senior Software Developer at BJSS · permanent · 2021-2023}}
-\begin{itemize}
-  \item Rebuilt a monolithic desktop application as a distributed cloud service
-  \item Implemented a micro front-end architecture that supported SPA development across six teams
-  \item Maintained a Vue-based UI component library, documented using Storybook
-  \item Contributed to back-end services written in Java on the Spring Framework
-  \item Implemented a GraphQL API gateway service. Consulted on the design of client-server contracts
-  \item Collaborated with business analysts on software requirements specifications
-  \item Collaborated with QA engineers on automated UI tests using Selenium
-  \item Collaborated with platform engineers on Azure DevOps automation
-  \item Steered a cross-team technical standards alignment group
-  \item Proposed and gathered consensus for better ways of working
-\end{itemize}
+  \begin{minipage}{\textwidth}
+    \resumeHeading{Selected Projects}
 
-% NOTES:
-% Socrates is Specsavers' patient management system. The legacy version is a long-lived
-% desktop Java application. The new version, Socrates Cloud, is a centralized cloud
-% service, to be incrementally rolled out globally.
+    \resumeSubheading
+      [0pt]  %%  First section under the heading has no vertical space above it.
+      {LexisNexis Risk Solutions}
+      {Software Developer III}
+      {contract}
+      {2024-present}
+    \resumeListStart
+      \resumeItem{Supported the redesign of the company's flagship identity screening service}
+      \resumeItem{Built out new HTTP API services, programmed in PHP on Laravel}
+      \resumeItem{Integrated third-party data sources, such as the National Fraud Initiative (NFI)}
+      \resumeItem{Extended back-end services written in Enterprise Control Language, a specialist data analytics tool}
+      \resumeItem{Developed validation services for passports, driving licences, and national insurance numbers}
+      \resumeItem{Wrote scripts in Go to aggregate and analyse data from a sharded database}
+      \resumeItem{Maintained 100\% code coverage through a combination of unit and integration tests}
+      \resumeItem{Added OpenTelemetry with the Elastic stack for monitoring and observability}
+      \resumeItem{Configured CI/CD pipelines in GitHub Actions}
+    \resumeListEnd
+  \end{minipage}
 
-\subsection*{Moorfields Eye Hospital \hfill \normalfont{Senior Software Developer at BJSS · permanent · 2021}}
-\begin{itemize}
-  \item Created a statically-generated web front-end using Nuxt
-  \item Contributed to a library of custom UI components built with Vue
-  \item Complied with WCAG Level AA accessibility guidelines
-  \item Set up automated accessibility tests using aXe, and visual regression tests using WebDriverIO
-  \item Conducted manual accessibility testing using assistive technologies such as NVDA
-\end{itemize}
+  %%  NOTES: LexisNexis
+  %%  -----------------
+  %%  ECL is similar in concept to Hadoop's MapReduce programming model. A declarative,
+  %%  functional, data-oriented, programming language, it enables the processing of big
+  %%  datasets in parallel across a computer cluster. It runs on HPCC (High Performance
+  %%  Computing Cluster), an open source, massive parallel-processing computing platform,
+  %%  owned and maintained by LexisNexis and specializing in big data processing and
+  %%  analytics.
 
-\subsection*{TimeTrack \hfill \normalfont{Technical Lead · freelance · 2020-2021}}
-\begin{itemize}
-  \item R\&D project to build a proof-of-concept automated time logging system
-  \item Coordinated a remote team of contractors and freelancers. Oversaw all design and development activities
-  \item Worked closely with the business owner on the core data processing algorithms
-  \item Established an RFC system to manage technical proposals and record key design decisions
-  \item Implemented a back-end service as a modular monolith, designed for extraction into services
-  \item Constructed a layered application architecture with an isolated domain model at the centre
-  \item Prototyped a single-page web application built with React and backed by an HTTP API gateway
-  \item Created extensions for Chromium browsers and Firefox, compiled from a single source
-  \item Repurposed a Material Design component library for the UI
-  \item Planned for scalability from the start, eg. denormalization and read-write segregation
-  \item Node.js workers were used to leverage multi-threading in the main request-response cycle
-  \item Long-running data processing tasks were queued in a job scheduling system
-\end{itemize}
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {LiveMore Mortgages}
+  %    {Technical Lead}
+  %    {permanent}
+  %    {2024}
+  %  \resumeListStart
+  %    \resumeItem{Planned and coordinated a successful big-bang deployment of a major new feature}
+  %    \resumeItem{Deployed multiple service updates to AWS, automated via CodeDeploy and GitHub Actions}
+  %    \resumeItem{Implemented Jira Service Desk with Slack integration to improve customer support management}
+  %    \resumeItem{Consolidated fragmented technical documentation into a single Confluence space}
+  %  \resumeListEnd
+  %\end{minipage}
 
-\subsection*{Zylo Performance \hfill \normalfont{Full-Stack Web Developer · freelance · 2020-2021}}
-\begin{itemize}
-  \item Developed and maintained a custom business process management system in Drupal
-  \item Integrated payment card processing (FideliPay) and Direct Debits (GoCardless)
-  \item Used Adobe XD to mock UI designs and plan user journeys
-\end{itemize}
+  \begin{minipage}{\textwidth}
+    \resumeSubheading
+      {Specsavers}
+      {Senior Software Developer, BJSS}
+      {permanent}
+      {2021-2023}
+    \resumeListStart
+      \resumeItem{Involved in rebuilding a monolithic desktop application as a distributed cloud-native system}
+      \resumeItem{Implemented a micro front-end architecture that supported SPA development across six teams}
+      \resumeItem{Maintained a Vue-based UI component library, documented using Storybook}
+      \resumeItem{Contributed to back-end services written in Java on the Spring Framework}
+      \resumeItem{Implemented a GraphQL API gateway service; designed client-server contracts}
+      \resumeItem{Collaborated with business analysts on software requirements specifications}
+      \resumeItem{Collaborated with QA engineers on automated UI tests using Selenium}
+      \resumeItem{Collaborated with platform engineers on Azure DevOps automation}
+      \resumeItem{Steered a cross-team technical standards alignment group}
+      \resumeItem{Proposed and gathered consensus for improved ways of working}
+    \resumeListEnd
+  \end{minipage}
 
-\subsection*{Maker DAO \hfill \normalfont{Front-End Web Developer · freelance · 2019-2020}}
-\begin{itemize}
-  \item Created a responsive, mobile-first WordPress theme
-  \item Adopted the utility-class methodology to CSS architecture
-  \item Contributed to copywriting and search engine optimisation
-\end{itemize}
+  %%  NOTES: Specsavers
+  %%  -----------------
+  %%  Socrates is Specsavers' patient management system. The legacy version is a long-lived
+  %%  desktop Java application. The new version, Socrates Cloud, is a centralized cloud
+  %%  service, to be incrementally rolled out globally.
 
-\subsection*{Redgate Software \hfill \normalfont{Technical Lead at Helastel · contract · 2018-2019}}
-\begin{itemize}
-  \item Led a project to transition the SQLServerCentral.com website to a new tech stack
-  \item Gathered requirements via client conversations and reverse engineering of the legacy system
-  \item Documented a complete target specification for the replacement system
-  \item Undertook rapid prototyping to help estimate costs and timelines, and mitigate delivery risks
-  \item Used monthly checkpoints to establish trust with the customer
-  \item Created dozens of custom WordPress plugins
-  \item Wrote shell scripts to automate the migration of 17 years of editorial and user-generated content
-  \item Switched-over with minimal downtime and no subsequent issues in production
-  \item The solution, delivered on time and to budget, met all functional and non-functional requirements
-\end{itemize}
+  \begin{minipage}{\textwidth}
+    \resumeSubheading
+      {Moorfields Eye Hospital}
+      {Senior Software Developer, BJSS}
+      {permanent}
+      {2021}
+    \resumeListStart
+      \resumeItem{Generated a static web front-end using Nuxt}
+      \resumeItem{Contributed to a library of custom UI components built with Vue}
+      \resumeItem{Achieved compliance with WCAG Level AA accessibility guidelines}
+      \resumeItem{Set up automated accessibility tests using aXe, and visual regression tests using WebDriverIO}
+      \resumeItem{Conducted manual accessibility testing using assistive technologies such as NVDA}
+    \resumeListEnd
+  \end{minipage}
 
-\subsection*{Fresenius Kabi \hfill \normalfont{Software Developer at Helastel · contract · 2018}}
-\begin{itemize}
-  \item Salvaged a failing software project
-  \item Identified and prioritised issues
-  \item Enhanced the accuracy of project estimation and delivery reports
-  \item Successfully delivered a custom CRM operating on the NHS IT network
-\end{itemize}
+  \begin{minipage}{\textwidth}
+    \resumeSubheading
+      {TimeTrack}
+      {Technical Lead}
+      {contract}
+      {2020-2021}
+    \resumeListStart
+      \resumeItem{Oversaw an R\&D project to build a proof-of-concept automated time logging system}
+      \resumeItem{Coordinated a remote team of contractors and freelancers; supervised all design and development activities}
+      \resumeItem{Worked closely with the business owner on the core data processing algorithms}
+      \resumeItem{Established an RFC system to manage technical proposals and record key design decisions}
+      \resumeItem{Designed the back-end as a modular monolith for decomposition to a service-oriented architecture}
+      \resumeItem{Constructed a layered application architecture with an isolated domain model at the centre}
+      \resumeItem{Prototyped a single-page web application built with React and backed by an HTTP API service}
+      \resumeItem{Created extensions for Chrome and Firefox, compiled from a single source}
+      \resumeItem{Repurposed a Material Design component library for the UI}
+      \resumeItem{Planned for scalability from the start, eg. denormalization and read-write segregation}
+      \resumeItem{Used Node.js workers to leverage multi-threading in the main request-response cycle}
+      \resumeItem{Queued long-running data processing tasks in a job scheduling system}
+    \resumeListEnd
+  \end{minipage}
 
-\subsection*{DenGro \hfill \normalfont{Full-Stack Web Developer · contract · 2017}}
-\begin{itemize}
-  \item Helped launch an enterprise software-as-a-service built on Laravel
-  \item Collaborated with UX designers on critical user journeys
-  \item Redesigned the onboarding journey, where beta testing had revealed poor conversion rates
-  \item Refactored code to improve time-to-first render and other performance metrics
-  \item Made extensive use of Laravel job queues to offload processing from the main execution thread
-\end{itemize}
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {Zylo Performance}
+  %    {Full-Stack Web Developer}
+  %    {freelance}
+  %    {2020-2021}
+  %  \resumeListStart
+  %    \resumeItem{Developed and maintained a custom business process management system in Drupal}
+  %    \resumeItem{Integrated payment card processing (FideliPay) and Direct Debits (GoCardless)}
+  %    \resumeItem{Used Adobe XD to mock UI designs and plan user journeys}
+  %  \resumeListEnd
+  %\end{minipage}
 
-\subsection*{CurrencyCloud \hfill \normalfont{Technical Writer · freelance · 2017}}
-\begin{itemize}
-  \item Rewrote all user-facing documentation to improve accuracy and readability
-  \item Reverse engineered CurrencyCloud's public web service to create a complete OpenAPI specification
-\end{itemize}
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {Maker DAO}
+  %    {Front-End Web Developer}
+  %    {freelance}
+  %    {2019-2020}
+  %  \resumeListStart
+  %    \resumeItem{Created a responsive, mobile-first WordPress theme}
+  %    \resumeItem{Adopted the utility-class methodology to CSS architecture}
+  %    \resumeItem{Contributed to copywriting and search engine optimisation}
+  %  \resumeListEnd
+  %\end{minipage}
 
-\subsection*{Zapmap \hfill \normalfont{Full-Stack Web Developer · permanent · 2016-2017}}
-\begin{itemize}
-  \item Begun work to increment away from a tightly coupled monolith to a more modular, scalable design
-  \item Designed and implemented a new HTTP API, decoupling the client-side from the server-side
-  \item Supervised the development of iOS and Android clients
-  \item Worked with the data engineer to iterate the database design in a non-breaking way
-  \item Optimised slow-running SQL queries. Added load balancing and caching infrastructure
-  \item Administered physical Linux servers (CentOS)
-\end{itemize}
+  \begin{minipage}{\textwidth}
+    \resumeSubheading
+      {Redgate Software}
+      {Technical Lead, Helastel}
+      {contract}
+      {2018-2019}
+    \resumeListStart
+      \resumeItem{Led a project to transition the SQLServerCentral.com website to a new tech stack}
+      \resumeItem{Gathered requirements via client conversations and reverse engineering of the legacy system}
+      \resumeItem{Documented a complete target specification for the replacement system}
+      \resumeItem{Undertook rapid prototyping to estimate costs and timelines, and mitigate delivery risks}
+      \resumeItem{Used monthly checkpoints to establish trust with the customer}
+      \resumeItem{Wrote dozens of custom WordPress plugins; good unit test coverage throughout}
+      \resumeItem{Wrote shell scripts to automate the migration of 17 years of editorial and user-generated content}
+      \resumeItem{Switched-over with minimal downtime and no subsequent issues in production}
+    \resumeListEnd
+  \end{minipage}
 
-\subsection*{investUP \hfill \normalfont{Front-End Web Developer · permanent · 2014-2016}}
-\begin{itemize}
-  \item Implemented a lightweight, responsive single-page web application
-  \item Created a custom framework inspired by Backbone's MV*-style architecture
-  \item Developed a custom UI component library with a living style guide
-  \item Implemented the "`cut the mustard`" progressive enhancement technique
-  \item Made extensive use of data visualisation to summarise financial data
-\end{itemize}
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {Fresenius Kabi}
+  %    {Software Developer, Helastel}
+  %    {contract}
+  %    {2018}
+  %  \resumeListStart
+  %    \resumeItem{Salvaged a failing software project}
+  %    \resumeItem{Identified and prioritised issues}
+  %    \resumeItem{Enhanced the accuracy of project estimation and delivery reports}
+  %    \resumeItem{Successfully delivered a custom CRM operating on the NHS IT network}
+  %  \resumeListEnd
+  %\end{minipage}
 
-\section*{Employment and education history}
+  \begin{minipage}{\textwidth}
+    \resumeSubheading
+      {DenGro}
+      {Full-Stack Web Developer}
+      {contract}
+      {2017}
+    \resumeListStart
+      \resumeItem{Helped launch a startup enterprise software-as-a-service, built on Laravel}
+      \resumeItem{Collaborated with UX designers on critical user journeys (eg. onboarding, account management)}
+      \resumeItem{Redesigned the onboarding journey, where beta testing had revealed poor conversion rates}
+      \resumeItem{Refactored code to improve time-to-first render and other performance metrics}
+      \resumeItem{Made extensive use of Laravel job queues to offload processing from the main execution thread}
+    \resumeListEnd
+  \end{minipage}
 
-\begin{tabular}{l l}
-  2024-present & Contract Software Developer \\
-  2021-2023 & Senior Software Developer, BJSS \\
-  2017-2021 & Freelance/Contract Software Developer \\
-  2016-2017 & Full-Stack Web Developer, Zapmap \\
-  2014-2016 & Front-End Web Developer, investUP \\
-  2006-2014 & Freelance Web Developer \\
-  2006 & Public relations for Audible, Monument PR \\
-  2004-2005 & Technology Writer, Deputy Editor of PC Plus magazine, Future Publishing \\
-  2001-2003 & Staff Writer, ITP (Dubai) \\
-  1998-2001 & First-class honours in Human Geography, Leeds University
- \end{tabular}
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {CurrencyCloud}
+  %    {Technical Writer}
+  %    {freelance}
+  %    {2017}
+  %  \resumeListStart
+  %    \resumeItem{Rewrote all user-facing documentation to improve accuracy and readability}
+  %    \resumeItem{Reverse engineered CurrencyCloud's public web service to create a complete OpenAPI specification}
+  %  \resumeListEnd
+  %\end{minipage}
+
+  \begin{minipage}{\textwidth}
+    \resumeSubheading
+      {Zapmap}
+      {Full-Stack Web Developer}
+      {permanent}
+      {2016-2017}
+    \resumeListStart
+      \resumeItem{Begun work to increment away from a tightly coupled monolith to a more modular, scalable design}
+      \resumeItem{Designed and implemented a new HTTP API and started decoupling the client-side from the server-side}
+      \resumeItem{Supervised the development of iOS and Android clients}
+      \resumeItem{Collaborated with the data engineer to iterate the database design in a non-breaking way}
+      \resumeItem{Optimised slow-running SQL queries}
+      \resumeItem{Added various caching layers to reduce hot spots}
+      \resumeItem{Administered physical Linux servers (CentOS)}
+    \resumeListEnd
+  \end{minipage}
+
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {investUP}
+  %    {Front-End Web Developer}
+  %    {permanent}
+  %    {2014-2016}
+  %  \resumeListStart
+  %    \resumeItem{Implemented a lightweight, responsive single-page web application}
+  %    \resumeItem{Created a custom framework inspired by Backbone's MV*-style architecture}
+  %    \resumeItem{Developed a custom UI component library with a living style guide}
+  %    \resumeItem{Implemented the ``cut the mustard'' progressive enhancement technique}
+  %    \resumeItem{Made extensive use of data visualisation to summarise financial data}
+  %  \resumeListEnd
+  %\end{minipage}
+
+  \begin{minipage}{\textwidth}
+    \resumeHeading{Employment and Education History}
+
+    \begingroup
+      \arrayrulecolor{border}
+      \setlength{\tabcolsep}{6pt}
+      \renewcommand{\arraystretch}{1.2}  %%  Adjusts table row height
+      \begin{tabular*}{\textwidth}{l|l@{\extracolsep{\fill}}}
+        \small{2024-present} & \small{Contract Software Developer (remote and on-site)} \\ \hline
+        \small{2021-2023} & \small{Senior Software Developer, BJSS (Bristol, hybrid)} \\ \hline
+        \small{2017-2021} & \small{Freelance/Contract Software Developer (remote and on-site)} \\ \hline
+        \small{2016-2017} & \small{Full-Stack Web Developer, Zapmap (Bristol)} \\ \hline
+        \small{2014-2016} & \small{Front-End Web Developer, investUP (Bristol and London)} \\ \hline
+        \small{2006-2014} & \small{Freelance Web Developer (remote)} \\ \hline
+        \small{2004-2005} & \small{Technology Writer, Deputy Editor of PC Plus magazine, Future Publishing (Bath)} \\ \hline
+        \small{2001-2003} & \small{Staff Writer, ITP (Dubai)} \\ \hline
+        \small{1998-2001} & \small{First-class honours in Human Geography, Leeds University}
+      \end{tabular*}
+    \endgroup
+  \end{minipage}
 
 \end{document}
