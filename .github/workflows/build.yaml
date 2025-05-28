@@ -1,0 +1,25 @@
+name: Build
+on:
+  #push:
+  #  branches: ["main"]
+  #pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: build in docker
+        run: |
+          docker run --rm \
+            --mount type=bind,source="${PWD}",target=/data \
+            --workdir /data \
+            $IMAGE \
+            bash -c "mkdir -p dist && pdflatex -output-directory dist src/cv.tex"
+        env:
+          IMAGE: blang/latex:ubuntu
+      - uses: actions/upload-artifact@v4.4.3
+        with:
+          name: pdf
+          path: "dist/cv.pdf"
