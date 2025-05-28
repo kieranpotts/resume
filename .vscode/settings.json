@@ -5,10 +5,10 @@
 
   /* Add custom dictionary for this repository only. */
   "cSpell.customDictionaries": {
-    "cvDictionary": {
+    "resumeDictionary": {
       "name": "Résumé Dictionary",
-      "path": "${workspaceFolder:cv}/.cspell/dictionary.txt",
-      "scope":"folder",
+      "path": "${workspaceFolder:résumé}/.cspell/dictionary.txt",
+      "scope": "folder",
       "addWords": true
     }
   },
