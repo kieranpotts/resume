@@ -53,26 +53,26 @@ jobs:
             --mount type=bind,source="${PWD}",target=/data \
             --workdir /data \
             $IMAGE \
-            bash -c "mkdir -p dist && pdflatex -output-directory dist src/cv.tex"
+            bash -c "mkdir -p dist && pdflatex -output-directory dist src/kieran-potts-cv.tex"
 
       - name: Verify artifact was created
         run: |
           echo "Checking for built artifacts..."
           ls -la dist/
 
-          if [ ! -f "dist/cv.pdf" ]; then
+          if [ ! -f "dist/kieran-potts-cv.pdf" ]; then
             echo "Error: Main artifact not found!"
             exit 1
           fi
 
           echo "Artifact verification successful!"
 
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4.4.3
-        with:
-          name: kieran-potts-cv.pdf
-          path: "dist/cv.pdf"
-          retention-days: 5
+      #- name: Upload PDF artifact
+      #  uses: actions/upload-artifact@v4.4.3
+      #  with:
+      #    name: kieran-potts-cv.pdf
+      #    path: "dist/kieran-potts-cv.pdf"
+      #    retention-days: 5
 
       - name: Create release
         id: create_release
@@ -82,10 +82,9 @@ jobs:
         with:
           tag_name: ${{ steps.version.outputs.tag }}
           release_name: Release ${{ steps.version.outputs.tag }}
-          body: |
-            ## ${{ steps.version.outputs.version }}
-          draft: true
-          prerelease: true
+          # body: TODO: Extract from commit message
+          draft: false
+          prerelease: false
 
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
@@ -93,6 +92,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/cv.pdf
-          asset_name: cv-${{ steps.version.outputs.version }}.pdf
+          asset_path: ./dist/kieran-potts-cv.pdf
+          asset_name: kieran-potts-cv-${{ steps.version.outputs.version }}.pdf
           asset_content_type: application/pdf
