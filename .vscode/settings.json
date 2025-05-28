@@ -6,7 +6,7 @@
   /* Add custom dictionary for this repository only. */
   "cSpell.customDictionaries": {
     "cvDictionary": {
-      "name": "CV Dictionary",
+      "name": "Résumé Dictionary",
       "path": "${workspaceFolder:cv}/.cspell/dictionary.txt",
       "scope":"folder",
       "addWords": true
