@@ -7,6 +7,10 @@
 
 *Source content and build scripts for my résumé.*
 
+[NOTE]
+======
+The `v1` branch is an archived version of my résumé, which was previously built with AsciiDoc and the `asciidoctor-pdf` tool. This branch is no longer maintained.
+======
 
 == Documentation
 
