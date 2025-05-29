@@ -29,7 +29,7 @@ Finally, make sure that each of the `run/*` scripts are executable:
 $ chmod +x run/*
 ----
 
-=== Procedure
+=== Development
 
 To start the Docker container, run:
 
@@ -105,23 +105,23 @@ The release workflow in GitHub Actions will automatically create a release at th
 
 The following resources provided valuable inspiration.
 
-* Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex Docker image] — The build scripts are based on the examples included in this repository
+* Andrew Lock's blog post about https://andrewlock.net/building-latex-projects-on-windows-easily-with-docker/[building LaTeX projects with Docker]
 
-* https://andrewlock.net/building-latex-projects-on-windows-easily-with-docker/[Building LaTeX projects on Windows easily with Docker] by Andrew Lock
+* Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex] Docker image
 
-* https://www.overleaf.com/latex/templates/tagged/cv[Overleaf CV templates]
+* https://www.overleaf.com/latex/templates/tagged/cv[Overleaf's CV templates]
 
-* https://github.com/posquit0/Awesome-CV[Awesome CV] — maintained by Byungjin Park and contributors
+* https://github.com/posquit0/Awesome-CV[Awesome CV], maintained by Byungjin Park and contributors
 
-* https://github.com/jankapunkt/latexcv[LaTex CV and Résumé Collection] — maintained by Jan Küster and contributors
+* https://github.com/jankapunkt/latexcv[LaTex CV and Résumé Collection], maintained by Jan Küster and contributors
 
-* https://github.com/jakegut/resume[Jake Gutierrez] and https://github.com/lcfyi/software-resume-template[Leslie Cheng's] résumé templates are based on https://github.com/sb2nov/resume/[Sourabh Bajaj's]
+* https://github.com/jakegut/resume[Jake Gutierrez] and https://github.com/lcfyi/software-resume-template[Leslie Cheng's] résumé templates, which are based on https://github.com/sb2nov/resume/[Sourabh Bajaj's]
 
-* https://github.com/dnl-blkv/mcdowell-cv[Daniil Belyakov's "McDowell CV"], a LuaLaTeX class
+* Daniil Belyakov's https://github.com/dnl-blkv/mcdowell-cv[McDowell CV], a LuaLaTeX class
 
-* https://github.com/billryan/resume[billryan's résumé template]
+* billryan's https://github.com/billryan/resume[résumé template]
 
-* https://github.com/mliu7/latex-moderncv/[Mark Liu's latex-moderncv project]
+* Mark Liu's https://github.com/mliu7/latex-moderncv/[latex-moderncv]
 
 ''''
 
