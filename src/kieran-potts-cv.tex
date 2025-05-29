@@ -26,13 +26,8 @@
 %%  Customization of lists.
 \usepackage{enumitem}
 
-%%  Hyperlinks.
-%%  Link text is black, but we've customized the underline color using a custom command, `\link`.
+%%  Package for customizing hyperlinks and PDF metadata.
 \usepackage{hyperref}
-\hypersetup{
-  colorlinks=true,
-  urlcolor=black,
-}
 
 %%  Underlines - the `ulem` package provides better consistency of
 %%  underlining styles than the standard LaTeX `\underline` command.
@@ -46,6 +41,22 @@
 \usepackage{colortbl}
 
 %%  ==== GENERAL SETTINGS ==========================================================================
+
+%%  hyperref settings.
+%%
+%%  - Document metadata.
+%%  - Don't open bookmarks by default.
+%%  - Customizes link colors. Link text is blank, but underline customized via `\link` command.
+%%
+\hypersetup{
+  pdftitle={Kieran Potts - CV},
+  pdfauthor={Kieran Potts},
+  pdfkeywords={curriculum vitae, résumé},
+  pdfcreator={LaTeX with pdflatex},
+  bookmarksopen=false,
+  colorlinks=true,
+  urlcolor=black,
+}
 
 \pagestyle{empty}              %%  No header or footer.
 \setcounter{secnumdepth}{0}    %%  No section numbering.
