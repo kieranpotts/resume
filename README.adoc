@@ -8,7 +8,10 @@ link:https://github.com/kieranpotts/resume/releases/latest[image:https://img.shi
 
 === Requirements
 
-The compilation scripts run in *Docker Desktop*.
+The only requirements are *Docker Desktop* and a good LaTeX editor.
+
+
+The compilation scripts run in a Docker container, so you do not need to install any LaTeX packages on your host system. The Docker image is based on the `blang/latex` image, which includes a full TeX Live installation.
 
 On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are insufficient.
 
@@ -19,7 +22,7 @@ The script to start the container will run the container under the current user 
 $ sudo usermod -aG docker [your-username]
 ----
 
-Also, make sure that each of the `run/*` scripts are executable:
+Finally, make sure that each of the `run/*` scripts are executable:
 
 [source,sh]
 ----
@@ -35,7 +38,7 @@ To start the Docker container, run:
 $ ./run/start
 ----
 
-The start script keeps the container running indefinitely (until it is explicitly stopped), so you can re-run the build command again and again, and each time it will be executed immediately without needing to restart the container.
+The start script keeps the container running indefinitely (until it is explicitly stopped), so you can re-run the build command again and again, and each time it will be executed immediately without restarting the container.
 
 To build the CV to PDF format from the source Tex file, run:
 
@@ -55,15 +58,44 @@ $ ./run/stop
 
 === Releasing
 
-To release a new version of the CV, run the following command, simple create and push a new tag:
+To release a new version of the CV, simply create a new tag:
 
-[source,sh]
 ----
-$ git tag -a v[major].[minor].[patch] -m "v[major].[minor].[patch]"
-$ git push origin v[major].[minor].[patch]
+$ git tag -a v[major].[minor].[patch]
 ----
 
-The release workflow in GitHub Actions will automatically create a release at the tag point, and build the CV and attach it to the release.
+It is RECOMMENDED to include details of the changes in the release in a message attached to the Git tag object. If the changes can be summarized in a single line, you can use the `-m` option to specify the message inline:
+
+----
+$ git tag -a v2.0.3 -m "Minor edits for improved readability."
+----
+
+Otherwise create a temporary release notes file, and use the `-F` option to use the file's contents as the tag message. Release notes SHOULD be formatted using Markdown.
+
+----
+$ git tag -a v2.0.3 -F RELEASE_NOTES.md
+----
+
+Push the new tag:
+
+----
+$ git push origin v2.0.3
+----
+
+Alternatively, push any new tags with new commits:
+
+----
+$ git push --follow-tags
+----
+
+Or you can push commits and tags separately:
+
+----
+$ git push
+$ git push --tags
+----
+
+The release workflow in GitHub Actions will automatically create a release at the tag point, and it will compile the CV to the PDF format and attach the file to the release. The new CV can be downloaded from the https://github.com/kieranpotts/resume/releases[releases page].
 
 == Reference resources
 
