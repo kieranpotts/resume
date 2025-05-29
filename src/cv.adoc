@@ -1,0 +1,265 @@
+= Kieran Potts
+:pdf-themesdir: {docdir}/themes
+:pdf-theme: cv
+:!outline:
+:table-caption!:
+:nofooter:
+
+:link-linkedin: https://linkedin.com/in/kieranpotts
+:link-github: https://github.com/kieranpotts
+:link-blog: https://kieranpotts.com/
+
+:link-aws-cloud-practitioner-actions-cert: https://www.credly.com/badges/9801eabb-75e4-4533-a63b-4560c0abae49/
+:link-github-actions-cert: https://www.credly.com/badges/4ffff536-6b68-40b1-8686-5ffd7f548447/
+
+Software Developer • Technical Writer
+
+[.text-center]
+{link-linkedin}[linkedin.com/in/kieranpotts] • {link-github}[github.com/kieranpotts] • {link-blog}[kieranpotts.com] +
+\hello@kieranpotts.com • 07706 130 393 • Bristol, UK
+
+== Technical specialisations
+
+* Full-stack web application design
+* React, Vue, and single-page application architecture
+* HTTP and GraphQL APIs
+* JavaScript, TypeScript, and Node.js
+* Java and Spring Framework
+* PHP and Laravel
+
+== Current certifications
+
+* {link-aws-cloud-practitioner-actions-cert}[AWS Certified Cloud Practitioner]
+* {link-github-actions-cert}[GitHub Actions]
+
+== Selected projects
+
+////
+[%unbreakable]
+--
+*Newswire prototype* +
+Freelance • 2025 - present
+
+* Rapid development of a "walking skeleton" newswire service
+* Single-page application built with custom React + Tailwind components based on shadcn/ui
+* RESTful HTTP services written in Java on Spring Boot (authentication service written in Kotlin)
+--
+////
+
+[%unbreakable]
+--
+*LexisNexis Risk Solutions* +
+Software Developer III • Contract • 2024 - present
+
+* Supported the redesign of the company's flagship identity screening service
+* Iterated the design of a new API gateway service, written in PHP with Laravel
+* Extended back-end services written in a specialist data analytics tool, Enterprise Control Language
+* Additional data analysis scripts written in Go, aggregating data from a sharded database
+* Integrations with public service APIs such as the National Fraud Initiative (NFI)
+* Developed validation services for passports, driving licences, and national insurance numbers
+* Maintained 100% code coverage through a combination of unit and integration tests
+* Integrated OpenTelemetry with the Elastic Stack for monitoring and observability
+* Configured CI/CD pipelines (GitHub Actions)
+
+////
+NOTES:
+ECL is similar in concept to Hadoop's MapReduce programming model. A declarative, functional,
+data-oriented, programming language, it enables the processing of big datasets in parallel across a
+computer cluster. It runs on HPCC (High Performance Computing Cluster), an open source, massive
+parallel-processing computing platform, owned and maintained by LexisNexis and specializing in big
+data processing and analytics.
+////
+--
+
+ifdef::full[]
+[%unbreakable]
+--
+*LiveMore Mortgages* +
+Technical Lead • Permanent • 2024
+
+* Planned and coordinated a successful big-bang deployment of a major new feature
+* Deployed multiple service updates to AWS, automated via CodeDeploy and GitHub Actions
+* Implemented Jira Service Desk with Slack integration to improve customer support management
+* Consolidated fragmented technical documentation into a single Confluence space
+--
+endif::[]
+
+[%unbreakable]
+--
+*Specsavers* +
+Senior Software Developer at BJSS • Permanent • 2021 - 2023
+
+* Rebuilt a monolithic desktop application as a distributed cloud service
+* Implemented a micro front-end architecture that supported SPA development across six teams
+* Maintained a Vue-based UI component library, documented using Storybook
+* Contributed to back-end services written in Java on the Spring Framework
+* Implemented a GraphQL API gateway service. Consulted on the design of client-server contracts
+* Collaborated with business analysts on software requirements specifications
+* Collaborated with QA engineers on automated UI tests using Selenium
+* Collaborated with platform engineers on Azure DevOps automation
+* Steered a cross-team technical standards alignment group
+* Proposed and gathered consensus for better ways of working
+
+////
+NOTES:
+Socrates is Specsavers' patient management system. The legacy version is a long-lived desktop Java
+application. The new version, Socrates Cloud, is a centralized cloud service, to be incrementally
+rolled out globally.
+////
+--
+
+[%unbreakable]
+--
+*Moorfields Eye Hospital* +
+Senior Software Developer at BJSS • Permanent • 2021
+
+* Created a statically-generated web front-end using Nuxt
+* Contributed to a library of custom UI components built with Vue
+* Complied with WCAG Level AA accessibility guidelines
+* Set up automated accessibility tests using aXe, and visual regression tests using WebDriverIO
+* Conducted manual accessibility testing using assistive technologies such as NVDA
+--
+
+[%unbreakable]
+--
+*TimeTrack* +
+Technical Lead • Freelance • 2020 - 2021
+
+* R&D project to build a proof-of-concept automated time logging system
+* Coordinated a remote team of contractors and freelancers. Oversaw all design and development activities
+* Worked closely with the business owner on the core data processing algorithms
+* Established an RFC system to manage technical proposals and record key design decisions
+* Implemented a back-end service as a modular monolith, designed for extraction into services
+* Constructed a layered application architecture with an isolated domain model at the centre
+* Prototyped a single-page web application built with React and backed by an HTTP API gateway
+* Created extensions for Chromium browsers and Firefox, compiled from a single source
+* Repurposed a Material Design component library for the UI
+* Planned for scalability from the start, eg. denormalization and read-write segregation
+* Node.js workers were used to leverage multi-threading in the main request-response cycle
+* Long-running data processing tasks were queued in a job scheduling system
+--
+
+ifdef::full[]
+[%unbreakable]
+--
+*Zylo Performance* +
+Full-Stack Web Developer • Freelance • 2020 - 2021
+
+* Developed and maintained a custom business process management system in Drupal
+* Integrated payment card processing (FideliPay) and Direct Debits (GoCardless)
+* Used Adobe XD to mock UI designs and plan user journeys
+--
+endif::[]
+
+ifdef::full[]
+[%unbreakable]
+--
+*Maker DAO* +
+Front-End Web Developer • Freelance • 2019 - 2020
+
+* Created a responsive, mobile-first WordPress theme
+* Adopted the utility-class methodology to CSS architecture
+* Contributed to copywriting and search engine optimisation
+--
+endif::[]
+
+[%unbreakable]
+--
+*Redgate Software* +
+Technical Lead at Helastel • Contract • 2018 - 2019
+
+* Led a project to transition the SQLServerCentral.com website to a new tech stack
+* Gathered requirements via client conversations and reverse engineering of the legacy system
+* Documented a complete target specification for the replacement system
+* Undertook rapid prototyping to help estimate costs and timelines, and mitigate delivery risks
+* Used monthly checkpoints to establish trust with the customer
+* Created dozens of custom WordPress plugins
+* Wrote shell scripts to automate the migration of 17 years of editorial and user-generated content
+* Switched-over with minimal downtime and no subsequent issues in production
+* The solution, delivered on time and to budget, met all functional and non-functional requirements
+--
+
+ifdef::full[]
+[%unbreakable]
+--
+*Fresenius Kabi* +
+Software Developer at Helastel • Contract • 2018
+
+* Salvaged a failing software project
+* Identified and prioritised issues
+* Enhanced the accuracy of project estimation and delivery reports
+* Successfully delivered a custom CRM operating on the NHS IT network
+--
+endif::[]
+
+ifdef::full[]
+[%unbreakable]
+--
+*DenGro* +
+Full-Stack Web Developer • Contract • 2017
+
+* Helped launch an enterprise software-as-a-service built on Laravel
+* Collaborated with UX designers on critical user journeys
+* Redesigned the onboarding journey, where beta testing had revealed poor conversion rates
+* Refactored code to improve time-to-first render and other performance metrics
+* Made extensive use of Laravel job queues to offload processing from the main execution thread
+--
+endif::[]
+
+ifdef::full[]
+[%unbreakable]
+--
+*CurrencyCloud* +
+Technical Writer • Freelance • 2017
+
+* Rewrote all user-facing documentation to improve accuracy and readability
+* Reverse engineered CurrencyCloud's public web service to create a complete OpenAPI specification
+--
+endif::[]
+
+[%unbreakable]
+--
+*Zapmap* +
+Full-Stack Web Developer • Permanent • 2016 - 2017
+
+* Begun work to increment away from a tightly coupled monolith to a more modular, scalable design
+* Designed and implemented a new HTTP API, decoupling the client-side from the server-side
+* Supervised the development of iOS and Android clients
+* Worked with the data engineer to iterate the database design in a non-breaking way
+* Optimised slow-running SQL queries. Added load balancing and caching infrastructure
+* Administered physical Linux servers (CentOS)
+--
+
+ifdef::full[]
+[%unbreakable]
+--
+*investUP* +
+Front-End Web Developer • Permanent • 2014 - 2016
+
+* Implemented a lightweight, responsive single-page web application
+* Created a custom framework inspired by Backbone's MV*-style architecture
+* Developed a custom UI component library with a living style guide
+* Implemented the "`cut the mustard`" progressive enhancement technique
+* Made extensive use of data visualisation to summarise financial data
+--
+endif::[]
+
+ifdef::full[]
+[%unbreakable]
+--
+.Employment and education history
+[cols="1,5"]
+|===
+|2024 - present |Contract Software Developer
+|2021 - 2023    |Senior Software Developer, BJSS
+|2017 - 2021    |Contract Software Developer
+|2016 - 2017    |Full-Stack Web Developer, Zapmap
+|2014 - 2016    |Front-End Web Developer, investUP
+|2006 - 2014    |Freelance Web Developer (self-employed)
+|2006 - 2006    |Public relations for Audible, Monument PR
+|2004 - 2005    |Technology Writer, Deputy Editor of PC Plus magazine, Future Publishing
+|2001 - 2003    |Staff Writer, ITP (Dubai)
+|1998 - 2001    |First-class honours in Human Geography, Leeds University
+|===
+--
+endif::[]

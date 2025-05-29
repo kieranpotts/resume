@@ -1,0 +1,47 @@
+extends: ./base-theme.yml
+
+heading:
+  line_height: 1
+
+  text_align: left
+  h1_text_align: center
+
+  font_style: bold
+
+  h1_font_size: $base_font_size * 2.6
+  h2_font_size: $base_font_size * 1.3
+
+  h1_margin_top: 0
+  h1_margin_bottom: 0
+
+  h2_margin_top: $vertical_rhythm * 2
+  h2_margin_bottom: $vertical_rhythm * 1
+
+  # Prevents page breaks after headings.
+  # [%breakable] are still required.
+  min_height_after: auto
+
+role:
+  # The "lead" role is built-in and is used for the job title
+  # at the top of the CV. It is styled like an h2.
+  lead:
+    font_size: $heading_h2_font_size
+    text_align: center
+    line_height: 1
+
+caption:
+  # Matches h2.
+  align: left
+  font_size: $heading_h2_font_size
+  font_style: bold
+
+  # Margins intended to mimic h2, assumes follows a paragraph.
+  margin_inside: $vertical_rhythm * 1
+  margin_outside: $vertical_rhythm * 1
+
+table:
+  border_color: AAAAAA
+  border_width: $base_border_width
+  grid_width: $base_border_width
+  cell_line_height: 1
+  cell_padding: $vertical_rhythm / 6
