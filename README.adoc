@@ -40,7 +40,7 @@ $ ./run/start
 
 The start script keeps the container running indefinitely (until it is explicitly stopped), so you can re-run the build command again and again, and each time it will be executed immediately without restarting the container.
 
-To build the CV to PDF format from the source Tex file, run:
+To build the résumé to PDF format from the source Tex file, run:
 
 [source,sh]
 ----
@@ -58,7 +58,7 @@ $ ./run/stop
 
 === Releasing
 
-To release a new version of the CV, simply create a new tag:
+To release a new version of the résumé, simply create a new tag:
 
 ----
 $ git tag -a v[major].[minor].[patch]
@@ -95,7 +95,7 @@ $ git push
 $ git push --tags
 ----
 
-The release workflow in GitHub Actions will automatically create a release at the tag point, and it will compile the CV to the PDF format and attach the file to the release. The new CV can be downloaded from the https://github.com/kieranpotts/resume/releases[releases page].
+The release workflow in GitHub Actions will automatically create a release at the tag point, copying across the message from the Git tag. The pipeline will compile the résumé to the PDF format and attach the file to the release. The updated résumé can be downloaded from the https://github.com/kieranpotts/resume/releases[releases page].
 
 == Reference resources
 
