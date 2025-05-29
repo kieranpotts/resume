@@ -1,2 +1,58 @@
 = CV
 
+:link-docker-image: https://hub.docker.com/r/asciidoctor/docker-asciidoctor
+:link-asciidoctor-pdf: https://asciidoctor.org/docs/asciidoctor-pdf/
+:link-cpdf-binary: https://github.com/coherentgraphics/cpdf-binaries/
+:link-cpdf-license: https://github.com/coherentgraphics/cpdf-binaries/blob/master/LICENSE.md
+
+*Source content and build scripts for my résumé.*
+
+
+== Documentation
+
+=== Requirements
+
+Before running the build scripts, install and start *Docker Desktop*.
+
+On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are not sufficient.
+
+=== Building
+
+The {link-docker-image}[official Asciidoctor Docker container image] is used to build my CV from AsciiDoc source files. The container image includes {link-asciidoctor-pdf}[Asciidoctor PDF], which does the compilation.
+
+The `./run/pdf.sh` script encapsulates all the build commands.
+
+[source,bash]
+----
+bash run/pdf.sh
+----
+
+Another way to interact with the builder is to shell into the container and run the Asciidoctor tools interactively. The following command maps this repository's root directory to the `/documents` directory inside the container, and takes you to the container's shell environment.
+
+[source,bash]
+----
+docker run -it -v ./:/documents/ asciidoctor/docker-asciidoctor
+----
+
+From the container's shell environment, run the following command.
+
+[source,bash]
+----
+asciidoctor-pdf -D dist src/cv.adoc
+----
+
+Type `Ctrl`+`D` to exit from the container shell.
+
+See the https://github.com/asciidoctor/docker-asciidoctor[Asciidoctor Docker Container documentation] for advanced build commands.
+
+== Acknowledgements
+
+* https://github.com/lirantal/asciidoc-book-starter[AsciiDoc Book Starter], maintained by Liran Tal and others, provided a starting point for the build configuration and PDF theme.
+
+* https://docs.asciidoctor.org/pdf-converter/latest/theme/[AsciiDoc PDF Theming], main reference point.
+
+''''
+
+Copyright © 2020-present Kieran Potts, all rights reserved
+
+The bundled {link-cpdf-binary}[cpdf binary] is licensed under the {link-cpdf-license}[GNU Affero General Public License].
