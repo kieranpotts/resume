@@ -2,7 +2,7 @@
 
 *Source content and build scripts for my curriculum vitae (CV), compiled from LaTeX.*
 
-image:https://img.shields.io/github/v/release/kieranpotts/resume?style=for-the-badge[GitHub Release]
+link:https://github.com/kieranpotts/resume/releases/latest[image:https://img.shields.io/github/v/release/kieranpotts/resume?style=flat-square&label=latest&labelColor=%23333333&color=%232266EE[GitHub release]]
 
 == Documentation
 
