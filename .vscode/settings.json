@@ -1,6 +1,51 @@
 {
+  /* Vertical guidelines for line wrapping. */
+  "editor.rulers": [
+    80,
+    100,
+    120,
+  ],
 
-  /* Spell check language for this repository differs from my default, en-US. */
+  /* By default, wrap long lines at the viewport or 120 characters, whichever is narrowest. */
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120,
+
+  /* Show control and empty space characters. */
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+
+  /* Enforce 2 spaces for indentation by default. */
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+
+  /* Disable auto-formatting by default. */
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+
+  /* Disable auto-fixes by default. */
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never"
+  },
+
+  /* Language-specific overrides. */
+  "[asciidoc]": {
+    "editor.rulers": [100],
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100,
+  },
+  "[markdown]": {
+    "editor.rulers": [100],
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100,
+  },
+  "[latex]": {
+    "editor.rulers": [],
+    "editor.wordWrap": "off",
+  },
+
+  /* Spell check language for this repository differs from the workspace default – en-US. */
   "cSpell.language": "en-GB",
 
   /* Add custom dictionary for this repository only. */
@@ -12,43 +57,4 @@
       "addWords": true
     }
   },
-
-  /* Vertical guidelines for line wrapping. */
-  "editor.rulers": [
-    100,
-  ],
-
-  /* Remove line wrap for everything except AsciiDoc. */
-  "editor.wordWrap": "off",
-  "[asciidoc]": {
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100,
-  },
-
-  /* Enforce 2 spaces for indentation. */
-  "editor.detectIndentation": false,
-  "editor.insertSpaces": true,
-  "editor.tabSize": 2,
-
-  /* Show control and empty space characters. */
-  "editor.renderControlCharacters": true,
-  "editor.renderWhitespace": "all",
-
-  /* Enable all auto-formatting mechanisms. */
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-
-  /* Enable auto-fixes. */
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "always",
-  },
-
-  /* Don't allow commits to protected branches. */
-  "git.branchProtectionPrompt": "alwaysPrompt",
-  "git.branchProtection": [
-    // "stable",
-    // "release/*",
-  ],
-
 }
