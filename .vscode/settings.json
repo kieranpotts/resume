@@ -50,11 +50,11 @@
 
   /* Add custom dictionary for this repository only. */
   "cSpell.customDictionaries": {
-    "resumeDictionary": {
-      "name": "Résumé Dictionary",
-      "path": "${workspaceFolder:résumé}/.cspell/dictionary.txt",
-      "scope": "folder",
+    "personalDictionary": {
+      "name": "Personal Dictionary (en-GB)",
+      "path": "${workspaceFolder:dictionary}/src/en-GB.txt",
+      "scope": "workspace",
       "addWords": true
     }
-  },
+  }
 }
