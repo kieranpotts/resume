@@ -10,21 +10,18 @@ link:https://github.com/kieranpotts/resume/releases/latest[image:https://img.shi
 
 The only requirements are *Docker Desktop* and a good LaTeX editor.
 
-
 The compilation scripts run in a Docker container, so you do not need to install any LaTeX packages on your host system. The Docker image is based on the `blang/latex` image, which includes a full TeX Live installation.
 
 On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are insufficient.
 
 The script to start the container will run the container under the current user and group. You should add your user to the `docker` group, which will allow you to run Docker commands without needing to use `sudo`.
 
-[source,sh]
 ----
 $ sudo usermod -aG docker [your-username]
 ----
 
 Finally, make sure that each of the `run/*` scripts are executable:
 
-[source,sh]
 ----
 $ chmod +x run/*
 ----
@@ -33,7 +30,6 @@ $ chmod +x run/*
 
 To start the Docker container, run:
 
-[source,sh]
 ----
 $ ./run/start
 ----
@@ -42,7 +38,6 @@ The start script keeps the container running indefinitely (until it is explicitl
 
 To build the résumé to PDF format from the source Tex file, run:
 
-[source,sh]
 ----
 $ ./run/build
 ----
@@ -51,7 +46,6 @@ The output file is `./dist/kieran-potts-cv.pdf`.
 
 To stop the Docker container, run:
 
-[source,sh]
 ----
 $ ./run/stop
 ----
