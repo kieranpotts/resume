@@ -10,7 +10,7 @@ link:https://github.com/kieranpotts/resume/releases/latest[image:https://img.shi
 
 The only requirements are *Docker Desktop* and a good LaTeX editor.
 
-The compilation scripts run in a Docker container, so you do not need to install any LaTeX packages on your host system. The Docker image is based on the `blang/latex` image, which includes a full TeX Live installation.
+The compilation scripts run in a Docker container, so you do not need to install any LaTeX packages on your host system. The Docker image is based on Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex], which includes a full TeX Live installation.
 
 On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are insufficient.
 
@@ -100,8 +100,6 @@ The release workflow in GitHub Actions will automatically create a release at th
 The following resources provided valuable inspiration.
 
 * Andrew Lock's blog post about https://andrewlock.net/building-latex-projects-on-windows-easily-with-docker/[building LaTeX projects with Docker]
-
-* Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex] Docker image
 
 * https://www.overleaf.com/latex/templates/tagged/cv[Overleaf's CV templates]
 
