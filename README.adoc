@@ -42,7 +42,7 @@ To build the résumé to PDF format from the source Tex file, run:
 $ ./run/build
 ----
 
-The output file is `./dist/kieran-potts-cv.pdf`.
+The output file is `./dist/kieran-potts-cv.pdf`. Other artifacts are also outputted by the compiler to the `dist` directory.
 
 To stop the Docker container, run:
 
