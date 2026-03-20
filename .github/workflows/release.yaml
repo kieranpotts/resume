@@ -17,7 +17,7 @@ jobs:
       packages: write # Required to upload packages
 
     env:
-      IMAGE: blang/latex:ubuntu
+      IMAGE: kieranpotts/latex:latest
 
     steps:
       - name: Checkout version tag

@@ -1,15 +1,9 @@
 #!/bin/sh
 
-# The `blang/latest` repository ships with three images:
+# Source:
+# https://hub.docker.com/r/kieranpotts/latex
 #
-# - `blang/latex:ubuntu` — Old but stable TexLive distribution with most needed packages (3.9GB).
-# - `blang/latex:ctanbasic` — Up-to-date, only basic packages, base for custom builds (500MB).
-# - `blang/latex:ctanfull` — Up-to-date, all packages (5.6GB).
-#
-# The second and third images use the "basic" and "full" schemes of the CTAN packages, respectively:
-# http://mirror.ctan.org/systems/texlive/tlnet/archive
-#
-IMAGE=blang/latex:ubuntu
+IMAGE=kieranpotts/latex:latest
 
 # Start a new Docker container in the background (detached mode, `-d`), removing any existing
 # instances of the container (`--rm`). The container is named `latex_daemon`. It is run

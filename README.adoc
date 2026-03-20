@@ -10,7 +10,7 @@ link:https://github.com/kieranpotts/resume/releases/latest[image:https://img.shi
 
 The only requirements are Docker and a good LaTeX editor.
 
-The compilation scripts run in a Docker container, so you do not need to install any LaTeX packages on your host system. The Docker image is based on Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex], which includes a full TeX Live installation.
+The compilation scripts run in a Docker container, so you do not need to install any LaTeX packages on your host system. The Docker image is based on my own https://hub.docker.com/r/kieranpotts/latex[Docker image], which is in turn inspired by Benedikt Lang's https://github.com/blang/latex-docker/[blang/latex] images.
 
 On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are insufficient.
 
