@@ -26,14 +26,14 @@ jobs:
           ref: ${{ github.ref }} # Checks out the specific tag
           fetch-depth: 0 # Full history for proper versioning
 
-      #- name: Debugging
-      #  run: |
-      #    echo "GITHUB_REF: ${{ github.ref }}"
-      #    echo "GITHUB_REF_TYPE: ${{ github.ref_type }}"
-      #
-      #    VERSION=${GITHUB_REF#refs/tags/v}
-      #    echo "version=$VERSION"
-      #    echo "tag=${GITHUB_REF#refs/tags/}"
+      - name: Debugging
+        run: |
+          echo "GITHUB_REF: ${{ github.ref }}"
+          echo "GITHUB_REF_TYPE: ${{ github.ref_type }}"
+
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$VERSION"
+          echo "tag=${GITHUB_REF#refs/tags/}"
 
       - name: Extract version number from tag
         id: version
@@ -76,6 +76,7 @@ jobs:
 
           echo "Artifact verification successful!"
 
+      # @deprecated - swapped for release artifact (see below).
       #- name: Upload PDF artifact
       #  uses: actions/upload-artifact@v4.4.3
       #  with:
