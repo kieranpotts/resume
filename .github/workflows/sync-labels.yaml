@@ -10,12 +10,13 @@
 # https://github.com/EndBug/label-sync
 #
 
-name: Sync Labels
+name: Sync labels
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 20 * * *'
+    # Every day at 5am.
+    - cron: '0 5 * * *'
 
 permissions:
   issues: write
