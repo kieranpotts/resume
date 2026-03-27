@@ -1,0 +1,27 @@
+#
+# Synchronize this repository's labels with the
+# labels defined in the kieranpotts/.github repository,
+# which is the source-of-truth for all "community health"
+# configuration across my personal repositories.
+#
+# https://github.com/EndBug/label-sync
+#
+
+name: Sync Labels
+
+on:
+  schedule:
+    - cron: '0 20 * * *'
+
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync labels
+        uses: EndBug/label-sync@v2
+        with:
+          source-repo: kieranpotts/.github
+          delete-other-labels: false
