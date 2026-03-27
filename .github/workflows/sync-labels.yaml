@@ -4,12 +4,16 @@
 # which is the source-of-truth for all "community health"
 # configuration across my personal repositories.
 #
+# The job runs on an overnight schedule, or you can
+# trigger a run manually.
+#
 # https://github.com/EndBug/label-sync
 #
 
 name: Sync Labels
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 20 * * *'
 
