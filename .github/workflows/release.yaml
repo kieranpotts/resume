@@ -1,3 +1,8 @@
+#
+# Compile a new CV (PDF format) when a new version-tagged
+# commit is pushed.
+#
+
 name: Release
 
 on:
