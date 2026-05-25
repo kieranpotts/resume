@@ -115,6 +115,6 @@ The following resources provided valuable inspiration.
 
 - Mark Liu's [latex-moderncv](https://github.com/mliu7/latex-moderncv/)
 
----
+-----
 
 Copyright © 2020-present Kieran Potts, all rights reserved
