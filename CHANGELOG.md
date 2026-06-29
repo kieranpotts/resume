@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Bold text for technology/skills mentioned within projects.
+
 ## [2.7.2] - 2026-06-29
 
 - Remove expiry dates from certs list.

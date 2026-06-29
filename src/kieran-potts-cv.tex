@@ -169,6 +169,19 @@
   \vspace{2pt}
 }
 
+%%  \skill{text}
+%%  ------------------------------------------------------------------------------------------------
+%%  Highlights a named technology or skill within a `\resumeItem`. Centralizes the styling so it
+%%  can be changed in one place rather than editing every `\textbf` usage.
+%%
+%%  Arguments:
+%%  - `text`: The skill or technology name to highlight.
+%%
+%%  Example:
+%%    \skill{React}
+%%
+\newcommand{\skill}[1]{\textbf{#1}}
+
 %%  \resumeListStart
 %%  ------------------------------------------------------------------------------------------------
 %%  Starts a new unordered (bullet) list.
@@ -304,17 +317,17 @@
       {2024-2026}
     \resumeListStart
       \resumeItem{Supported the redesign of the company's flagship identity verification service}
-      \resumeItem{Built new HTTP API services in PHP on Laravel, with role-based access controls}
+      \resumeItem{Built new \skill{HTTP API} services in \skill{PHP} on \skill{Laravel}, with role-based access controls}
       \resumeItem{Integrated third-party data sources including the National Fraud Initiative}
       \resumeItem{Integrated the IDVerse remote identity verification service into the platform}
       %\resumeItem{Extended back-end services written in Enterprise Control Language, a specialist data analytics tool}
       \resumeItem{Designed and implemented a webhook notifications system for real-time data updates}
       \resumeItem{Developed and deployed validation services for passports, driving licences, and national insurance numbers}
-      \resumeItem{Wrote Go scripts to aggregate and analyse data from a sharded database}
+      \resumeItem{Wrote \skill{Go} scripts to aggregate and analyse data from a sharded database}
       \resumeItem{Maintained high code coverage through unit and integration testing}
-      \resumeItem{Implemented OpenTelemetry with the Elastic stack for monitoring and observability}
-      \resumeItem{Automated static and dynamic application security testing using tools like Checkmarx and ZAP}
-      \resumeItem{Configured CI/CD pipelines in GitHub Actions}
+      \resumeItem{Implemented \skill{OpenTelemetry} with the \skill{Elastic} stack for monitoring and observability}
+      \resumeItem{Automated static and dynamic application security testing using tools like \skill{Checkmarx} and \skill{ZAP}}
+      \resumeItem{Configured CI/CD pipelines in \skill{GitHub Actions}}
     \resumeListEnd
   \end{minipage}
 
@@ -347,9 +360,9 @@
     \resumeListStart
       %\resumeItem{Involved in rebuilding a monolithic desktop application as an online, distributed, cloud-native system}
       \resumeItem{Implemented a micro front-end architecture that supported development across six teams}
-      \resumeItem{Maintained a Vue-based UI component library, documented using Storybook}
-      \resumeItem{Contributed to back-end services written in Java on the Spring Framework}
-      \resumeItem{Designed a GraphQL API gateway service and established client-server contracts}
+      \resumeItem{Maintained a \skill{Vue}-based UI component library, documented using Storybook}
+      \resumeItem{Contributed to back-end services written in \skill{Java} on the \skill{Spring Framework}}
+      \resumeItem{Designed a \skill{GraphQL} API gateway service and established client-server contracts}
       \resumeItem{Defined software requirements specifications with business analysts}
       \resumeItem{Designed and implemented automated UI tests using Selenium}
       \resumeItem{Implemented Azure DevOps automation with platform engineers}
@@ -365,8 +378,8 @@
       {permanent}
       {2021}
     \resumeListStart
-      \resumeItem{Generated a static web front-end using Nuxt}
-      \resumeItem{Contributed to a library of custom UI components built with Vue}
+      \resumeItem{Generated a static web front-end using \skill{Nuxt}}
+      \resumeItem{Contributed to a library of custom UI components built with \skill{Vue}}
       \resumeItem{Achieved compliance with WCAG Level AA accessibility guidelines}
       \resumeItem{Set up automated accessibility tests using aXe and visual regression tests using WebDriverIO}
       \resumeItem{Conducted manual accessibility testing using assistive technologies such as NVDA}
@@ -386,11 +399,11 @@
       \resumeItem{Developed the core data processing algorithms in partnership with the business owner}
       \resumeItem{Designed the back-end as a modular monolith for decomposition to a service-oriented architecture}
       \resumeItem{Constructed a layered application architecture with an isolated domain model at the centre}
-      \resumeItem{Built a single-page web application using React and an HTTP API service}
+      \resumeItem{Built a \skill{single-page web application} using \skill{React} and an \skill{HTTP API} service}
       \resumeItem{Created extensions for Chrome and Firefox, transcompiled from a single source}
       \resumeItem{Adopted a Material Design component library for the UI}
       \resumeItem{Architected for scalability from the start with denormalization and read-write segregation}
-      \resumeItem{Implemented Node.js workers to leverage multi-threading in the main request-response cycle}
+      \resumeItem{Implemented \skill{Node.js} workers to leverage multi-threading in the main request-response cycle}
       \resumeItem{Configured a job scheduling system for long-running data processing tasks}
     \resumeListEnd
   \end{minipage}
@@ -469,11 +482,11 @@
       {extended contract}
       {2017}
     \resumeListStart
-      \resumeItem{Launched a startup B2B software-as-a-service platform, built on Laravel}
+      \resumeItem{Launched a startup B2B software-as-a-service platform, built on \skill{Laravel}}
       \resumeItem{Designed critical user journeys including onboarding and account management with UX designers}
       \resumeItem{Redesigned the onboarding journey following beta testing that revealed poor conversion rates}
       \resumeItem{Optimized performance by refactoring code and improving time-to-first render metrics}
-      \resumeItem{Implemented Laravel job queues to offload processing from the main execution thread}
+      \resumeItem{Implemented \skill{Laravel} job queues to offload processing from the main execution thread}
       \resumeItem{Implemented localization and managed translations using Phrase.com}
       %\resumeItem{Profiles software components using Xdebug; debugged code using Laravel Tinker}
     \resumeListEnd
@@ -487,7 +500,7 @@
       {2017}
     \resumeListStart
       \resumeItem{Rewrote all user documentation, improving accuracy, completeness, and readability}
-      \resumeItem{Reverse engineered CurrencyCloud's API to a formal OpenAPI specification}
+      \resumeItem{Reverse engineered CurrencyCloud's \skill{HTTP API} to a formal OpenAPI specification}
       %\resumeItem{Developed a custom WordPress plugin to automate documentation generation}
     \resumeListEnd
   \end{minipage}
@@ -500,8 +513,8 @@
       {2016-2017}
     \resumeListStart
       \resumeItem{Began incrementally transitioning from a tightly coupled monolith to a modular, scalable design}
-      \resumeItem{Designed and implemented a new HTTP API, decoupling the web client from the server}
-      \resumeItem{Led the development of a replacement React web UI and supervised iOS and Android client development}
+      \resumeItem{Designed and implemented a new \skill{HTTP API}, decoupling the web client from the server}
+      \resumeItem{Led the development of a replacement \skill{React} web UI and supervised iOS and Android client development}
       \resumeItem{Iterated the database design in a non-breaking way with the data engineer}
       \resumeItem{Optimized slow-running SQL queries through indexing, denormalization, and simplified joins}
       %\resumeItem{Supervised the development of Android and iOS apps}
