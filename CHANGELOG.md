@@ -2,15 +2,13 @@
 
 ## [Unreleased]
 
-- Rewrite introduction paragraph.
-- Change job descriptions to roles rather than titles.
-- Add role-based access controls.
-- Remove expiry dates from certification list.
+## [2.7.0] - 2026-06-29
+
+- Remove expiry dates from certs list.
 - Minor changes to tech specializations.
 - Reorder technical specializations by competency.
 - Add webhook notifications to LexisNexis.
 - Add reference to IDverse remote check service.
-- Rewrites for more action-oriented tone.
 - Migrate docs to Markdown.
 
 ## [2.6.0] - 2026-03-25
