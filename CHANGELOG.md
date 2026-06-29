@@ -13,6 +13,48 @@
 - Rewrites for more action-oriented tone.
 - Migrate docs to Markdown.
 
+## [2.6.0] - 2026-03-25
+
+Update work email address.
+
+## [2.5.0] - 2026-03-20
+
+Edits for more consistent, action-oriented tone.
+
+## [2.4.2] - 2026-03-20
+
+Various minor content tweaks
+
+## [2.4.1] - 2025-11-17
+
+Swap job titles around.
+
+## [2.4.0] - 2025-11-17
+
+Add webhook notifications system to LexisNexis project.
+
+## [2.3.3] - 2025-09-08
+
+- Update job titles.
+- Update introductory paragraph.
+- Other minor edits for clarity and conciseness.
+
+## [2.3.2] - 2025-09-06
+
+Add role-based access controls.
+
+## [2.3.1] - 2025-09-05
+
+Change "solution architecture" to "software architecture".
+
+## [2.3.0] - 2025-09-05
+
+Update job titles and intro blurb.
+
+## [2.2.1] - 2025-08-22
+
+Punctuation fix.
+
 ## [2.2.0] - 2025-08-22
 
 - Add Bash.
