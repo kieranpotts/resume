@@ -1,0 +1,65 @@
+# Changelog
+
+## [Unreleased]
+
+- Rewrite introduction paragraph.
+- Change job descriptions to roles rather than titles.
+- Add role-based access controls.
+- Remove expiry dates from certification list.
+- Minor changes to tech specializations.
+- Reorder technical specializations by competency.
+- Add webhook notifications to LexisNexis.
+- Add reference to IDverse remote check service.
+- Rewrites for more action-oriented tone.
+- Migrate docs to Markdown.
+
+## [2.2.0] - 2025-08-22
+
+- Add Bash.
+- Add Docker.
+- Simplify header.
+
+## [2.1.1] - 2025-07-08
+
+Reduce opening blurb font size; minor content edits.
+
+## [2.1.0] - 2025-06-23
+
+Add Terraform certification.
+
+## [2.0.7] - 2025-06-04
+
+- Set table line width to 0.1pt.
+- Update introductory text.
+- Other minor content edits.
+
+## [2.0.6] - 2025-06-03
+
+Added SAST/DAST tools to LexisNexis Risk Solutions.
+
+## [2.0.5] - 2025-05-29
+
+Add document metadata.
+
+## [2.0.4] - 2025-05-29
+
+- Added CurrencyCloud.
+- Rewrote ZapMap.
+
+## [2.0.3] - 2025-05-29
+
+Minor edits for improved readability.
+
+## [2.0.2] - 2025-05-29
+
+Adjust kerning and letter case of title.
+
+## [2.0.1] - 2025-05-28
+
+## [2.0.0] - 2025-05-28
+
+Port CV to LaTeX.
+
+## [1.0.0] - 2025-05-29
+
+Archive of AsciiDoc-based version of CV - now ported to LaTeX.
