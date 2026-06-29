@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [2.7.0] - 2026-06-29
+## [2.7.2] - 2026-06-29
 
 - Remove expiry dates from certs list.
 - Minor changes to tech specializations.
