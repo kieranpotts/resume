@@ -51,7 +51,9 @@ jobs:
       - name: Extract release notes from tag message
         id: tag_message
         run: |
-          TAG_MESSAGE=$(git tag -l --format='%(contents)' ${{ steps.version.outputs.tag }})
+          # `%(contents)` includes the PGP signature block for signed tags, so strip
+          # everything from the "-----BEGIN PGP SIGNATURE-----" marker onward.
+          TAG_MESSAGE=$(git tag -l --format='%(contents)' ${{ steps.version.outputs.tag }} | sed '/-----BEGIN PGP SIGNATURE-----/,$d')
 
           echo "release_notes<<EOF" >> $GITHUB_OUTPUT
           echo "$TAG_MESSAGE" >> $GITHUB_OUTPUT
