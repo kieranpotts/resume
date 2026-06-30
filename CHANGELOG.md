@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Swap Computer Modern for Source Serif Pro.
+- Adjust letter spacing (tracking).
 - Bold text for technology/skills mentioned within projects.
 
 ## [2.7.2] - 2026-06-29

@@ -7,18 +7,23 @@
 
 %%  Page geometry - for fine control over the page layout.
 \usepackage[
-  ignoreheadfoot,   %%  Set margins without considering header and footer
-  top=1.5cm,        %%  Seperation between body and page edge from the top
-  bottom=1.5cm,     %%  Seperation between body and page edge from the bottom
-  left=2cm,         %%  Seperation between body and page edge from the left
-  right=2cm,        %%  Seperation between body and page edge from the right
-  footskip=1cm,     %%  Seperation between body and footer
-  %showframe        %%  Enable for debugging
+  ignoreheadfoot,   %%  Set margins without considering header and footer.
+  top=1.5cm,        %%  Seperation between body and page edge from the top.
+  bottom=1.5cm,     %%  Seperation between body and page edge from the bottom.
+  left=2cm,         %%  Seperation between body and page edge from the left.
+  right=2cm,        %%  Seperation between body and page edge from the right.
+  footskip=1cm,     %%  Seperation between body and footer.
+  %showframe        %%  Enable for debugging.
 ]{geometry}
 \geometry{a4paper}
 
 %%  Microtype - for fine-tuning text.
 \usepackage{microtype}
+
+
+%%  Source Serif Pro — provides Light/Regular/Semibold/Bold weights, usable directly with pdflatex
+%%  (no fontspec/xelatex required).
+\usepackage[default]{sourceserifpro}
 
 %%  Customize the presentation of section headings using `\titleformat` and `\titlespacing`.
 \usepackage{titlesec}
@@ -103,12 +108,25 @@
 %%  Border color - used for table borders and titlerule under section headings.
 \definecolor{border}{RGB}{50,50,50}
 
+%%  ==== TYPOGRAPHY ================================================================================
+
+%%  Letter spacing (tracking) scale, applied consistently across the document via `\textls[<value>]`.
+%%  All values are in the units expected by `\textls` (1/1000 em).
+%%
+%%  - `\trackingHero`: The largest, most prominent text - the candidate's name.
+%%  - `\trackingHeading`: Section headings and the subtitle row.
+%%  - `\trackingBody`: Body text - bullet items, subheadings, table cells, links.
+%%
+\newcommand{\trackingHero}{50}
+\newcommand{\trackingHeading}{20}
+\newcommand{\trackingBody}{8}
+
 %%  ==== SECTION FORMATTING ========================================================================
 
 %%  Customize `\section` presentation. Add custom spacing above and below.
 \titleformat{\section}{
   \vspace{24pt}\scshape\raggedright\large
-}{}{0em}{}[{\color{border}\titlerule[0.1pt] \vspace{12pt}}]
+}{}{0em}{\textls[\trackingHeading]}[{\color{border}\titlerule[0.1pt] \vspace{12pt}}]
 
 %%  Remove default spacing above and below section headings.
 \titlespacing{\section}{0pt}{0pt}{0pt}
@@ -128,7 +146,7 @@
 %%    \link{https://example.com}{Example Link}
 %%
 \newcommand{\link}[2]{
-  \textcolor{link}{\uline{\href{#1}{#2}}}
+  \textcolor{link}{\uline{\href{#1}{\textls[\trackingBody]{#2}}}}
 }
 
 %%  \resumeHeading{text}
@@ -164,8 +182,8 @@
 %%
 \newcommand{\resumeSubheading}[5][12pt]{
   \vspace{#1}
-  {\scshape{#2}} \\
-  \textit{\small{#3}} \textit{\small{(#4)}} · \textit{\small{#5}}
+  {\scshape{\textls[\trackingBody]{#2}}} \\
+  \textit{\small{\textls[\trackingBody]{#3}}} \textit{\small{(\textls[\trackingBody]{#4})}} · \textit{\small{\textls[\trackingBody]{#5}}}
   \vspace{2pt}
 }
 
@@ -180,7 +198,7 @@
 %%  Example:
 %%    \skill{React}
 %%
-\newcommand{\skill}[1]{\textbf{#1}}
+\newcommand{\skill}[1]{\fontseries{sb}\selectfont #1\fontseries{m}\selectfont}
 
 %%  \resumeListStart
 %%  ------------------------------------------------------------------------------------------------
@@ -212,7 +230,7 @@
 %%    \resumeItem{Lorem ipsum...}
 %%
 \newcommand{\resumeItem}[1]{
-  \item[\-·]\small{{#1\vspace{1pt}}}
+  \item[\-·]\small{{\textls[\trackingBody]{#1}\vspace{1pt}}}
 }
 
 %%  ==== DOCUMENT ==================================================================================
@@ -220,20 +238,20 @@
 \begin{document}
 
   \begin{center}
-    {\MakeUppercase{\textls[20]{\Huge Kieran Potts}}}
+    {\MakeUppercase{\textls[\trackingHero]{\Huge Kieran Potts}}}
   \end{center}
 
   \smallskip
 
   \begin{center}
-    {\scshape{Software Architecture}} · {\scshape{Computer Programming}} · {\scshape{Technical Writing}}
+    \textls[\trackingHeading]{{\scshape{Software Architecture}} · {\scshape{Computer Programming}} · {\scshape{Technical Writing}}}
   \end{center}
 
   \smallskip
 
   \begin{center}
-    \small{Contract software developer with 20\raisebox{+0.25ex}{\tiny +} years experience designing, building,\\
-    and documenting full-stack enterprise web applications}
+    \textls[\trackingBody]{\small{Contract software developer with 20 years experience designing, building,\\
+    and documenting full-stack enterprise web applications}}
   \end{center}
 
   \bigskip
@@ -244,7 +262,7 @@
     \link{https://github.com/kieranpotts}{\small{github.com/kieranpotts}}
         & \link{tel:+447706130393}{\small{+44 (0)7706 130 393}}\\
     \link{https://kieranpotts.com/}{\small{kieranpotts.com}}
-        & \small{Bristol, UK}
+        & \small{\textls[\trackingBody]{Bristol, UK}}
   \end{tabular*}
 
   \resumeHeading{Technology Specialisations}
@@ -547,6 +565,7 @@
       \setlength{\tabcolsep}{6pt}
       \renewcommand{\arraystretch}{1.2}  %%  Adjusts table row height
       \setlength{\arrayrulewidth}{0.1pt} %% Set border (rule) width
+      \textls[\trackingBody]{%
       \begin{tabular*}{\textwidth}{l|l@{\extracolsep{\fill}}}
         \small{2024-present} & \small{Contract Software Developer (remote and on-site)} \\ \hline
         \small{2021-2023} & \small{Senior Software Developer, BJSS (Bristol, hybrid)} \\ \hline
@@ -558,7 +577,7 @@
         \small{2004-2005} & \small{Technology Writer, Deputy Editor of PC Plus magazine, Future Publishing (Bath)} \\ \hline
         \small{2001-2003} & \small{Staff Writer, ITP (Dubai)} \\ \hline
         \small{1998-2001} & \small{First-class honours in Human Geography, Leeds University}
-      \end{tabular*}
+      \end{tabular*}}
     \endgroup
   \end{minipage}
 
