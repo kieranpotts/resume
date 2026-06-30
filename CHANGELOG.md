@@ -4,8 +4,9 @@
 
 - Swap Computer Modern for Source Serif Pro.
 - Adjust letter spacing (tracking).
-- Bold text for technology/skills mentioned within projects.
 - Condense subheadings to a single line.
+- Bold text for technology/skills mentioned within projects.
+- Added missing skills to projects.
 
 ## [2.7.2] - 2026-06-29
 
