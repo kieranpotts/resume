@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.8.0] - 2026-06-30
+
 - Swap Computer Modern for Source Serif Pro.
 - Adjust letter spacing (tracking).
 - Condense subheadings to a single line.
