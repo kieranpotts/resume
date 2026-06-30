@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Review project descriptions.
+
 ## [2.9.0] - 2026-06-30
 
 - Specify staff level.
