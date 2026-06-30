@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.9.0] - 2026-06-30
+
 - Specify staff level.
 
 ## [2.8.1] - 2026-06-30
