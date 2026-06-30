@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Add Bristol/Bath.
+- Extend spacing around inline bullets.
 
 ## [2.8.0] - 2026-06-30
 
