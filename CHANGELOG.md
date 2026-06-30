@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Review project descriptions.
+- Tidy up employment and education history table.
 
 ## [2.9.0] - 2026-06-30
 
