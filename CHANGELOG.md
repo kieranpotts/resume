@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add Bristol/Bath.
+
 ## [2.8.0] - 2026-06-30
 
 - Swap Computer Modern for Source Serif Pro.
