@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.10.0] - 2026-06-30
+
 - Review project descriptions.
 - Tidy up employment and education history table.
 
