@@ -35,23 +35,23 @@
 
 ## [2.6.0] - 2026-03-25
 
-Update work email address.
+- Update work email address.
 
 ## [2.5.0] - 2026-03-20
 
-Edits for more consistent, action-oriented tone.
+- Edits for more consistent, action-oriented tone.
 
 ## [2.4.2] - 2026-03-20
 
-Various minor content tweaks
+- Various minor content tweaks
 
 ## [2.4.1] - 2025-11-17
 
-Swap job titles around.
+- Swap job titles around.
 
 ## [2.4.0] - 2025-11-17
 
-Add webhook notifications system to LexisNexis project.
+- Add webhook notifications system to LexisNexis project.
 
 ## [2.3.3] - 2025-09-08
 
@@ -61,19 +61,19 @@ Add webhook notifications system to LexisNexis project.
 
 ## [2.3.2] - 2025-09-06
 
-Add role-based access controls.
+- Add role-based access controls.
 
 ## [2.3.1] - 2025-09-05
 
-Change "solution architecture" to "software architecture".
+- Change "solution architecture" to "software architecture".
 
 ## [2.3.0] - 2025-09-05
 
-Update job titles and intro blurb.
+- Update job titles and intro blurb.
 
 ## [2.2.1] - 2025-08-22
 
-Punctuation fix.
+- Punctuation fix.
 
 ## [2.2.0] - 2025-08-22
 
@@ -83,11 +83,11 @@ Punctuation fix.
 
 ## [2.1.1] - 2025-07-08
 
-Reduce opening blurb font size; minor content edits.
+- Reduce opening blurb font size; minor content edits.
 
 ## [2.1.0] - 2025-06-23
 
-Add Terraform certification.
+- Add Terraform certification.
 
 ## [2.0.7] - 2025-06-04
 
@@ -97,11 +97,11 @@ Add Terraform certification.
 
 ## [2.0.6] - 2025-06-03
 
-Added SAST/DAST tools to LexisNexis Risk Solutions.
+- Added SAST/DAST tools to LexisNexis Risk Solutions.
 
 ## [2.0.5] - 2025-05-29
 
-Add document metadata.
+- Add document metadata.
 
 ## [2.0.4] - 2025-05-29
 
@@ -110,18 +110,20 @@ Add document metadata.
 
 ## [2.0.3] - 2025-05-29
 
-Minor edits for improved readability.
+- Minor edits for improved readability.
 
 ## [2.0.2] - 2025-05-29
 
-Adjust kerning and letter case of title.
+- Adjust kerning and letter case of title.
 
 ## [2.0.1] - 2025-05-28
 
+- Patch release.
+
 ## [2.0.0] - 2025-05-28
 
-Port CV to LaTeX.
+- Port CV to LaTeX.
 
 ## [1.0.0] - 2025-05-29
 
-Archive of AsciiDoc-based version of CV - now ported to LaTeX.
+- Archive of AsciiDoc-based version of CV - now ported to LaTeX.
