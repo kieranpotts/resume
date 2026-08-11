@@ -14,6 +14,24 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
 
+  "[latex]": {
+    /* Fully disable line wraps in `.tex` files. */
+    "editor.wordWrap": "off",
+
+    /* Limit for comment lines. */
+    "editor.rulers": [100],
+
+    /* Disable auto-formatting. */
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+
+    /* Disable auto-fixes. */
+    "editor.codeActionsOnSave": {
+      "source.fixAll":"never",
+    },
+  },
+
   "[markdown]": {
     /* Wrap documentation files at the viewport width. Hard-wrapping
     should be applied at 80 characters, except for tables and long URLs. */
