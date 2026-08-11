@@ -4,6 +4,10 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/kieranpotts/resume?style=flat-square&label=latest&labelColor=%23333333&color=%232266EE)](https://github.com/kieranpotts/resume/releases/latest)
 
+> [!NOTE]
+> All content in this repository is written in British English. Technical
+> documentation across all other repositories is written in American English.
+
 ## Documentation
 
 ### Requirements
@@ -70,7 +74,7 @@ $ git tag -a v[major].[minor].[patch]
 ```
 
 It is RECOMMENDED to include details of the changes in the release in a message
-attached to the Git tag object. If the changes can be summarized in a single
+attached to the Git tag object. If the changes can be summarised in a single
 line, you can use the `-m` option to specify the message inline:
 
 ```

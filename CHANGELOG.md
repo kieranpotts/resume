@@ -6,6 +6,8 @@
 - Various typographic fixes.
 - Remove redundant packages (`color`, `colortbl`, `inputenc`)..
 - Use en dashes in date ranges, applied consistently throughout.
+- Proofreading pass: spelling and terminology fixes.
+- Fix remaining American-to-British spellings across whole repository.
 
 ## [2.11.0] - 2026-08-11
 
@@ -13,7 +15,7 @@
 - American to British spelling fixes.
 - Specify more technologies and frameworks under project experience.
 - Add Media Hacks project.
-- Collapse technology specializations section from two to three columns.
+- Collapse technology specialisations section from two to three columns.
 - Softer bullets and other style tweaks.
 
 ## [2.10.0] - 2026-06-30
@@ -41,8 +43,8 @@
 ## [2.7.2] - 2026-06-29
 
 - Remove expiry dates from certs list.
-- Minor changes to tech specializations.
-- Reorder technical specializations by competency.
+- Minor changes to tech specialisations.
+- Reorder technical specialisations by competency.
 - Add webhook notifications to LexisNexis.
 - Add reference to IDverse remote check service.
 - Migrate docs to Markdown.

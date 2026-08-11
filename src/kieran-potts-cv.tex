@@ -5,11 +5,11 @@
 %%  Page geometry - for fine control over the page layout.
 \usepackage[
   ignoreheadfoot,   %%  Set margins without considering header and footer.
-  top=1.5cm,        %%  Seperation between body and page edge from the top.
-  bottom=1cm,       %%  Seperation between body and page edge from the bottom.
-  left=2cm,         %%  Seperation between body and page edge from the left.
-  right=2cm,        %%  Seperation between body and page edge from the right.
-  footskip=1cm,     %%  Seperation between body and footer.
+  top=1.5cm,        %%  Separation between body and page edge from the top.
+  bottom=1cm,       %%  Separation between body and page edge from the bottom.
+  left=2cm,         %%  Separation between body and page edge from the left.
+  right=2cm,        %%  Separation between body and page edge from the right.
+  footskip=1cm,     %%  Separation between body and footer.
   %showframe        %%  Enable for debugging.
 ]{geometry}
 \geometry{a4paper}
@@ -21,13 +21,13 @@
 %%  (no fontspec/xelatex required).
 \usepackage[default]{sourceserifpro}
 
-%%  Customize the presentation of section headings using `\titleformat` and `\titlespacing`.
+%%  Customise the presentation of section headings using `\titleformat` and `\titlespacing`.
 \usepackage{titlesec}
 
-%%  Customization of lists.
+%%  Customisation of lists.
 \usepackage{enumitem}
 
-%%  Package for customizing hyperlinks and PDF metadata.
+%%  Package for customising hyperlinks and PDF metadata.
 \usepackage{hyperref}
 
 %%  Underlines - the `ulem` package provides better consistency of
@@ -43,7 +43,7 @@
 %%
 %%  - Document metadata.
 %%  - Don't open bookmarks by default.
-%%  - Customizes link colours. Link text is blank, but underline customized via `\link` command.
+%%  - Customises link colours. Link text is blank, but underline customised via `\link` command.
 %%
 \hypersetup{
   pdftitle={Kieran Potts – CV},
@@ -71,7 +71,7 @@
 \setlength{\partopsep}{0pt}
 \setlength{\parsep}{0pt}
 
-%%  List customization (via `enumitem` package).
+%%  List customisation (via `enumitem` package).
 %\setlist{noitemsep}    %%  Removes spacing from items but leaves space around whole lists.
 \setlist{nosep}         %%  Removes all vertical spacing within and around lists.
 
@@ -84,13 +84,13 @@
 
 %%  ==== CUSTOM COLOURS ============================================================================
 
-%%  Link color - this is the color of the underline, the text is "black".
+%%  Link colour - this is the colour of the underline, the text is "black".
 \definecolor{link}{RGB}{185,185,185}
 
-%%  Quiet text color - used for dates and other less important text.
+%%  Quiet text colour - used for dates and other less important text.
 \definecolor{quiet}{RGB}{150,150,150}
 
-%%  Border color - used for table borders and titlerule under section headings.
+%%  Border colour - used for table borders and titlerule under section headings.
 \definecolor{border}{RGB}{50,50,50}
 
 %%  ==== TYPOGRAPHY ================================================================================
@@ -108,7 +108,7 @@
 
 %%  ==== SECTION FORMATTING ========================================================================
 
-%%  Customize `\section` presentation. Add custom spacing above and below.
+%%  Customise `\section` presentation. Add custom spacing above and below.
 \titleformat{\section}{
   \vspace{24pt}\scshape\raggedright\large
 }{}{0em}{\textls[\trackingHeading]}[{\color{border}\titlerule[0.1pt] \vspace{12pt}}]
@@ -120,7 +120,7 @@
 
 %%  \link{url}{text}
 %%  ------------------------------------------------------------------------------------------------
-%%  Creates a hyperlink with a custom underline color. The color of the link text itself is
+%%  Creates a hyperlink with a custom underline colour. The colour of the link text itself is
 %%  defined via the `\hypersetup` command.
 %%
 %%  Arguments:
@@ -138,7 +138,7 @@
 %%  ------------------------------------------------------------------------------------------------
 %%  Creates a non-numbered `\section` heading.
 %%
-%%  The style of `\section` headings is customized via the `\titleformat` and `\titlespacing`
+%%  The style of `\section` headings is customised via the `\titleformat` and `\titlespacing`
 %%  commands above.
 %%
 %%  Arguments:
@@ -157,7 +157,7 @@
 %%
 %%  Arguments:
 %%  - `vspace`: Space above the subheading - optional, default = 12pt.
-%%  - `company`: The name of the company or organization.
+%%  - `company`: The name of the company or organisation.
 %%  - `role`: The job title or role.
 %%  - `employment-type`: The type of employment (eg., contract, permanent).
 %%  - `dates`: The dates of employment (eg., 2023--present).
@@ -259,7 +259,7 @@
   \begin{minipage}[t]{0.33\textwidth}
     \resumeListStart
       \resumeItem{Single-page web applications}
-      \resumeItem{React, Next}
+      \resumeItem{React, Next.js}
       \resumeItem{Vue, Nuxt}
       \resumeItem{Tailwind}
     \resumeListEnd
@@ -287,7 +287,7 @@
     \resumeListStart
       \resumeItem{Building a proof-of-concept commercial newswire platform for journalists.}
       \resumeItem{Agentic specs-to-code development workflow. Wrote a global library of AI skills and custom prompts.}
-      \resumeItem{Configured CI/CD pipelines in GitHub Actions. Dockerized services deployed to AWS ECS.}
+      \resumeItem{Configured CI/CD pipelines in GitHub Actions. Dockerised services deployed to AWS ECS.}
       \resumeItem{High coverage with an emphasis on system-level tests. JUnit, plus Mockito in unit tests.}
       \resumeItem{Modelled the domain in an event-driven microservices architecture in Java on Spring (Boot, Data JPA, Security).}
       \resumeItem{Served a unified API gateway fronting domain services. Dedicated SSO service for JWT-based auth.}
@@ -339,7 +339,7 @@
   %%  NOTES: Specsavers
   %%  -----------------
   %%  Socrates is Specsavers' patient management system. The legacy version is a long-lived
-  %%  desktop Java application. The new version, Socrates Cloud, is a centralized cloud
+  %%  desktop Java application. The new version, Socrates Cloud, is a centralised cloud
   %%  service, to be incrementally rolled out globally.
 
   \begin{minipage}{\textwidth}
@@ -369,9 +369,9 @@
       {2021}
     \resumeListStart
       \resumeItem{Generated a static web front-end using Nuxt. Custom UI component library built with Vue and TypeScript.}
-      \resumeItem{Set up automated accessibility tests using aXe and visual regression tests using WebDriverIO.}
+      \resumeItem{Set up automated accessibility tests using axe and visual regression tests using WebdriverIO.}
       \resumeItem{Conducted manual accessibility testing using assistive technologies such as NVDA.}
-      \resumeItem{Achieved compliance with WCAG Level AA accessibility guidelines.}
+      \resumeItem{Achieved compliance with WCAG 2.1 Level AA accessibility guidelines.}
     \resumeListEnd
   \end{minipage}
 
@@ -384,12 +384,12 @@
     \resumeListStart
       \resumeItem{Oversaw an R\&D project to build a proof-of-concept automated time logging system.}
       \resumeItem{Coordinated a remote team of contractors and freelancers. Supervised all design and development activities.}
-      \resumeItem{Established a Requests for Comments process to manage technical proposals and record key design decisions.}
+      \resumeItem{Established a Request for Comments (RFC) process to manage technical proposals and record key design decisions.}
       \resumeItem{Developed the core data processing algorithms in collaboration with the business owner.}
       \resumeItem{Planned an Express back-end as a modular monolith for decomposition to a service-oriented architecture.}
       \resumeItem{Constructed a layered application architecture with an isolated domain model at its centre.}
       \resumeItem{Built a single-page web application using React and TypeScript, backed by a simple HTTP API service.}
-      \resumeItem{Created extensions for Chrome and Firefox, transcompiled from a single source.}
+      \resumeItem{Created extensions for Chrome and Firefox, built from a single codebase.}
       \resumeItem{Adopted MUI, a Material Design component library, for the UI.}
       \resumeItem{Architected the MySQL schema for scalability from the start (denormalisation, read-write segregation).}
       \resumeItem{Implemented Node workers to leverage multi-threading in the main request-response cycle.}
@@ -476,7 +476,7 @@
       \resumeItem{Optimised performance by refactoring code and improving time-to-first-render metrics.}
       \resumeItem{Implemented Laravel job queues to offload heavy processing from the main execution thread.}
       \resumeItem{Profiled software components using Xdebug. Debugged code using Laravel Tinker.}
-      \resumeItem{Implemented localisation. Managed translations using Phrase.com.}
+      \resumeItem{Implemented localisation. Managed translations using Phrase.}
     \resumeListEnd
   \end{minipage}
 
@@ -501,7 +501,7 @@
       {2016--2017}
     \resumeListStart
       \resumeItem{Began incrementally transitioning from a tightly coupled monolith to a modular, scalable design.}
-      \resumeItem{Administered bare metal Linux servers (CentOS). Added load balancing (Nginx) and caching (Redis) infrastructure.}
+      \resumeItem{Administered bare-metal Linux servers (CentOS). Added load balancing (Nginx) and caching (Redis) infrastructure.}
       \resumeItem{Planned for incremental transition to the cloud (GCP).}
       \resumeItem{Designed and implemented a new HTTP API in PHP, decoupling the web client from the server.}
       \resumeItem{Led the development of a replacement React web UI. Supervised the development of native Android and iOS clients.}
@@ -545,7 +545,7 @@
         %\small{2005--2006} & \small{Public relations for Audible\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Monument PR\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Bath} \\ \hline
         \small{2004--2005} & \small{Technology Writer, Deputy Editor of PC Plus magazine\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Future Publishing\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Bath} \\ \hline
         \small{2001--2003} & \small{Technology Writer\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Information \& Technology Publishing Co.\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Dubai} \\ \hline
-        \small{1998--2001} & \small{First-class honours in Human Geography\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Leeds University}
+        \small{1998--2001} & \small{First-class BA (Hons) in Human Geography\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}University of Leeds}
       \end{tabular*}}
     \endgroup
   \end{minipage}
