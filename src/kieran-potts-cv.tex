@@ -9,7 +9,7 @@
 \usepackage[
   ignoreheadfoot,   %%  Set margins without considering header and footer.
   top=1.5cm,        %%  Seperation between body and page edge from the top.
-  bottom=1.5cm,     %%  Seperation between body and page edge from the bottom.
+  bottom=1cm,       %%  Seperation between body and page edge from the bottom.
   left=2cm,         %%  Seperation between body and page edge from the left.
   right=2cm,        %%  Seperation between body and page edge from the right.
   footskip=1cm,     %%  Seperation between body and footer.
@@ -253,22 +253,27 @@
 
   \resumeHeading{Technology Specialisations}
 
-  \begin{minipage}[t]{0.5\textwidth}
+  \begin{minipage}[t]{0.33\textwidth}
     \resumeListStart
-      \resumeItem{JavaScript, TypeScript, Node.js}
+      \resumeItem{JavaScript, TypeScript, Node}
       \resumeItem{Java, Spring Framework}
       \resumeItem{PHP, Laravel}
       \resumeItem{AWS, Terraform, Docker}
-      \resumeItem{GitHub Actions}
-      \resumeItem{Bash}
     \resumeListEnd
   \end{minipage}
   \hfill
-  \begin{minipage}[t]{0.5\textwidth}
+  \begin{minipage}[t]{0.33\textwidth}
     \resumeListStart
+      \resumeItem{GitHub Actions}
+      \resumeItem{Bash}
       \resumeItem{The web platform}
-      \resumeItem{Single-page applications}
       \resumeItem{HTTP APIs, GraphQL}
+    \resumeListEnd
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.33\textwidth}
+    \resumeListStart
+      \resumeItem{Single-page web applications}
       \resumeItem{React, Next}
       \resumeItem{Vue, Nuxt}
       \resumeItem{Tailwind}
@@ -290,22 +295,18 @@
 
     \resumeSubheading
       [0pt]  %%  First section under the heading has no vertical space above it.
-      {Media Hacks}
-      {Independent Software Architect \& Developer}
       {R\&D project}
+      {Software Architect \& Developer}
+      {freelance}
       {2025-present}
     \resumeListStart
-      \resumeItem{Building a proof-of-concept commercial newswire platform for journalists}
-      \resumeItem{Designed an event-driven microservices architecture in Java on the Spring Framework (Spring Boot, Spring Data JPA, Spring Security)}
-      \resumeItem{Designed a unified API gateway fronting per-subdomain service gateways}
-      \resumeItem{Implemented a dedicated SSO gateway providing JWT-based authentication across services}
-      \resumeItem{Designed and evolved a PostgreSQL schema, versioned with a lightweight custom Bash migration tool}
-      \resumeItem{Maintained high code coverage using JUnit and Mockito}
-      \resumeItem{Automated end-to-end product delivery from ticket triage to deployment}
-      \resumeItem{Scripted automation of linting, testing, and release workflows}
-      \resumeItem{Adopted a specification-driven development approach, orchestrating AI subagents for coding, review, and testing under deterministic guardrails}
-      \resumeItem{Established prompt engineering and context management standards, and iterated a large library of AI skills and commands}
-      \resumeItem{Dockerised Java services, deployed to AWS ECS}
+      \resumeItem{Building a proof-of-concept commercial newswire platform for journalists.}
+      \resumeItem{Agentic specs-to-code development worflow. Wrote a global library of AI skills and custom prompts.}
+      \resumeItem{Scripted linting, testing, and release steps. Dockerized services deployed to AWS ECS.}
+      \resumeItem{High coverage with an emphasis on system-level tests. JUnit, plus Mockito in unit tests.}
+      \resumeItem{Modelled the domain in an event-driven microservices architecture in Java on Spring (Boot, Data JPA, Security).}
+      \resumeItem{Served a unified API gateway fronting subdomain gateways. Dedicated SSO service for JWT-based auth.}
+      \resumeItem{Versioned PostgreSQL schema using a custom Bash migration tool.}
     \resumeListEnd
 
     %%  NOTES: LexisNexis
@@ -322,18 +323,18 @@
       {extended contract}
       {2024-2026}
     \resumeListStart
-      \resumeItem{Supported the redesign of the company's flagship identity verification service}
-      \resumeItem{Built new HTTP API services in PHP on Laravel, with role-based access controls}
-      \resumeItem{Integrated third-party data sources, including the National Fraud Initiative, via REST and SOAP APIs}
-      \resumeItem{Integrated the IDVerse remote identity verification service}
-      \resumeItem{Extended back-end services written in Enterprise Control Language, a specialist data analytics tool}
-      \resumeItem{Designed and implemented a webhook notifications system for real-time data updates}
-      \resumeItem{Developed and deployed validation services for passports, driving licences, and National Insurance numbers}
-      \resumeItem{Wrote Go scripts to aggregate and analyse data from a sharded database}
-      \resumeItem{Maintained high code coverage through unit and integration tests running in Pest}
-      \resumeItem{Implemented OpenTelemetry with the Elastic stack for monitoring and observability}
-      \resumeItem{Automated static and dynamic application security testing using tools like Checkmarx and ZAP}
-      \resumeItem{Configured CI/CD pipelines in GitHub Actions}
+      \resumeItem{Supported the redesign of the company's flagship identity verification service.}
+      \resumeItem{Built new HTTP API services in PHP on Laravel. Role-based access controls.}
+      \resumeItem{Integrated third-party data sources, including the National Fraud Initiative, via REST and SOAP APIs.}
+      \resumeItem{Integrated the IDVerse remote identity verification service.}
+      \resumeItem{Extended back-end services written in Enterprise Control Language, a specialist data analytics tool.}
+      \resumeItem{Designed and implemented a webhook notifications system for real-time data updates.}
+      \resumeItem{Developed validation services for passports, driving licences, and National Insurance numbers.}
+      \resumeItem{Wrote Go scripts to aggregate and analyse data from a sharded database.}
+      \resumeItem{Maintained high code coverage through unit and integration tests running in Pest.}
+      \resumeItem{Implemented OpenTelemetry with the Elastic stack for monitoring and observability.}
+      \resumeItem{Automated static and dynamic application security testing using tools like Checkmarx and ZAP.}
+      \resumeItem{Configured CI/CD pipelines in GitHub Actions.}
     \resumeListEnd
   \end{minipage}
 
@@ -344,10 +345,10 @@
   %    {permanent}
   %    {2024}
   %  \resumeListStart
-  %    \resumeItem{Planned and coordinated a successful big-bang deployment of a major new feature}
-  %    \resumeItem{Deployed multiple service updates to AWS, automated via CodeDeploy and GitHub Actions}
-  %    \resumeItem{Implemented Jira Service Desk with Slack integration to improve customer support management}
-  %    \resumeItem{Consolidated fragmented technical documentation into a single Confluence space}
+  %    \resumeItem{Planned and coordinated a successful big-bang deployment of a major new feature.}
+  %    \resumeItem{Deployed multiple service updates to AWS, automated via CodeDeploy and GitHub Actions.}
+  %    \resumeItem{Implemented Jira Service Desk with Slack integration to improve customer support management.}
+  %    \resumeItem{Consolidated fragmented technical documentation into a single Confluence space.}
   %  \resumeListEnd
   %\end{minipage}
 
@@ -364,16 +365,15 @@
       {permanent}
       {2021-2023}
     \resumeListStart
-      \resumeItem{Involved in rebuilding a monolithic desktop application as a cloud-native system on Azure}
-      \resumeItem{Implemented a micro front-end architecture using single-spa, supporting six parallel work streams}
-      \resumeItem{Maintained a Vue/TypeScript UI component library, documented using Storybook}
-      \resumeItem{Contributed to back-end services written in Java on the Spring Framework}
-      \resumeItem{Designed GraphQL API services and established client-server contracts}
-      \resumeItem{Defined software requirements specifications with business analysts}
-      \resumeItem{Designed and implemented automated UI tests using Selenium}
-      \resumeItem{Implemented Azure DevOps automation with platform engineers}
-      \resumeItem{Led a cross-team technical standards alignment group}
-      %\resumeItem{Proposed and gathered consensus for improved ways of working}
+      \resumeItem{Involved in rebuilding a monolithic desktop application as a cloud-native system on Azure.}
+      \resumeItem{Implemented a micro front-end architecture using single-spa, supporting six parallel work streams.}
+      \resumeItem{Maintained a Vue/TypeScript UI component library, documented using Storybook.}
+      \resumeItem{Contributed to back-end services written in Java on the Spring Framework.}
+      \resumeItem{Designed GraphQL API services. Established client-server contracts and standards.}
+      \resumeItem{Collaborated with business analysts on software requirements specifications.}
+      \resumeItem{Collaborated with QA engineers on automated UI tests using Selenium.}
+      \resumeItem{Collaborated with platform engineers on Azure DevOps automation.}
+      \resumeItem{Coordinated a cross-team technical standards alignment group.}
     \resumeListEnd
   \end{minipage}
 
@@ -384,11 +384,10 @@
       {permanent}
       {2021}
     \resumeListStart
-      \resumeItem{Generated a static web front-end using Nuxt}
-      \resumeItem{Contributed to a library of custom UI components built with Vue and TypeScript}
-      \resumeItem{Achieved compliance with WCAG Level AA accessibility guidelines}
-      \resumeItem{Set up automated accessibility tests using aXe and visual regression tests using WebDriverIO}
-      \resumeItem{Conducted manual accessibility testing using assistive technologies such as NVDA}
+      \resumeItem{Generated a static web front-end using Nuxt. Custom UI component library built with Vue and TypeScript.}
+      \resumeItem{Set up automated accessibility tests using aXe and visual regression tests using WebDriverIO.}
+      \resumeItem{Conducted manual accessibility testing using assistive technologies such as NVDA.}
+      \resumeItem{Achieved compliance with WCAG Level AA accessibility guidelines.}
     \resumeListEnd
   \end{minipage}
 
@@ -399,18 +398,18 @@
       {rolling contract}
       {2020-2021}
     \resumeListStart
-      \resumeItem{Oversaw an R\&D project to build a proof-of-concept automated time logging system}
-      \resumeItem{Coordinated a remote team of contractors and freelancers; supervised all design and development activities}
-      \resumeItem{Established a Requests for Comments process to manage technical proposals and record key design decisions}
-      \resumeItem{Developed the core data processing algorithms in collaboration with the business owner}
-      \resumeItem{Designed an Express back-end as a modular monolith for decomposition to a service-oriented architecture}
-      \resumeItem{Constructed a layered application architecture with an isolated domain model at the centre}
-      \resumeItem{Built a single-page web application using React and TypeScript, backed by an HTTP API service}
-      \resumeItem{Created extensions for Chrome and Firefox, transcompiled from a single source}
-      \resumeItem{Adopted MUI, a Material Design component library, for the UI}
-      \resumeItem{Architected the MySQL schema for scalability from the start with denormalisation and read-write segregation}
-      \resumeItem{Implemented Node.js workers to leverage multi-threading in the main request-response cycle}
-      \resumeItem{Configured Agenda for job scheduling of long-running data processing tasks}
+      \resumeItem{Oversaw an R\&D project to build a proof-of-concept automated time logging system.}
+      \resumeItem{Coordinated a remote team of contractors and freelancers. Supervised all design and development activities.}
+      \resumeItem{Established a Requests for Comments process to manage technical proposals and record key design decisions.}
+      \resumeItem{Developed the core data processing algorithms in collaboration with the business owner.}
+      \resumeItem{Planned an Express back-end as a modular monolith for decomposition to a service-oriented architecture.}
+      \resumeItem{Constructed a layered application architecture with an isolated domain model at its centre.}
+      \resumeItem{Built a single-page web application using React and TypeScript, backed by a simple HTTP API service.}
+      \resumeItem{Created extensions for Chrome and Firefox, transcompiled from a single source.}
+      \resumeItem{Adopted MUI, a Material Design component library, for the UI.}
+      \resumeItem{Architected the MySQL schema for scalability from the start (denormalisation, read-write segregation).}
+      \resumeItem{Implemented Node workers to leverage multi-threading in the main request-response cycle.}
+      \resumeItem{Configured Agenda for job scheduling of long-running data processing tasks.}
     \resumeListEnd
   \end{minipage}
 
@@ -421,9 +420,9 @@
   %    {freelance}
   %    {2020-2021}
   %  \resumeListStart
-  %    \resumeItem{Developed and maintained a custom business process management system in Drupal}
-  %    \resumeItem{Integrated payment card processing (FideliPay) and Direct Debits (GoCardless)}
-  %    \resumeItem{Used Adobe XD to mock UI designs and plan user journeys}
+  %    \resumeItem{Developed and maintained a custom business process management system in Drupal.}
+  %    \resumeItem{Integrated payment card processing (FideliPay) and Direct Debits (GoCardless).}
+  %    \resumeItem{Used Adobe XD to mock UI designs and plan user journeys.}
   %  \resumeListEnd
   %\end{minipage}
 
@@ -434,17 +433,17 @@
   %    {freelance}
   %    {2019-2020}
   %  \resumeListStart
-  %    \resumeItem{Created a responsive, mobile-first WordPress theme}
-  %    \resumeItem{Enabled management of multi-language content}
-  %    \resumeItem{Adopted the utility-class methodology to CSS architecture}
-  %    \resumeItem{Contributed to copywriting and search engine optimisation}
+  %    \resumeItem{Created a responsive, mobile-first WordPress theme.}
+  %    \resumeItem{Enabled management of multi-language content.}
+  %    \resumeItem{Adopted the utility-class methodology to CSS architecture.}
+  %    \resumeItem{Contributed to copywriting and search engine optimisation.}
   %  \resumeListEnd
   %\end{minipage}
 
   %%  NOTES: Redgate Software
   %%  -----------------------
-  %%  Six-month project to port the functionality of a proprietary .NET CMS to a WordPress,
-  %%  Project Nami, and migrate 17 years of editorial and user-generated content between
+  %%  Six-month project to port the functionality of a proprietary .NET CMS to a WordPress fork
+  %%  (Project Nami), and migrate 17 years of editorial and user-generated content between
   %%  two databases.
 
   \begin{minipage}{\textwidth}
@@ -454,16 +453,15 @@
       {fixed-term contract}
       {2018-2019}
     \resumeListStart
-      \resumeItem{Led a project to transition the SQLServerCentral.com website to Project Name (WordPress fork using MSSQL)}
-      \resumeItem{Gathered requirements via client conversations and reverse engineering of the legacy system}
-      \resumeItem{Documented a complete target specification for the replacement system}
-      \resumeItem{Undertook rapid prototyping to estimate costs and timelines, and mitigate delivery risks}
-      \resumeItem{Used monthly checkpoints to establish trust with the customer}
-      %\resumeItem{Implemented a light development workflow with weekly integration cycles}
-      \resumeItem{Wrote dozens of custom WordPress plugins; good unit test coverage throughout}
-      \resumeItem{Wrote Bash scripts to automate the migration of 17 years of editorial and user-generated content}
-      %\resumeItem{Configured a shareable virtualised development environment using Vagrant}
-      \resumeItem{Switched over with minimal downtime and no subsequent issues in production}
+      \resumeItem{Led a project to transition the SQLServerCentral.com website to Project Name (a WordPress fork using MSSQL).}
+      \resumeItem{Gathered requirements via client discovery workshops and reverse engineering of the legacy system.}
+      \resumeItem{Documented a complete target specification for the replacement system.}
+      \resumeItem{Undertook rapid prototyping to estimate costs and timelines, and so mitigate delivery risks.}
+      \resumeItem{Used monthly checkpoints to establish trust with the customer.}
+      \resumeItem{Implemented a light development workflow with weekly integration cycles.}
+      \resumeItem{Wrote dozens of custom WordPress plugins. Good unit test coverage throughout.}
+      \resumeItem{Wrote Bash scripts to automate the migration of 17 years of editorial and user-generated content.}
+      \resumeItem{Switched over with minimal downtime and no subsequent issues in production.}
     \resumeListEnd
   \end{minipage}
 
@@ -474,10 +472,10 @@
   %    {fixed-term contract}
   %    {2018}
   %  \resumeListStart
-  %    \resumeItem{Salvaged a failing software project}
-  %    \resumeItem{Identified and prioritised issues}
-  %    \resumeItem{Enhanced the accuracy of project estimation and delivery reports}
-  %    \resumeItem{Successfully delivered a custom CRM operating on the NHS IT network}
+  %    \resumeItem{Salvaged a failing software project.}
+  %    \resumeItem{Identified and prioritised issues.}
+  %    \resumeItem{Enhanced the accuracy of project estimation and delivery reports.}
+  %    \resumeItem{Successfully delivered a custom CRM operating on the NHS IT network.}
   %  \resumeListEnd
   %\end{minipage}
 
@@ -488,28 +486,28 @@
       {extended contract}
       {2017}
     \resumeListStart
-      \resumeItem{Launched a startup B2B software-as-a-service platform, built on Laravel}
-      \resumeItem{Designed critical user journeys including onboarding and account management with UX designers}
-      \resumeItem{Redesigned the onboarding journey following beta testing that revealed poor conversion rates}
-      \resumeItem{Optimised performance by refactoring code and improving time-to-first render metrics}
-      \resumeItem{Implemented Laravel job queues to offload processing from the main execution thread}
-      \resumeItem{Implemented localisation and managed translations using Phrase.com}
-      \resumeItem{Profiled software components using Xdebug; debugged code using Laravel Tinker}
+      \resumeItem{Launched a startup B2B software-as-a-service platform, built on Laravel.}
+      \resumeItem{Designed critical user journeys, including onboarding and account management, in collaboration with UX designers.}
+      \resumeItem{Redesigned the onboarding journey following beta testing that revealed poor conversion rates.}
+      \resumeItem{Optimised performance by refactoring code and improving time-to-first render metrics.}
+      \resumeItem{Implemented Laravel job queues to offload heavy processing from the main execution thread.}
+      \resumeItem{Profiled software components using Xdebug. Debugged code using Laravel Tinker.}
+      \resumeItem{Implemented localisation. Managed translations using Phrase.com.}
     \resumeListEnd
   \end{minipage}
 
-  \begin{minipage}{\textwidth}
-    \resumeSubheading
-      {CurrencyCloud}
-      {Technical Writer}
-      {freelance}
-      {2017}
-    \resumeListStart
-      \resumeItem{Rewrote all user documentation, improving accuracy, completeness, and readability}
-      \resumeItem{Reverse engineered CurrencyCloud's HTTP API to a formal OpenAPI specification}
-      %\resumeItem{Developed a custom WordPress plugin to automate documentation generation}
-    \resumeListEnd
-  \end{minipage}
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {CurrencyCloud}
+  %    {Technical Writer}
+  %    {freelance}
+  %    {2017}
+  %  \resumeListStart
+  %    \resumeItem{Rewrote all user documentation, improving accuracy, completeness, and readability.}
+  %    \resumeItem{Reverse engineered CurrencyCloud's HTTP API to a formal OpenAPI specification.}
+  %    \resumeItem{Developed a custom WordPress plugin to automate documentation generation.}
+  %  \resumeListEnd
+  %\end{minipage}
 
   \begin{minipage}{\textwidth}
     \resumeSubheading
@@ -518,15 +516,13 @@
       {permanent}
       {2016-2017}
     \resumeListStart
-      \resumeItem{Began incrementally transitioning from a tightly coupled monolith to a modular, scalable design}
-      \resumeItem{Designed and implemented a new HTTP API in PHP, decoupling the web client from the server}
-      \resumeItem{Led the development of a replacement React web UI}
-      \resumeItem{Supervised the development of native Android and iOS apps}
-      \resumeItem{Iterated the MySQL database design in a non-breaking way in collaboration with the data engineer}
-      \resumeItem{Optimised slow-running MySQL queries through indexing, denormalisation, and simplified joins}
-      \resumeItem{Added load balancing (Nginx) and caching (Redis) infrastructure}
-      \resumeItem{Administered physical Linux servers (CentOS)}
-      %\resumeItem{Planned for an incremental transition to cloud infrastructure (GCP)}
+      \resumeItem{Began incrementally transitioning from a tightly coupled monolith to a modular, scalable design.}
+      \resumeItem{Administered bare metal Linux servers (CentOS). Added load balancing (Nginx) and caching (Redis) infrastructure.}
+      \resumeItem{Planned for incremental transition to the cloud (GCP).}
+      \resumeItem{Designed and implemented a new HTTP API in PHP, decoupling the web client from the server.}
+      \resumeItem{Led the development of a replacement React web UI. Supervised the development of native Android and iOS client.}
+      \resumeItem{Iterated the MySQL database design in a non-breaking way, in close collaboration with the data engineer.}
+      \resumeItem{Optimised slow-running MySQL queries through indexing, denormalisation, and simplified joins.}
     \resumeListEnd
   \end{minipage}
 
@@ -537,11 +533,11 @@
   %    {permanent}
   %    {2014-2016}
   %  \resumeListStart
-  %    \resumeItem{Implemented a lightweight, responsive single-page web application}
-  %    \resumeItem{Created a custom framework inspired by Backbone's MV*-style architecture}
-  %    \resumeItem{Developed a custom UI component library with a living style guide}
-  %    \resumeItem{Implemented the ``cut the mustard'' progressive enhancement technique}
-  %    \resumeItem{Made extensive use of data visualisation to summarise financial data}
+  %    \resumeItem{Implemented a lightweight, responsive single-page web application.}
+  %    \resumeItem{Created a custom framework inspired by Backbone's MV*-style architecture.}
+  %    \resumeItem{Developed a custom UI component library with a living style guide.}
+  %    \resumeItem{Implemented the "`cut the mustard`" progressive enhancement technique.}
+  %    \resumeItem{Made extensive use of data visualisation to summarise financial data.}
   %  \resumeListEnd
   %\end{minipage}
 
@@ -555,15 +551,15 @@
       \setlength{\arrayrulewidth}{0.1pt} %% Set border (rule) width
       \textls[\trackingBody]{%
       \begin{tabular*}{\textwidth}{l|l@{\extracolsep{\fill}}}
-        \small{2024-2026} & \small{Contract Software Developer} \\ \hline
-        \small{2021-2023} & \small{Senior Software Developer\hspace{0.5em}·\hspace{0.5em}BJSS} \\ \hline
-        \small{2017-2021} & \small{Freelance/Contract Software Developer} \\ \hline
-        \small{2016-2017} & \small{Full-Stack Web Developer\hspace{0.5em}·\hspace{0.5em}Zapmap} \\ \hline
-        \small{2014-2016} & \small{Front-End Web Developer\hspace{0.5em}·\hspace{0.5em}investUP} \\ \hline
-        \small{2006-2014} & \small{Freelance Web Developer} \\ \hline
+        \small{2024-} & \small{Contract Software Developer\hspace{0.5em}·\hspace{0.5em}remote/hybrid/on-site} \\ \hline
+        \small{2021-2023} & \small{Senior Software Developer\hspace{0.5em}·\hspace{0.5em}BJSS (now CGI)\hspace{0.5em}·\hspace{0.5em}Bristol/hybrid} \\ \hline
+        \small{2017-2021} & \small{Freelance/Contract Software Developer\hspace{0.5em}·\hspace{0.5em}remote} \\ \hline
+        \small{2016-2017} & \small{Full-Stack Web Developer\hspace{0.5em}·\hspace{0.5em}Zapmap\hspace{0.5em}·\hspace{0.5em}Bristol} \\ \hline
+        \small{2014-2016} & \small{Front-End Web Developer\hspace{0.5em}·\hspace{0.5em}investUP}\hspace{0.5em}·\hspace{0.5em}Bristol/London \\ \hline
+        \small{2006-2014} & \small{Freelance Web Developer}\hspace{0.5em}·\hspace{0.5em}remote \\ \hline
         %\small{2005-2006} & \small{Public relations for Audible\hspace{0.5em}·\hspace{0.5em}Monument PR} \\ \hline
-        \small{2004-2005} & \small{Technology Writer, Deputy Editor of PC Plus magazine\hspace{0.5em}·\hspace{0.5em}Future Publishing} \\ \hline
-        \small{2001-2003} & \small{Technology Writer\hspace{0.5em}·\hspace{0.5em}ITP (Dubai)} \\ \hline
+        \small{2004-2005} & \small{Technology Writer, Deputy Editor of PC Plus magazine\hspace{0.5em}·\hspace{0.5em}Future Publishing\hspace{0.5em}·\hspace{0.5em}Bath} \\ \hline
+        \small{2001-2003} & \small{Technology Writer\hspace{0.5em}·\hspace{0.5em}Information \& Technology Publishing Co.\hspace{0.5em}·\hspace{0.5em}Dubai} \\ \hline
         \small{1998-2001} & \small{First-class honours in Human Geography\hspace{0.5em}·\hspace{0.5em}Leeds University}
       \end{tabular*}}
     \endgroup
