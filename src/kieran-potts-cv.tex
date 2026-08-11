@@ -101,8 +101,8 @@
 %%  Link color - this is the color of the underline, the text is "black".
 \definecolor{link}{RGB}{185,185,185}
 
-%%  Quiet text color - used for dates and other less important text - NOT IN USE.
-%\definecolor{shhh}{RGB}{150,150,150}
+%%  Quiet text color - used for dates and other less important text.
+\definecolor{quiet}{RGB}{150,150,150}
 
 %%  Border color - used for table borders and titlerule under section headings.
 \definecolor{border}{RGB}{50,50,50}
@@ -181,7 +181,7 @@
 %%
 \newcommand{\resumeSubheading}[5][12pt]{
   \vspace{#1}
-  {\scshape{\textls[\trackingBody]{#2}}}\quad\textit{\small{\textls[\trackingBody]{#3}}} \textit{\small{(\textls[\trackingBody]{#4})}}\hspace{0.5em}·\hspace{0.5em}\textit{\small{\textls[\trackingBody]{#5}}}
+  {\scshape{\textls[\trackingBody]{#2}}}\quad\textit{\small{\textls[\trackingBody]{#3}}} \textit{\small{(\textls[\trackingBody]{#4})}}\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}\textit{\small{\textls[\trackingBody]{#5}}}
   \vspace{2pt}
 }
 
@@ -215,7 +215,7 @@
 %%    \resumeItem{Lorem ipsum...}
 %%
 \newcommand{\resumeItem}[1]{
-  \item[\-·]\small{{\textls[\trackingBody]{#1}\vspace{1pt}}}
+  \item[\-{\color{quiet}·}]\small{{\textls[\trackingBody]{#1}\vspace{1pt}}}
 }
 
 %%  ==== DOCUMENT ==================================================================================
