@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.12.0] - 2026-08-11
+
 - Proofreading pass – spelling and terminology fixes.
 - Fix remaining American-to-British spellings across whole repository.
 - Reorganize the technology specialization grid under sub-headings.
