@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Remove `\skill` command for inline tech highlighting.
+
 ## [2.10.0] - 2026-06-30
 
 - Review project descriptions.
