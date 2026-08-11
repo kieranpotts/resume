@@ -2,13 +2,13 @@
 
 ## [Unreleased]
 
-- Remove duplicated statements between projects.
-- Various typographic fixes.
-- Remove redundant packages (`color`, `colortbl`, `inputenc`)..
-- Use en dashes in date ranges, applied consistently throughout.
 - Proofreading pass – spelling and terminology fixes.
 - Fix remaining American-to-British spellings across whole repository.
 - Reorganize the technology specialization grid under sub-headings.
+- Remove duplicated statements between projects.
+- Various typographic fixes and styling improvements.
+- Use en dashes in date ranges, applied consistently throughout.
+- Remove redundant packages (`color`, `colortbl`, `inputenc`)..
 
 ## [2.11.0] - 2026-08-11
 
