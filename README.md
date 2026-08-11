@@ -106,9 +106,10 @@ $ git push --tags
 
 The release workflow in GitHub Actions will automatically create a release at
 the tag point, copying across the message from the Git tag. The pipeline will
-compile the résumé to the PDF format and attach the file to the release. The
-updated résumé can be downloaded from the
-[releases page](https://github.com/kieranpotts/resume/releases).
+compile the résumé to the PDF format and attach the file to the release.
+
+The latest release can be fetched using this URL: \
+<https://github.com/kieranpotts/resume/releases/latest/download/kieran-potts-cv.pdf>.
 
 ## Reference resources
 
