@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Small edits.
+- Remove duplicated statements between projects.
+
 ## [2.11.0] - 2026-08-11
 
 - Remove `\skill` command for inline tech highlighting.
