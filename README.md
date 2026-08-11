@@ -10,11 +10,19 @@
 
 The only requirements are Docker and a good LaTeX editor.
 
-The compilation scripts run in a Docker container, so you do not need to install any LaTeX packages on your host system. The Docker image is based on my own [Docker image](https://hub.docker.com/r/kieranpotts/latex), which is in turn inspired by Benedikt Lang's [blang/latex](https://github.com/blang/latex-docker/) images.
+The compilation scripts run in a Docker container, so you do not need to install
+any LaTeX packages on your host system. The Docker image is based on my own
+[Docker image](https://hub.docker.com/r/kieranpotts/latex), which is in turn
+inspired by Benedikt Lang's [blang/latex](https://github.com/blang/latex-docker/)
+images.
 
-On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the build commands from WSL in a terminal running under administrator mode. Linux emulators like Git Bash are insufficient.
+On Windows, it is RECOMMENDED to configure Docker to use WSL 2, and then run the
+build commands from WSL in a terminal running under administrator mode. Linux
+emulators like Git Bash are insufficient.
 
-The script to start the container will run the container under the current user and group. You should add your user to the `docker` group, which will allow you to run Docker commands without needing to use `sudo`.
+The script to start the container will run the container under the current user
+and group. You should add your user to the `docker` group, which will allow you
+to run Docker commands without needing to use `sudo`.
 
 ```
 $ sudo usermod -aG docker [your-username]
@@ -34,7 +42,9 @@ To start the Docker container, run:
 $ ./run/start
 ```
 
-The start script keeps the container running indefinitely (until it is explicitly stopped), so you can re-run the build command again and again, and each time it will be executed immediately without restarting the container.
+The start script keeps the container running indefinitely (until it is
+explicitly stopped), so you can re-run the build command again and again, and
+each time it will be executed immediately without restarting the container.
 
 To build the résumé to PDF format from the source Tex file, run:
 
@@ -42,7 +52,8 @@ To build the résumé to PDF format from the source Tex file, run:
 $ ./run/build
 ```
 
-The output file is `./dist/kieran-potts-cv.pdf`. Other artifacts are also outputted by the compiler to the `dist` directory.
+The output file is `./dist/kieran-potts-cv.pdf`. Other artifacts are also
+outputted by the compiler to the `dist` directory.
 
 To stop the Docker container, run:
 
@@ -58,13 +69,17 @@ To release a new version of the résumé, simply create a new tag:
 $ git tag -a v[major].[minor].[patch]
 ```
 
-It is RECOMMENDED to include details of the changes in the release in a message attached to the Git tag object. If the changes can be summarized in a single line, you can use the `-m` option to specify the message inline:
+It is RECOMMENDED to include details of the changes in the release in a message
+attached to the Git tag object. If the changes can be summarized in a single
+line, you can use the `-m` option to specify the message inline:
 
 ```
 $ git tag -a v2.0.3 -m "Minor edits for improved readability."
 ```
 
-Otherwise create a temporary release notes file, and use the `-F` option to use the file's contents as the tag message. Release notes SHOULD be formatted using Markdown.
+Otherwise create a temporary release notes file, and use the `-F` option to use
+the file's contents as the tag message. Release notes SHOULD be formatted using
+Markdown.
 
 ```
 $ git tag -a v2.0.3 -F RELEASE_NOTES.md
@@ -89,17 +104,23 @@ $ git push
 $ git push --tags
 ```
 
-The release workflow in GitHub Actions will automatically create a release at the tag point, copying across the message from the Git tag. The pipeline will compile the résumé to the PDF format and attach the file to the release. The updated résumé can be downloaded from the [releases page](https://github.com/kieranpotts/resume/releases).
+The release workflow in GitHub Actions will automatically create a release at
+the tag point, copying across the message from the Git tag. The pipeline will
+compile the résumé to the PDF format and attach the file to the release. The
+updated résumé can be downloaded from the
+[releases page](https://github.com/kieranpotts/resume/releases).
 
 ## Reference resources
 
-- [pdflatex man page](https://linux.die.net/man/1/pdflatex) — The build scripts use `pdflatex` to compile the LaTeX source files into PDF format.
+- [pdflatex man page](https://linux.die.net/man/1/pdflatex) — The build scripts
+  use `pdflatex` to compile the LaTeX source files into PDF format.
 
 ## Acknowledgements
 
 The following resources provided valuable inspiration.
 
-- Andrew Lock's blog post about [building LaTeX projects with Docker](https://andrewlock.net/building-latex-projects-on-windows-easily-with-docker/)
+- Andrew Lock's blog post about
+  [building LaTeX projects with Docker](https://andrewlock.net/building-latex-projects-on-windows-easily-with-docker/)
 
 - [Overleaf's CV templates](https://www.overleaf.com/latex/templates/tagged/cv)
 
@@ -107,7 +128,9 @@ The following resources provided valuable inspiration.
 
 - [LaTex CV and Résumé Collection](https://github.com/jankapunkt/latexcv), maintained by Jan Küster and contributors
 
-- [Jake Gutierrez](https://github.com/jakegut/resume) and [Leslie Cheng's](https://github.com/lcfyi/software-resume-template) résumé templates, which are based on [Sourabh Bajaj's](https://github.com/sb2nov/resume/)
+- [Jake Gutierrez](https://github.com/jakegut/resume) and
+  [Leslie Cheng's](https://github.com/lcfyi/software-resume-template) résumé
+  templates, which are based on [Sourabh Bajaj's](https://github.com/sb2nov/resume/)
 
 - Daniil Belyakov's [McDowell CV](https://github.com/dnl-blkv/mcdowell-cv), a LuaLaTeX class
 
