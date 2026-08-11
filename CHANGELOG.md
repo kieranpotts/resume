@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Small tweaks.
+
 ## [2.12.0] - 2026-08-11
 
 - Proofreading pass – spelling and terminology fixes.
