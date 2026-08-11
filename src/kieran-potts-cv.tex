@@ -2,9 +2,6 @@
 
 %%  ==== PACKAGES ==================================================================================
 
-%%  UTF-8 encoding.
-\usepackage[utf8]{inputenc}
-
 %%  Page geometry - for fine control over the page layout.
 \usepackage[
   ignoreheadfoot,   %%  Set margins without considering header and footer.
@@ -37,22 +34,10 @@
 %%  underlining styles than the standard LaTeX `\underline` command.
 \usepackage{ulem}
 
-%%  To define custom colours.
-\usepackage{color}
-
-%%  Table colours.
+%%  Table colours. Also provides `\definecolor` and `\textcolor`, superseding the `color` package.
 \usepackage[table]{xcolor}
-\usepackage{colortbl}
 
 %%  ==== GENERAL SETTINGS ==========================================================================
-
-%%  Document info dictionary.
-%%  See https://texdoc.org/serve/pdftex-a.pdf/0
-\pdfinfo{
-  /Title (Kieran Potts – CV)
-  /Author (Kieran Potts)
-  /Keywords (curriculum vitae, résumé)
-}
 
 %%  hyperref settings.
 %%
@@ -145,8 +130,8 @@
 %%  Example:
 %%    \link{https://example.com}{Example Link}
 %%
-\newcommand{\link}[2]{
-  \textcolor{link}{\uline{\href{#1}{\textls[\trackingBody]{#2}}}}
+\newcommand{\link}[2]{%
+  \textcolor{link}{\uline{\href{#1}{\textls[\trackingBody]{#2}}}}%
 }
 
 %%  \resumeHeading{text}
@@ -162,8 +147,8 @@
 %%  Example:
 %%    \resumeHeading{Heading title}
 %%
-\newcommand{\resumeHeading}[1]{
-  \section*{#1}
+\newcommand{\resumeHeading}[1]{%
+  \section*{#1}%
 }
 
 %%  \resumeSubheading[vspace]{company}{role}{employment-type}{dates}
@@ -175,15 +160,15 @@
 %%  - `company`: The name of the company or organization.
 %%  - `role`: The job title or role.
 %%  - `employment-type`: The type of employment (eg., contract, permanent).
-%%  - `dates`: The dates of employment (eg., 2023-present).
+%%  - `dates`: The dates of employment (eg., 2023--present).
 %%
 %%  Example:
-%%    \resumeSubheading{ACME Corp}{Software Engineer}{contract}{2023-present}
+%%    \resumeSubheading{ACME Corp}{Software Engineer}{contract}{2023--present}
 %%
-\newcommand{\resumeSubheading}[5][12pt]{
+\newcommand{\resumeSubheading}[5][12pt]{%
   \vspace{#1}
   {\scshape{\textls[\trackingBody]{#2}}}\quad\textit{\small{\textls[\trackingBody]{#3}}} \textit{\small{(\textls[\trackingBody]{#4})}}\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}\textit{\small{\textls[\trackingBody]{#5}}}
-  \vspace{2pt}
+  \vspace{2pt}%
 }
 
 %%  \resumeListStart
@@ -215,8 +200,8 @@
 %%  Example:
 %%    \resumeItem{Lorem ipsum...}
 %%
-\newcommand{\resumeItem}[1]{
-  \item[\-{\color{quiet}·}]\small{{\textls[\trackingBody]{#1}\vspace{1pt}}}
+\newcommand{\resumeItem}[1]{%
+  \item[{\color{quiet}·}]\small{{\textls[\trackingBody]{#1}\vspace{1pt}}}%
 }
 
 %%  ==== DOCUMENT ==================================================================================
@@ -230,7 +215,7 @@
   \smallskip
 
   \begin{center}
-    \textls[\trackingHeading]{{\scshape{Software Architecture}}\hspace{0.5em}·\hspace{0.5em}{\scshape{Computer Programming}}\hspace{0.5em}·\hspace{0.5em}{\scshape{Technical Writing}}}
+    \textls[\trackingHeading]{{\scshape{Software Architecture}}\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}{\scshape{Computer Programming}}\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}{\scshape{Technical Writing}}}
   \end{center}
 
   \smallskip
@@ -298,7 +283,7 @@
       {R\&D project}
       {Software Architect \& Developer}
       {freelance}
-      {2025-present}
+      {2025--present}
     \resumeListStart
       \resumeItem{Building a proof-of-concept commercial newswire platform for journalists.}
       \resumeItem{Agentic specs-to-code development workflow. Wrote a global library of AI skills and custom prompts.}
@@ -321,7 +306,7 @@
       {LexisNexis Risk Solutions}
       {Software Developer III}
       {extended contract}
-      {2024-2026}
+      {2024--2026}
     \resumeListStart
       \resumeItem{Supported the redesign of the company's flagship identity verification service.}
       \resumeItem{Built new HTTP API services in PHP on Laravel. Role-based access controls.}
@@ -362,7 +347,7 @@
       {Specsavers}
       {Senior Software Developer, BJSS}
       {permanent}
-      {2021-2023}
+      {2021--2023}
     \resumeListStart
       \resumeItem{Involved in replatforming a monolithic Java desktop application to cloud-native services running on Azure.}
       \resumeItem{Implemented a micro front-end architecture using single-spa, supporting six parallel work streams.}
@@ -395,7 +380,7 @@
       {TimeTrack}
       {Technical Lead}
       {rolling contract}
-      {2020-2021}
+      {2020--2021}
     \resumeListStart
       \resumeItem{Oversaw an R\&D project to build a proof-of-concept automated time logging system.}
       \resumeItem{Coordinated a remote team of contractors and freelancers. Supervised all design and development activities.}
@@ -417,7 +402,7 @@
   %    {Zylo Performance}
   %    {Full-Stack Web Developer}
   %    {freelance}
-  %    {2020-2021}
+  %    {2020--2021}
   %  \resumeListStart
   %    \resumeItem{Developed and maintained a custom business process management system in Drupal.}
   %    \resumeItem{Integrated payment card processing (FideliPay) and Direct Debits (GoCardless).}
@@ -430,7 +415,7 @@
   %    {Maker DAO}
   %    {Front-End Web Developer}
   %    {freelance}
-  %    {2019-2020}
+  %    {2019--2020}
   %  \resumeListStart
   %    \resumeItem{Created a responsive, mobile-first WordPress theme.}
   %    \resumeItem{Enabled management of multi-language content.}
@@ -450,7 +435,7 @@
       {Redgate Software}
       {Technical Lead, Helastel}
       {fixed-term contract}
-      {2018-2019}
+      {2018--2019}
     \resumeListStart
       \resumeItem{Led a project to transition the SQLServerCentral.com website to Project Nami (a WordPress fork using MSSQL).}
       \resumeItem{Gathered requirements via client discovery workshops and reverse engineering of the legacy system.}
@@ -513,7 +498,7 @@
       {Zapmap}
       {Full-Stack Web Developer}
       {permanent}
-      {2016-2017}
+      {2016--2017}
     \resumeListStart
       \resumeItem{Began incrementally transitioning from a tightly coupled monolith to a modular, scalable design.}
       \resumeItem{Administered bare metal Linux servers (CentOS). Added load balancing (Nginx) and caching (Redis) infrastructure.}
@@ -530,7 +515,7 @@
   %    {investUP}
   %    {Front-End Web Developer}
   %    {permanent}
-  %    {2014-2016}
+  %    {2014--2016}
   %  \resumeListStart
   %    \resumeItem{Implemented a lightweight, responsive single-page web application.}
   %    \resumeItem{Created a custom framework inspired by Backbone's MV*-style architecture.}
@@ -551,16 +536,16 @@
       \hbadness=10000               %%  Suppress benign underfull-hbox warning from the trailing \extracolsep fill glue.
       \textls[\trackingBody]{%
       \begin{tabular*}{\textwidth}{l|l@{\extracolsep{\fill}}}
-        \small{2024-present} & \small{Contract Software Developer\hspace{0.5em}·\hspace{0.5em}remote/hybrid/on-site} \\ \hline
-        \small{2021-2023} & \small{Senior Software Developer\hspace{0.5em}·\hspace{0.5em}BJSS (now CGI)\hspace{0.5em}·\hspace{0.5em}Bristol/hybrid} \\ \hline
-        \small{2017-2021} & \small{Freelance/Contract Software Developer\hspace{0.5em}·\hspace{0.5em}remote} \\ \hline
-        \small{2016-2017} & \small{Full-Stack Web Developer\hspace{0.5em}·\hspace{0.5em}Zapmap\hspace{0.5em}·\hspace{0.5em}Bristol} \\ \hline
-        \small{2014-2016} & \small{Front-End Web Developer\hspace{0.5em}·\hspace{0.5em}investUP\hspace{0.5em}·\hspace{0.5em}Bristol/London} \\ \hline
-        \small{2006-2014} & \small{Freelance Web Developer}\hspace{0.5em}·\hspace{0.5em}remote \\ \hline
-        %\small{2005-2006} & \small{Public relations for Audible\hspace{0.5em}·\hspace{0.5em}Monument PR\hspace{0.5em}·\hspace{0.5em}Bath} \\ \hline
-        \small{2004-2005} & \small{Technology Writer, Deputy Editor of PC Plus magazine\hspace{0.5em}·\hspace{0.5em}Future Publishing\hspace{0.5em}·\hspace{0.5em}Bath} \\ \hline
-        \small{2001-2003} & \small{Technology Writer\hspace{0.5em}·\hspace{0.5em}Information \& Technology Publishing Co.\hspace{0.5em}·\hspace{0.5em}Dubai} \\ \hline
-        \small{1998-2001} & \small{First-class honours in Human Geography\hspace{0.5em}·\hspace{0.5em}Leeds University}
+        \small{2024--present} & \small{Contract Software Developer\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}remote/hybrid/on-site} \\ \hline
+        \small{2021--2023} & \small{Senior Software Developer\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}BJSS (now CGI)\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Bristol/hybrid} \\ \hline
+        \small{2017--2021} & \small{Freelance/Contract Software Developer\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}remote} \\ \hline
+        \small{2016--2017} & \small{Full-Stack Web Developer\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Zapmap\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Bristol} \\ \hline
+        \small{2014--2016} & \small{Front-End Web Developer\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}investUP\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Bristol/London} \\ \hline
+        \small{2006--2014} & \small{Freelance Web Developer\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}remote} \\ \hline
+        %\small{2005--2006} & \small{Public relations for Audible\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Monument PR\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Bath} \\ \hline
+        \small{2004--2005} & \small{Technology Writer, Deputy Editor of PC Plus magazine\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Future Publishing\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Bath} \\ \hline
+        \small{2001--2003} & \small{Technology Writer\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Information \& Technology Publishing Co.\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Dubai} \\ \hline
+        \small{1998--2001} & \small{First-class honours in Human Geography\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}Leeds University}
       \end{tabular*}}
     \endgroup
   \end{minipage}

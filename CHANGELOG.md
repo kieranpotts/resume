@@ -2,8 +2,10 @@
 
 ## [Unreleased]
 
-- Small edits.
 - Remove duplicated statements between projects.
+- Various typographic fixes.
+- Remove redundant packages (`color`, `colortbl`, `inputenc`)..
+- Use en dashes in date ranges, applied consistently throughout.
 
 ## [2.11.0] - 2026-08-11
 
