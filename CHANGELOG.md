@@ -6,6 +6,7 @@
 - American to British spelling fixes.
 - Specify more technologies and frameworks under project experience.
 - Add Media Hacks project.
+- Collapse technology specializations section from two to three columns.
 
 ## [2.10.0] - 2026-06-30
 
