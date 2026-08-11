@@ -68,6 +68,7 @@
   bookmarksopen=false,
   colorlinks=true,
   urlcolor=black,
+  pageanchor=false,
 }
 
 \pagestyle{empty}              %%  No header or footer.
@@ -547,6 +548,7 @@
       \setlength{\tabcolsep}{6pt}
       \renewcommand{\arraystretch}{1.2}  %%  Adjusts table row height
       \setlength{\arrayrulewidth}{0.1pt} %% Set border (rule) width
+      \hbadness=10000               %%  Suppress benign underfull-hbox warning from the trailing \extracolsep fill glue.
       \textls[\trackingBody]{%
       \begin{tabular*}{\textwidth}{l|l@{\extracolsep{\fill}}}
         \small{2024-present} & \small{Contract Software Developer\hspace{0.5em}·\hspace{0.5em}remote/hybrid/on-site} \\ \hline
