@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Remove `\skill` command for inline tech highlighting.
+- American to British spelling fixes.
 
 ## [2.10.0] - 2026-06-30
 
