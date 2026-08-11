@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.11.0] - 2026-08-11
+
 - Remove `\skill` command for inline tech highlighting.
 - American to British spelling fixes.
 - Specify more technologies and frameworks under project experience.
