@@ -33,9 +33,10 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 
 ## Tools
 
-- **`./run/start`** to start the persistent LaTeX container.
-- **`./run/build`** to compile `src/kieran-potts-cv.tex` to `dist/kieran-potts-cv.pdf`.
-- **`./run/stop`** to stop the container.
+- `./run/start` to start the persistent LaTeX container.
+- `./run/build` to compile `src/kieran-potts-cv.tex` to
+  `dist/kieran-potts-cv.pdf`.
+- `./run/stop` to stop the container.
 
 ## Rules
 
@@ -53,7 +54,7 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 ## References
 
 This project follows Kieran Potts' technical standards. Read the relevant
-standard(s) below for the current task; their RFC 2119 rules MUST be followed
+standard(s) below for the current task. Their RFC 2119 rules MUST be followed
 unless explicitly overridden elsewhere in this file.
 
 - **[TS-11: Versioning](https://kieranpotts.com/standards/011)**
