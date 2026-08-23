@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.12.3] - 2026-08-23
+
 - Add Grafana to LNRS project.
 
 ## [2.12.2] - 2026-08-23
