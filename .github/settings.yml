@@ -63,7 +63,8 @@ repository:
   enable_automated_security_fixes: false
 
   # Enable vulnerability alerts?
-  enable_vulnerability_alerts: false
+  # Required to be true in order to configure automated security fixes.
+  enable_vulnerability_alerts: true
 
   # Enable private vulnerability reporting?
   enable_private_vulnerability_reporting: false
