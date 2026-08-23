@@ -74,7 +74,7 @@ repository:
 
   # Enable Git LFS? GitHub exposes no read endpoint for this setting, so
   # apply re-asserts the declared value on every run.
-  enable_git_lfs: false
+  ##enable_git_lfs: false
 
   # Show the sponsor button on this repository?
   enable_sponsorships: false
