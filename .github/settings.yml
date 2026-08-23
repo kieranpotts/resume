@@ -72,8 +72,7 @@ repository:
   # Enable immutable releases?
   enable_immutable_releases: false
 
-  # Enable Git LFS? GitHub exposes no read endpoint for this setting, so
-  # apply re-asserts the declared value on every run.
+  # Enable Git LFS? (Disabled because this is mysteriously breaking the pipeline.)
   ##enable_git_lfs: false
 
   # Show the sponsor button on this repository?
