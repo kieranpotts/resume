@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add Grafana to LNRS project.
+
 ## [2.12.2] - 2026-08-23
 
 - Add Maven.
