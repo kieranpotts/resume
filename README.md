@@ -13,7 +13,6 @@ The latest version of my xxxx is available to download from the GitHub releases 
 
 See the [contributing guidelines](./CONTRIBUTING.md).
 
-
 -----
 
 Copyright © 2020-present Kieran Potts, all rights reserved
