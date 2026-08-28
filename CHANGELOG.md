@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.13.0] - 2026-08-28
+
 - Add CPSA-F certification.
 
 ## [2.12.3] - 2026-08-23
