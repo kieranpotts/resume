@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add forward-deployed label to LNRS project.
+
 ## [2.13.1] - 2026-09-01
 
 - Small text fixes.
