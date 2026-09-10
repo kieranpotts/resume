@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Line length fix.
+
 ## [2.14.0] - 2026-09-10
 
 - Add forward-deployed label to LNRS and Redgate projects.
