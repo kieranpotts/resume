@@ -2,7 +2,8 @@
 
 ## [Unreleased]
 
-- Add forward-deployed label to LNRS project.
+- Add forward-deployed label to LNRS and Redgate projects.
+- Move LNRS to top of CV.
 
 ## [2.13.1] - 2026-09-01
 
