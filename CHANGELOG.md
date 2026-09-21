@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Added threat modelling experience at LNRS.
+
 ## [2.14.1] - 2026-09-10
 
 - Line length fix.
