@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.15.0] - 2026-09-21
+
 - Added threat modelling experience at LNRS.
 
 ## [2.14.1] - 2026-09-10
