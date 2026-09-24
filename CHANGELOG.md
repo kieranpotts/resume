@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Remove filler words in experience lists.
+- Merging and tightening of some list items.
+
 ## [2.16.0] - 2026-09-24
 
 - Add semibold font to highlight key technologies and architectural styles in experience.
