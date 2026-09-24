@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add semibold font to highlight key technologies and architectural styles in experience.
+
 ## [2.15.0] - 2026-09-21
 
 - Added threat modelling experience at LNRS.
