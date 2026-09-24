@@ -4,6 +4,7 @@
 
 - Remove filler words in experience lists.
 - Merging and tightening of some list items.
+- Add runbooks.
 
 ## [2.16.0] - 2026-09-24
 
