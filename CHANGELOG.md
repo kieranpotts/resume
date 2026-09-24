@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Add semibold font to highlight key technologies and architectural styles in experience.
+- Move newswire project to top.
 
 ## [2.15.0] - 2026-09-21
 
