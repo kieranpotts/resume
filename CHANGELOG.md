@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.18.0] - 2026-09-27
+
 - Simplify employment list.
 - Shrink font size in employment list.
 - Extend PDF metadata keywords.
