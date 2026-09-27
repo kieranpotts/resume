@@ -5,6 +5,7 @@
 - Simplify employment list.
 - Shrink font size in employment list.
 - Extend PDF metadata keywords.
+- Extend technology specialisations: otel, node.js, web components, etc.
 
 ## [2.17.0] - 2026-09-24
 
