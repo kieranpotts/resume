@@ -2,7 +2,8 @@
 
 ## [Unreleased]
 
-- Simplify employment list
+- Simplify employment list.
+- Shrink font size in employment list.
 
 ## [2.17.0] - 2026-09-24
 
