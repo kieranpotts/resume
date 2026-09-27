@@ -8,6 +8,7 @@
 - Extend technology specialisations: otel, node.js, web components, etc.
 - Review hero wording.
 - Extend details on newswire architecture.
+- Extend details on LNRS project.
 
 ## [2.17.0] - 2026-09-24
 
