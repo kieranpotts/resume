@@ -10,6 +10,7 @@
 - Extend details on newswire architecture.
 - Extend details on LNRS project.
 - More outcome oriented.
+- Spelling and grammar.
 
 ## [2.17.0] - 2026-09-24
 
