@@ -12,6 +12,7 @@
 - More outcome oriented.
 - Spelling and grammar.
 - Consistent use of past tense.
+- UK phone number convention.
 
 ## [2.17.0] - 2026-09-24
 
