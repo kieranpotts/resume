@@ -306,19 +306,21 @@
 
     \resumeSubheading
       [0pt]  %%  First section under the heading has no vertical space above it.
-      {Independent R\&D}
-      {Software Architect \& Developer}
+      {Independent R\&D Project}
+      {Architect \& Developer}
       {freelance}
       {2025--present}
     \resumeListStart
       \resumeItem{Proof-of-concept commercial newswire platform for journalists.}
-      \resumeItem{\textbf{Agentic specs-to-code} development workflow, backed by a global library of agent skills and custom prompts.}
-      \resumeItem{CI/CD pipelines in \textbf{GitHub Actions}. \textbf{Docker}-ised services deployed to \textbf{AWS ECS}.}
-      \resumeItem{High coverage with an emphasis on system-level tests. \textbf{JUnit}, plus \textbf{Mockito} in unit tests.}
       \resumeItem{Domain modelled as \textbf{event-driven microservices} in \textbf{Java} on \textbf{Spring} (Boot, Data JPA, Security), built with \textbf{Maven}.}
+      \resumeItem{Asynchronous messaging over \textbf{AWS SNS/SQS}, with idempotent consumers, retries, and dead-letter queues.}
       \resumeItem{Unified \textbf{API gateway} fronting domain services. Dedicated \textbf{SSO} service for JWT-based auth.}
       \resumeItem{Versioned \textbf{PostgreSQL} schema, managed by a custom Bash migration tool.}
-      %% TODO: Healthchecks
+      \resumeItem{CI/CD pipelines in \textbf{GitHub Actions}. \textbf{Docker}-ised services deployed to \textbf{AWS ECS}.}
+      \resumeItem{\textbf{Health checks} with automatic recovery, plus SLO-based alerting for each service.}
+      \resumeItem{High coverage with an emphasis on system-level tests. \textbf{JUnit}, plus \textbf{Mockito} in unit tests.}
+      \resumeItem{\textbf{Agentic specs-to-code} development workflow, backed by a global library of agent skills and custom prompts.}
+      \resumeItem{Version-controlled requirements specifications, ADRs, design docs and diagrams, and a threat model risk register.}
     \resumeListEnd
   \end{minipage}
 

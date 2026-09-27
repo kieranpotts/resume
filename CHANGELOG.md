@@ -7,6 +7,7 @@
 - Extend PDF metadata keywords.
 - Extend technology specialisations: otel, node.js, web components, etc.
 - Review hero wording.
+- Extend details on newswire architecture.
 
 ## [2.17.0] - 2026-09-24
 
