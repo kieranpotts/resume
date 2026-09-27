@@ -11,6 +11,7 @@
 - Extend details on LNRS project.
 - More outcome oriented.
 - Spelling and grammar.
+- Consistent use of past tense.
 
 ## [2.17.0] - 2026-09-24
 
