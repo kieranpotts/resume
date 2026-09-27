@@ -314,15 +314,14 @@
     \resumeListStart
       \resumeItem{Proof-of-concept commercial newswire platform for journalists.}
       \resumeItem{Domain modelled as event-driven microservices in \textbf{Java} on \textbf{Spring} (Boot, Data JPA, Security), built with \textbf{Maven}.}
-      \resumeItem{Asynchronous messaging over \textbf{AWS SNS/SQS}, with idempotent consumers, retries, and dead-letter queues.}
-      \resumeItem{Event-driven \textbf{LLM} service summarizing news releases. Versioned prompts, automated evals, and cost controls.}
+      \resumeItem{Resilient asynchronous messaging over \textbf{AWS SNS/SQS}, with idempotent consumers, retries, and dead-letter queues.}
+      \resumeItem{\textbf{LLM} service summarizing news releases. Versioned prompts, automated evals, and cost controls.}
       \resumeItem{Experiments with \textbf{AWS Bedrock} and self-hosted open-weight models via \textbf{Ollama}.}
       \resumeItem{Unified API gateway fronting domain services. Dedicated SSO service for JWT-based auth.}
+      \resumeItem{Self-healing \textbf{Docker}-ised services on \textbf{AWS ECS}, with SLO-based alerting. CI/CD in \textbf{GitHub Actions}.}
       \resumeItem{Versioned \textbf{PostgreSQL} schema, managed by a custom Bash migration tool.}
-      \resumeItem{CI/CD pipelines in \textbf{GitHub Actions}. \textbf{Docker}-ised services deployed to \textbf{AWS ECS}.}
-      \resumeItem{Health checks with automatic recovery, plus SLO-based alerting for each service.}
       \resumeItem{High coverage with an emphasis on system-level tests. \textbf{JUnit}, plus \textbf{Mockito} in unit tests.}
-      \resumeItem{Agentic specs-to-code development workflow, backed by a global library of agent skills and custom prompts.}
+      \resumeItem{Sped up delivery with an agentic specs-to-code workflow, backed by a global library of agent skills and custom prompts.}
       \resumeItem{Version-controlled requirements specifications, ADRs, design docs and diagrams, and a threat model risk register.}
     \resumeListEnd
   \end{minipage}
@@ -344,15 +343,14 @@
     \resumeListStart
       \resumeItem{Ground-up redesign and rebuild of the company's flagship identity verification service.}
       \resumeItem{Designed key subsystems of the new architecture, documented in \textbf{C4}, \textbf{UML}, and ADRs.}
-      \resumeItem{Wrote technology selection proposals for webhook delivery and the observability stack.}
-      \resumeItem{Designed and built a webhook notifications system, with retries, backoff, and idempotent delivery.}
-      \resumeItem{Facilitated cross-functional threat modelling workshops using STRIDE and data flow diagrams.}
+      \resumeItem{Wrote technology selection proposals for webhook delivery and the observability stack, both adopted by the team.}
+      \resumeItem{Surfaced previously unknown security risks by facilitating cross-functional STRIDE threat modelling workshops.}
+      \resumeItem{Designed and built reliable webhook delivery to client systems, with retries, backoff, and idempotency.}
+      \resumeItem{Reduced incidents and recovery times via \textbf{OpenTelemetry}, \textbf{Elastic}, \textbf{Grafana}, SLO alerting, and runbooks.}
+      \resumeItem{Stopped vulnerabilities reaching production by automating SAST and DAST with \textbf{Checkmarx} and \textbf{ZAP}.}
       \resumeItem{Built new HTTP API services in \textbf{PHP} on \textbf{Laravel}, with role-based access controls.}
       \resumeItem{Integrated third-party data sources and identity verification services via \textbf{REST} and \textbf{SOAP} APIs.}
       \resumeItem{Extended back-end services written in Enterprise Control Language (ECL), a specialist data analytics tool.}
-      \resumeItem{Instrumented services with \textbf{OpenTelemetry}, feeding \textbf{Elastic} and \textbf{Grafana}, with health checks, SLOs, and alerting.}
-      \resumeItem{Wrote operational runbooks for the production services.}
-      \resumeItem{Automated static and dynamic application security testing with \textbf{Checkmarx} and \textbf{ZAP}.}
       \resumeItem{Developed validation services for passports, driving licences, and National Insurance numbers.}
       \resumeItem{Wrote \textbf{Go} scripts to aggregate and analyse data from a sharded database.}
       \resumeItem{Kept code coverage high with unit and integration tests in \textbf{Pest}.}
@@ -386,12 +384,12 @@
       {permanent}
       {2021--2023}
     \resumeListStart
-      \resumeItem{Replatforming of a monolithic \textbf{Java} desktop application to cloud-native services on \textbf{Azure}.}
-      \resumeItem{Implemented a micro front-end architecture using single-spa, supporting six parallel work streams.}
-      \resumeItem{Maintained a \textbf{Vue}/\textbf{TypeScript} UI component library, documented in \textbf{Storybook}.}
+      \resumeItem{Replatforming of a monolithic \textbf{Java} desktop application to cloud-native services on \textbf{Azure}, through to pilot.}
+      \resumeItem{Enabled six work streams to deliver in parallel, by implementing a micro front-end architecture with \textbf{single-spa}.}
+      \resumeItem{Maintained a \textbf{Vue}/\textbf{TypeScript} UI component library, adopted across work streams and documented in \textbf{Storybook}.}
+      \resumeItem{Coordinated a cross-team front-end "guild", whose technical standards and ways of working were adopted across teams.}
       \resumeItem{Worked with BAs on requirements, QA on \textbf{Selenium} UI tests, and platform engineers on \textbf{Azure DevOps}.}
       \resumeItem{Extended \textbf{Java}/\textbf{Spring Framework} services. Designed \textbf{GraphQL} schemas and API contracts.}
-      \resumeItem{Coordinated a cross-team front-end "guild" to align technical standards and ways of working.}
     \resumeListEnd
   \end{minipage}
 
@@ -415,7 +413,7 @@
       {rolling contract}
       {2020--2021}
     \resumeListStart
-      \resumeItem{Proof-of-concept automated time logging system. Led a remote team of contractors through the full delivery lifecycle.}
+      \resumeItem{Led a remote team through full delivery of a proof-of-concept time logger, informing the owner's go/no-go decision.}
       \resumeItem{Established a Request for Comments (RFC) process to manage technical proposals and record key design decisions.}
       \resumeItem{Designed a layered \textbf{Express} modular monolith around an isolated domain model, ready for decomposition to SOA.}
       \resumeItem{Architected the \textbf{MySQL} schema for scalability from the start (denormalisation, read-write segregation).}
@@ -467,7 +465,7 @@
     \resumeListStart
       \resumeItem{Forward-deployed engagement to migrate the SQLServerCentral.com website to a \textbf{WordPress} fork.}
       \resumeItem{Specified the replacement system via client discovery workshops and reverse engineering of the legacy system.}
-      \resumeItem{De-risked delivery with rapid prototyping to estimate costs and timelines. Monthly checkpoints built trust.}
+      \resumeItem{Delivered on time and on budget, de-risked by rapid prototyping and monthly checkpoints with the client.}
       \resumeItem{Wrote dozens of custom WordPress plugins, with good unit test coverage throughout.}
       \resumeItem{Migrated 17 years of content with \textbf{Bash} scripts, switching over with minimal downtime and no production issues.}
     \resumeListEnd
@@ -495,9 +493,9 @@
       {2017}
     \resumeListStart
       \resumeItem{Launch of a startup B2B software-as-a-service platform on \textbf{Laravel}, localised via \textbf{Phrase}.}
-      \resumeItem{Designed critical user journeys with UX designers. Redesigned onboarding after beta testing, improving conversion.}
-      \resumeItem{Optimised performance by refactoring code and improving time-to-first-render, profiling with \textbf{Xdebug}.}
-      \resumeItem{Moved heavy processing off the main execution thread onto Laravel job queues.}
+      \resumeItem{Significantly improved conversion by redesigning onboarding after beta testing, with UX designers.}
+      \resumeItem{Roughly halved time-to-first-render by profiling with \textbf{Xdebug} and refactoring code.}
+      \resumeItem{Kept requests responsive by moving heavy processing off the main execution thread onto Laravel job queues.}
     \resumeListEnd
   \end{minipage}
 
@@ -508,7 +506,7 @@
       {freelance}
       {2017}
     \resumeListStart
-      \resumeItem{Rewrote all user documentation, improving accuracy, completeness, and readability.}
+      \resumeItem{Rewrote all user documentation, reducing support tickets and speeding up client integrations.}
       \resumeItem{Reverse engineered the HTTP API to a formal \textbf{OpenAPI} spec. Generated docs via a custom \textbf{WordPress} plugin.}
     \resumeListEnd
   \end{minipage}
@@ -520,12 +518,12 @@
       {permanent}
       {2016--2017}
     \resumeListStart
-      \resumeItem{Incremental transition of an inherited, tightly-coupled legacy system to a modular, scalable design.}
+      \resumeItem{Incrementally modularised the tightly-coupled legacy system behind the UK's leading EV charge-point map.}
       \resumeItem{Administered bare-metal \textbf{Linux} servers, adding \textbf{Nginx} load balancing and \textbf{Redis} caching. Planned a move to \textbf{GCP}.}
       \resumeItem{Designed and built a new HTTP API in \textbf{PHP}, decoupling the web client from the server.}
       \resumeItem{Led development of a replacement \textbf{React} web UI. Supervised native \textbf{Android} and \textbf{iOS} clients.}
       \resumeItem{Evolved the \textbf{MySQL} database design without breaking changes, with the data engineer.}
-      \resumeItem{Optimised slow-running MySQL queries, reducing latency through indexing, denormalisation, and simplified joins.}
+      \resumeItem{Cut slow MySQL queries from seconds to milliseconds through indexing, denormalisation, and simplified joins.}
     \resumeListEnd
   \end{minipage}
 
