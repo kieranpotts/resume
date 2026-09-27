@@ -178,7 +178,8 @@
 %%  - `vspace`: Space above the subheading - optional, default = 12pt.
 %%  - `company`: The name of the company or organisation.
 %%  - `role`: The job title or role.
-%%  - `employment-type`: The type of employment (eg., contract, permanent).
+%%  - `employment-type`: The type of employment (eg., contract, permanent). If empty, the
+%%    parentheses are omitted.
 %%  - `dates`: The dates of employment (eg., 2023--present).
 %%
 %%  Example:
@@ -186,7 +187,7 @@
 %%
 \newcommand{\resumeSubheading}[5][12pt]{%
   \vspace{#1}
-  {\scshape{\textls[\trackingBody]{#2}}}\quad\small{\textls[\trackingBody]{#3}} \small{(\textls[\trackingBody]{#4})}\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}\small{\textls[\trackingBody]{#5}}
+  {\scshape{\textls[\trackingBody]{#2}}}\quad\small{\textls[\trackingBody]{#3}}\if\relax\detokenize{#4}\relax\else\ \small{(\textls[\trackingBody]{#4})}\fi\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}\small{\textls[\trackingBody]{#5}}
   \vspace{6pt}%
 }
 
@@ -308,7 +309,7 @@
       [0pt]  %%  First section under the heading has no vertical space above it.
       {Independent R\&D Project}
       {Architect \& Developer}
-      {freelance}
+      {}
       {2025--present}
     \resumeListStart
       \resumeItem{Proof-of-concept commercial newswire platform for journalists.}
