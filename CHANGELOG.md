@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Simplify employment list
+
 ## [2.17.0] - 2026-09-24
 
 - Remove filler words in experience lists.
