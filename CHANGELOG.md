@@ -4,6 +4,7 @@
 
 - Simplify employment list.
 - Shrink font size in employment list.
+- Extend PDF metadata keywords.
 
 ## [2.17.0] - 2026-09-24
 
