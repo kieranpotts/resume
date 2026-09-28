@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Reset hero text.
+
 ## [2.18.1] - 2026-09-27
 
 - Small edits.
