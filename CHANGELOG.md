@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add National Chargepoint Registry
+
 ## [2.18.2] - 2026-09-28
 
 - Reset hero text.
