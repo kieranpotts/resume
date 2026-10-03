@@ -2,9 +2,11 @@
 
 ## [Unreleased]
 
+- Cut words.
+
 ## [2.18.3] - 2026-09-29
 
-- Add National Chargepoint Registry
+- Add National Chargepoint Registry.
 
 ## [2.18.2] - 2026-09-28
 
