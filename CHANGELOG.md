@@ -5,6 +5,7 @@
 - Add Web Components, Lit, React-wrappers to newswire project.
 - Add IaC (AWS, Terraform) to newswire project.
 - Add OpenTelemetry and CloudWatch to newswire project.
+- Add archiecture-as-code.
 
 ## [2.19.0] - 2026-10-04
 
