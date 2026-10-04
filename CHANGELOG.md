@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Add Web Components, Lit, React-wrappers to newswire project.
+- Add IaC (AWS, Terraform) to newswire project.
 
 ## [2.19.0] - 2026-10-04
 
