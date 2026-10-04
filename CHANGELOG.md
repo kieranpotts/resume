@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-- Cut words.
+- Tightened wording.
 
 ## [2.18.3] - 2026-09-29
 
