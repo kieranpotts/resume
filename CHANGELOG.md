@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add Web Components, Lit, React-wrappers to newswire project.
+
 ## [2.19.0] - 2026-10-04
 
 - Tightened wording.
