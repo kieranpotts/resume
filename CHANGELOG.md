@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Add last-updated date.
+- Add download link for latest CV version.
+
 ## [2.20.0] - 2026-10-04
 
 - Add Web Components, Lit, React-wrappers to newswire project.

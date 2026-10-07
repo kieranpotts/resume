@@ -224,6 +224,18 @@
   \item[{\color{quiet}·}]\small{{\textls[\trackingBody]{#1}\vspace{1pt}}}%
 }
 
+%%  \monthYear
+%%  ------------------------------------------------------------------------------------------------
+%%  Prints the month and year in which the document was compiled, eg. "October 2026".
+%%
+%%  Example:
+%%    Updated \monthYear
+%%
+\newcommand{\monthYear}{%
+  \ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or
+  September\or October\or November\or December\fi\ \the\year%
+}
+
 %%  ==== DOCUMENT ==================================================================================
 
 \begin{document}
@@ -471,7 +483,7 @@
       \resumeItem{De-risked by rapid prototyping and monthly client checkpoints.}
       %\resumeItem{Dozens of custom WordPress plugins, with strong unit test coverage throughout.}
       \resumeItem{Migrated 17 years of content via \textbf{Bash} scripts. Switched over with minimal downtime and no production issues.}
-      \resumeItem{Delivered on time and budget.}
+      %\resumeItem{Delivered on time and budget.}
     \resumeListEnd
   \end{minipage}
 
@@ -504,15 +516,15 @@
   \end{minipage}
 
   \begin{minipage}{\textwidth}
-    \resumeSubheading
-      {CurrencyCloud}
-      {Technical Writer}
-      {freelance}
-      {2017}
-    \resumeListStart
-      \resumeItem{Rewrote all user documentation, cutting support tickets and speeding up client integrations.}
-      \resumeItem{Reverse-engineered the HTTP API into a formal \textbf{OpenAPI} spec. Generated docs via a custom \textbf{WordPress} plugin.}
-    \resumeListEnd
+   \resumeSubheading
+     {CurrencyCloud}
+     {Technical Writer}
+     {freelance}
+     {2017}
+   \resumeListStart
+     \resumeItem{Rewrote all user documentation, cutting support tickets and speeding up client integrations.}
+     \resumeItem{Reverse-engineered the HTTP API into a formal \textbf{OpenAPI} spec. Generated docs via a custom \textbf{WordPress} plugin.}
+   \resumeListEnd
   \end{minipage}
 
   \begin{minipage}{\textwidth}
@@ -526,7 +538,7 @@
       \resumeItem{Ran bare-metal \textbf{Linux} servers with \textbf{Nginx} load balancing and \textbf{Redis} caching. Planned a \textbf{GCP} migration.}
       \resumeItem{New HTTP API in \textbf{PHP}, decoupling the web client from the server.}
       \resumeItem{Oversaw a replacement \textbf{React} web UI and native \textbf{Android} and \textbf{iOS} app development.}
-      \resumeItem{Evolved the \textbf{MySQL} schema with the data engineer without breaking changes.}
+      %\resumeItem{Evolved the \textbf{MySQL} schema with the data engineer without breaking changes.}
       \resumeItem{Cut slow MySQL queries via indexing, denormalisation, and simplified joins.}
       \resumeItem{Maintained the government's National Chargepoint Registry, built on \textbf{Symfony}}
     \resumeListEnd
@@ -569,6 +581,13 @@
         \footnotesize{1998--2001} & \footnotesize{First-class BA (Hons) in Human Geography\hspace{0.5em}{\color{quiet}·}\hspace{0.5em}University of Leeds}
       \end{tabular*}}
     \endgroup
+
+    \vspace{18pt}
+
+    \begin{center}
+      \scriptsize\color{quiet}\textls[\trackingBody]{Updated \monthYear\hspace{0.5em}·\hspace{0.5em}Latest version at}
+      \link{https://kieranpotts.com/cv}{\scriptsize{kieranpotts.com/cv}}
+    \end{center}
   \end{minipage}
 
 \end{document}
