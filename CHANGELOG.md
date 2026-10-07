@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.21.0] - 2026-10-07
+
 - Add last-updated date.
 - Add download link for latest CV version.
 
