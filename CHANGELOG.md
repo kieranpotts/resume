@@ -195,6 +195,7 @@
 ## [2.1.0] - 2025-06-23
 
 - Add Terraform certification.
+- Add months to employment history.
 
 ## [2.0.7] - 2025-06-04
 
