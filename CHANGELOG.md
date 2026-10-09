@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.23.0] - 2026-10-09
+
 - Specify LexisNexis in employment history.
 
 ## [2.22.0] - 2026-10-08
