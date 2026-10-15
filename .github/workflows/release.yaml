@@ -69,7 +69,7 @@ jobs:
             --mount type=bind,source="${PWD}",target=/data \
             --workdir /data \
             $IMAGE \
-            bash -c "mkdir -p dist && pdflatex -output-directory dist src/kieran-potts-cv.tex"
+            bash -c "mkdir -p dist && pdflatex -jobname=kieran-potts-cv -output-directory dist '\\def\\cvVersion{${{ steps.version.outputs.tag }}}\\input{src/kieran-potts-cv.tex}'"
 
       - name: Verify artifact was created
         run: |

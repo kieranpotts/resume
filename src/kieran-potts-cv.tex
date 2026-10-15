@@ -236,6 +236,13 @@
   September\or October\or November\or December\fi\ \the\year%
 }
 
+%%  \cvVersion
+%%  ------------------------------------------------------------------------------------------------
+%%  The Git tag of this release, eg. "v2.9.0". Injected at compile time by `run/build` and the
+%%  release workflow, via `pdflatex '\def\cvVersion{v2.9.0}\input{...}'`. Empty when not provided.
+%%
+\providecommand{\cvVersion}{}
+
 %%  ==== DOCUMENT ==================================================================================
 
 \begin{document}
@@ -585,8 +592,8 @@
     \vspace{18pt}
 
     \begin{center}
-      \scriptsize\color{quiet}\textls[\trackingBody]{Updated \monthYear\hspace{0.5em}·\hspace{0.5em}Latest version at}
-      \link{https://kieranpotts.com/cv}{\scriptsize{kieranpotts.com/cv}}
+      \scriptsize\color{quiet}\textls[\trackingBody]{\ifx\cvVersion\empty\else\cvVersion\hspace{0.5em}·\hspace{0.5em}\fi\monthYear\hspace{0.5em}·\hspace{0.5em}}
+      {\hypersetup{urlcolor=quiet}\colorlet{link}{quiet}\link{https://kieranpotts.com/cv}{\scriptsize{kieranpotts.com/cv}}}
     \end{center}
   \end{minipage}
 

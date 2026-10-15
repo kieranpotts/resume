@@ -12,3 +12,22 @@ compile the résumé to the PDF format and attach the file to the release.
 
 The latest release can be fetched using this URL: \
 <https://github.com/kieranpotts/resume/releases/latest/download/kieran-potts-cv.pdf>.
+
+## Version number in the footer
+
+The CV footer prints the release version before the date, eg. "v2.9.0 · October 2026 ·
+kieranpotts.com/cv". The version is the Git tag, injected into the document at
+compile time:
+
+- `src/kieran-potts-cv.tex` defines an empty `\cvVersion` macro, and prints it
+  in the footer only when it's non-empty.
+- `run/build` (local builds) sets `\cvVersion` to the most recent tag, using
+  `git describe --tags --abbrev=0`. Note this is the last tag, not the current
+  commit, so untagged changes still show the previous version.
+- The release workflow sets `\cvVersion` to the pushed tag.
+- Both pass it to `pdflatex` as `\def\cvVersion{...}\input{src/kieran-potts-cv.tex}`,
+  along with `-jobname=kieran-potts-cv` so the output is still named
+  `kieran-potts-cv.pdf`.
+
+Compiling the `.tex` file directly with `pdflatex` works too, but the footer
+then omits the version.
