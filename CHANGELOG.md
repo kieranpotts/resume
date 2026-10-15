@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add version number in footer.
+
 ## [2.24.0] - 2026-10-15
 
 - Review bold text highlights.
