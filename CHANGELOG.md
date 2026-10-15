@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.24.0] - 2026-10-15
+
 - Review bold text highlights.
 
 ## [2.23.0] - 2026-10-09
