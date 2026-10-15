@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.25.0] - 2026-10-15
+
 - Add version number in footer.
 
 ## [2.24.0] - 2026-10-15
