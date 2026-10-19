@@ -9,9 +9,18 @@ mkdir -p dist
 # The latest Git tag is injected as \cvVersion, to be printed in the CV footer. Falls back to empty
 # if there are no tags.
 #
+set -e
+
 VERSION=$(git describe --tags --abbrev=0 2>/dev/null || true)
 
-exec docker exec -it latex_daemon pdflatex \
-  -jobname=kieran-potts-cv \
-  -output-directory dist \
-  "\\def\\cvVersion{${VERSION}}\\input{src/kieran-potts-cv.tex}"
+# Compile one variant of the CV. Arguments: the output job name and any extra TeX definitions.
+build_variant() {
+  docker exec -it latex_daemon pdflatex \
+    -jobname="$1" \
+    -output-directory dist \
+    "\\def\\cvVersion{${VERSION}}$2\\input{src/kieran-potts-cv.tex}"
+}
+
+# Short form (default), then long form. `\cvLong` switches on the long-only content.
+build_variant kieran-potts-cv ""
+build_variant kieran-potts-cv-long-form "\\def\\cvLong{1}"

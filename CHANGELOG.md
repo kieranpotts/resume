@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Add long-form variant, with an executive summary and additional engagement details.
+- Release both short-form and long-form PDFs.
+
 ## [2.25.0] - 2026-10-15
 
 - Add version number in footer.

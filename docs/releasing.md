@@ -10,8 +10,9 @@ Keep an eye on the [release workflow](https://github.com/kieranpotts/resume/acti
 It will automatically create a release at the tag point. The pipeline will
 compile the résumé to the PDF format and attach the file to the release.
 
-The latest release can be fetched using this URL: \
-<https://github.com/kieranpotts/resume/releases/latest/download/kieran-potts-cv.pdf>.
+The latest release can be fetched using these URLs: \
+Short form: <https://github.com/kieranpotts/resume/releases/latest/download/kieran-potts-cv.pdf> \
+Long form: <https://github.com/kieranpotts/resume/releases/latest/download/kieran-potts-cv-long-form.pdf>
 
 ## Version number in the footer
 
