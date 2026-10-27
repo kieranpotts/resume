@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.28.0] - 2026-10-27
+
 - Add React GUI for LexisNexis.
 
 ## [2.27.0] - 2026-10-27
