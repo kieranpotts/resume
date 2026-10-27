@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+- Return tagline to original phrasing and ordering.
 - Add long-form variant, with an executive summary and additional engagement details.
 - Release both short-form and long-form PDFs.
 
