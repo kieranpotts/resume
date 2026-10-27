@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add React GUI for LexisNexis.
+
 ## [2.27.0] - 2026-10-27
 
 - Undo long-form variant.
