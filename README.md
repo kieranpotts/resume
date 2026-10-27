@@ -6,12 +6,8 @@
 
 ## 💾 Releases
 
-The latest version of my CV is available to download from the GitHub releases page,
-<https://github.com/kieranpotts/resume/releases>, in two variants:
-
-- `kieran-potts-cv.pdf` — short form.
-- `kieran-potts-cv-long-form.pdf` — long form, with an executive summary and
-  additional engagements.
+The latest version of my xxxx is available to download from the GitHub releases page,
+<https://github.com/kieranpotts/resume/releases>.
 
 ## 📓 Developer documentation
 

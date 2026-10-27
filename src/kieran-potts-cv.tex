@@ -40,23 +40,6 @@
 
 %%  ==== GENERAL SETTINGS ==========================================================================
 
-%%  Short-form / long-form switch: \ifcvlong, \longonly{text}
-%%  ------------------------------------------------------------------------------------------------
-%%  Switch between the short-form (default) and long-form variants of the CV. The long form is
-%%  selected by defining `\cvLong` at compile time, via `pdflatex '\def\cvLong{1}\input{...}'`
-%%  (see `run/build` and the release workflow).
-%%
-%%  - `\ifcvlong ... \fi` wraps larger blocks that appear only in the long form, such as whole
-%%    engagements.
-%%  - `\longonly{text}` includes `text` only in the long form. Use it for single items.
-%%
-%%  Example:
-%%    \longonly{\resumeItem{Delivered on time and budget.}}
-%%
-\newif\ifcvlong
-\ifdefined\cvLong\cvlongtrue\fi
-\newcommand{\longonly}[1]{\ifcvlong#1\fi}
-
 %%  hyperref settings.
 %%
 %%  - Document metadata.
@@ -64,7 +47,7 @@
 %%  - Customises link colours. Link text is blank, but underline customised via `\link` command.
 %%
 \hypersetup{
-  pdftitle={Kieran Potts – CV\ifcvlong\ (long form)\fi},
+  pdftitle={Kieran Potts – CV},
   pdfauthor={Kieran Potts},
   pdfkeywords={%
     technical architect, software architect, software architecture, software engineering,
@@ -292,30 +275,6 @@
         & \small{\textls[\trackingBody]{Bath/Bristol, UK}}
   \end{tabular*}
 
-  \ifcvlong
-  \begin{minipage}{\textwidth}
-    \resumeHeading{Executive Summary}
-
-    \small\textls[\trackingBody]{%
-    Staff-level, \textbf{freelance} \textbf{product engineer} with expertise spanning three core disciplines:
-    \textbf{computer programming}, \textbf{software architecture}, and \textbf{technical writing}. Best placed
-    in \textbf{technical leadership} roles on a \textbf{contract} basis, turning ambiguous requirements into precise specifications, specifications into
-    architectural designs, and designs into production-grade software, through hands-on coding and
-    agentic specs-to-code workflows.
-
-    \medskip
-
-    Two decades of freelance and contract work building \textbf{web-based enterprise applications} and third-party \textbf{integrations}.
-    A career that began in London's start-up scene, and more recently large-scale \textbf{digital
-    transformation} and \textbf{replatforming} projects for Specsavers and LexisNexis Risk Solutions.
-    Extensive \textbf{consultancy} experience, often forward-deployed into customer locations,
-    landing in unfamiliar teams and codebases, and building credibility with business and technical
-    stakeholders from a standing start.
-
-    }
-  \end{minipage}
-  \fi
-
   \resumeHeading{Technology Specialisations}
 
   \begin{minipage}[t]{0.33\textwidth}
@@ -420,21 +379,19 @@
     \resumeListEnd
   \end{minipage}
 
-  \ifcvlong
-  \begin{minipage}{\textwidth}
-    \resumeSubheading
-      {LiveMore Mortgages}
-      {Technical Lead}
-      {permanent}
-      {2024}
-    \resumeListStart
-      \resumeItem{Planned and coordinated a big-bang deployment of a major new feature.}
-      \resumeItem{Automated service deployments to \textbf{AWS} via \textbf{CodeDeploy} and \textbf{GitHub Actions}.}
-      \resumeItem{Rolled out \textbf{Jira Service Desk}, integrated with Slack, to improve customer support management.}
-      \resumeItem{Consolidated fragmented technical documentation into a single Confluence space.}
-    \resumeListEnd
-  \end{minipage}
-  \fi
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {LiveMore Mortgages}
+  %    {Technical Lead}
+  %    {permanent}
+  %    {2024}
+  %  \resumeListStart
+  %    \resumeItem{Planned and coordinated a big-bang deployment of a major new feature.}
+  %    \resumeItem{Automated service deployments to \textbf{AWS} via \textbf{CodeDeploy} and \textbf{GitHub Actions}.}
+  %    \resumeItem{Rolled out \textbf{Jira Service Desk}, integrated with Slack, to improve customer support management.}
+  %    \resumeItem{Consolidated fragmented technical documentation into a single Confluence space.}
+  %  \resumeListEnd
+  %\end{minipage}
 
   %%  NOTES: Specsavers
   %%  -----------------
@@ -488,36 +445,32 @@
     \resumeListEnd
   \end{minipage}
 
-  \ifcvlong
-  \begin{minipage}{\textwidth}
-    \resumeSubheading
-      {Zylo Performance}
-      {Full-Stack Web Developer}
-      {freelance}
-      {2020--2021}
-    \resumeListStart
-      \resumeItem{Built a custom business process management system in \textbf{Drupal}.}
-      \resumeItem{Integrated \textbf{payment card processing} (FideliPay) and Direct Debits (GoCardless).}
-      \resumeItem{Mocked up UI designs and user journeys in Adobe XD.}
-    \resumeListEnd
-  \end{minipage}
-  \fi
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {Zylo Performance}
+  %    {Full-Stack Web Developer}
+  %    {freelance}
+  %    {2020--2021}
+  %  \resumeListStart
+  %    \resumeItem{Built a custom business process management system in \textbf{Drupal}.}
+  %    \resumeItem{Integrated \textbf{payment card processing} (FideliPay) and Direct Debits (GoCardless).}
+  %    \resumeItem{Mocked up UI designs and user journeys in Adobe XD.}
+  %  \resumeListEnd
+  %\end{minipage}
 
-  \ifcvlong
-  \begin{minipage}{\textwidth}
-    \resumeSubheading
-      {Maker DAO}
-      {Front-End Web Developer}
-      {freelance}
-      {2019--2020}
-    \resumeListStart
-      \resumeItem{Created a responsive, mobile-first \textbf{WordPress} theme.}
-      \resumeItem{Added support for multi-language content.}
-      \resumeItem{Adopted a utility-class approach to CSS architecture.}
-      \resumeItem{Wrote copy and improved \textbf{search engine optimisation}.}
-    \resumeListEnd
-  \end{minipage}
-  \fi
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {Maker DAO}
+  %    {Front-End Web Developer}
+  %    {freelance}
+  %    {2019--2020}
+  %  \resumeListStart
+  %    \resumeItem{Created a responsive, mobile-first \textbf{WordPress} theme.}
+  %    \resumeItem{Added support for multi-language content.}
+  %    \resumeItem{Adopted a utility-class approach to CSS architecture.}
+  %    \resumeItem{Wrote copy and improved \textbf{search engine optimisation}.}
+  %  \resumeListEnd
+  %\end{minipage}
 
   %%  NOTES: Redgate Software
   %%  -----------------------
@@ -535,27 +488,25 @@
       \resumeItem{Forward-deployed engagement to migrate SQLServerCentral.com to a \textbf{WordPress} fork.}
       \resumeItem{Specified the replacement system via client discovery workshops and reverse-engineering the legacy system.}
       \resumeItem{De-risked by rapid prototyping and monthly client checkpoints.}
-      \longonly{\resumeItem{Dozens of custom WordPress plugins, with strong unit test coverage throughout.}}
+      %\resumeItem{Dozens of custom WordPress plugins, with strong unit test coverage throughout.}
       \resumeItem{Migrated 17 years of content via \textbf{Bash} scripts. Switched over with minimal downtime and no production issues.}
-      \longonly{\resumeItem{Delivered on time and budget.}}
+      %\resumeItem{Delivered on time and budget.}
     \resumeListEnd
   \end{minipage}
 
-  \ifcvlong
-  \begin{minipage}{\textwidth}
-    \resumeSubheading
-      {Fresenius Kabi}
-      {Software Developer, Helastel}
-      {fixed-term contract}
-      {2018}
-    \resumeListStart
-      \resumeItem{Recovery of a failing software project.}
-      \resumeItem{Identified and prioritised issues.}
-      \resumeItem{Improved the accuracy of project estimation and delivery reports.}
-      \resumeItem{Delivered a custom CRM operating on the NHS IT network.}
-    \resumeListEnd
-  \end{minipage}
-  \fi
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {Fresenius Kabi}
+  %    {Software Developer, Helastel}
+  %    {fixed-term contract}
+  %    {2018}
+  %  \resumeListStart
+  %    \resumeItem{Recovery of a failing software project.}
+  %    \resumeItem{Identified and prioritised issues.}
+  %    \resumeItem{Improved the accuracy of project estimation and delivery reports.}
+  %    \resumeItem{Delivered a custom CRM operating on the NHS IT network.}
+  %  \resumeListEnd
+  %\end{minipage}
 
   \begin{minipage}{\textwidth}
     \resumeSubheading
@@ -594,28 +545,26 @@
       \resumeItem{Ran bare-metal \textbf{Linux} servers with \textbf{Nginx} load balancing and \textbf{Redis} caching. Planned a \textbf{GCP} migration.}
       \resumeItem{New HTTP API in \textbf{PHP}, decoupling the web client from the server.}
       \resumeItem{Oversaw a replacement \textbf{React} web UI and native \textbf{Android} and \textbf{iOS} app development.}
-      \longonly{\resumeItem{Evolved the \textbf{MySQL} schema with the data engineer without breaking changes.}}
+      %\resumeItem{Evolved the \textbf{MySQL} schema with the data engineer without breaking changes.}
       \resumeItem{Cut slow \textbf{MySQL} queries via indexing, denormalisation, and simplified joins.}
       \resumeItem{Maintained the government's National Chargepoint Registry, built on \textbf{Symfony}}
     \resumeListEnd
   \end{minipage}
 
-  \ifcvlong
-  \begin{minipage}{\textwidth}
-    \resumeSubheading
-      {investUP}
-      {Front-End Web Developer}
-      {permanent}
-      {2014--2016}
-    \resumeListStart
-      \resumeItem{Built a lightweight, responsive single-page web application.}
-      \resumeItem{Created a custom framework inspired by \textbf{Backbone}'s MV*-style architecture.}
-      \resumeItem{Developed a custom UI component library with a \textbf{living style guide}.}
-      \resumeItem{Applied the "`cut the mustard`" progressive enhancement technique.}
-      \resumeItem{Summarised financial data through extensive data visualisation.}
-    \resumeListEnd
-  \end{minipage}
-  \fi
+  %\begin{minipage}{\textwidth}
+  %  \resumeSubheading
+  %    {investUP}
+  %    {Front-End Web Developer}
+  %    {permanent}
+  %    {2014--2016}
+  %  \resumeListStart
+  %    \resumeItem{Built a lightweight, responsive single-page web application.}
+  %    \resumeItem{Created a custom framework inspired by \textbf{Backbone}'s MV*-style architecture.}
+  %    \resumeItem{Developed a custom UI component library with a \textbf{living style guide}.}
+  %    \resumeItem{Applied the "`cut the mustard`" progressive enhancement technique.}
+  %    \resumeItem{Summarised financial data through extensive data visualisation.}
+  %  \resumeListEnd
+  %\end{minipage}
 
   \begin{minipage}{\textwidth}
     \resumeHeading{Employment History}

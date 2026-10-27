@@ -63,28 +63,23 @@ jobs:
         run: |
           docker pull $IMAGE
 
-      - name: Build PDFs in Docker
+      - name: Build PDF in Docker
         run: |
-          # Short form, then long form (`\cvLong` switches on the long-only content).
           docker run --rm \
             --mount type=bind,source="${PWD}",target=/data \
             --workdir /data \
             $IMAGE \
-            bash -c "mkdir -p dist \
-              && pdflatex -jobname=kieran-potts-cv -output-directory dist '\\def\\cvVersion{${{ steps.version.outputs.tag }}}\\input{src/kieran-potts-cv.tex}' \
-              && pdflatex -jobname=kieran-potts-cv-long-form -output-directory dist '\\def\\cvVersion{${{ steps.version.outputs.tag }}}\\def\\cvLong{1}\\input{src/kieran-potts-cv.tex}'"
+            bash -c "mkdir -p dist && pdflatex -jobname=kieran-potts-cv -output-directory dist '\\def\\cvVersion{${{ steps.version.outputs.tag }}}\\input{src/kieran-potts-cv.tex}'"
 
       - name: Verify artifact was created
         run: |
           echo "Checking for built artifacts..."
           ls -la dist/
 
-          for f in kieran-potts-cv.pdf kieran-potts-cv-long-form.pdf; do
-            if [ ! -f "dist/$f" ]; then
-              echo "Error: artifact $f not found!"
-              exit 1
-            fi
-          done
+          if [ ! -f "dist/kieran-potts-cv.pdf" ]; then
+            echo "Error: Main artifact not found!"
+            exit 1
+          fi
 
           echo "Artifact verification successful!"
 
@@ -117,14 +112,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./dist/kieran-potts-cv.pdf
           asset_name: kieran-potts-cv.pdf
-          asset_content_type: application/pdf
-
-      - name: Upload long-form release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/kieran-potts-cv-long-form.pdf
-          asset_name: kieran-potts-cv-long-form.pdf
           asset_content_type: application/pdf

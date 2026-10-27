@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Undo long-form variant.
+
 ## [2.26.0] - 2026-10-27
 
 - Return tagline to original phrasing and ordering.
