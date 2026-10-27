@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.27.0] - 2026-10-27
+
 - Undo long-form variant.
 
 ## [2.26.0] - 2026-10-27
