@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# Stop the container named `latex_daemon`.
-docker stop latex_daemon

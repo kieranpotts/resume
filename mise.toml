@@ -1,0 +1,17 @@
+#
+# The project's build toolchain, for the host, the devcontainer, and CI. Run
+# `./run/install` to install it.
+# https://mise.jdx.dev/configuration.html
+#
+# TinyTeX 2023.02 is the last build of TeX Live 2022, the same TeX Live as the
+# `kieranpotts/latex` Docker image that built the CV before. `./run/install`
+# points its package manager at the frozen TeX Live 2022 archive, so every
+# package is pinned too, and the PDF is identical to the Docker build.
+#
+# Do not bump this without comparing the PDF. Later TeX Live releases change the
+# CV's layout: TeX Live 2024 pushes it onto three pages, and TeX Live 2025
+# replaces Source Serif Pro with Source Serif 4.
+#
+
+[tools]
+tinytex = "2023.02"

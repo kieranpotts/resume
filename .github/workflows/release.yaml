@@ -21,9 +21,6 @@ jobs:
       contents: write # Required to create releases
       packages: write # Required to upload packages
 
-    env:
-      IMAGE: kieranpotts/latex:latest
-
     steps:
       - name: Checkout version tag
         uses: actions/checkout@v4
@@ -59,17 +56,23 @@ jobs:
           echo "$TAG_MESSAGE" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: Pull Docker image
-        run: |
-          docker pull $IMAGE
+      # Install mise, which then installs the TinyTeX pinned in `mise.toml`.
+      # Pinned to a commit SHA, per TS-60.
+      # https://github.com/jdx/mise-action
+      - name: Install mise
+        uses: jdx/mise-action@6be3c7ed4c21d4f76b208d351d95aac273ebb76d # v5.2.4
+        with:
+          version: 2026.10.21
 
-      - name: Build PDF in Docker
-        run: |
-          docker run --rm \
-            --mount type=bind,source="${PWD}",target=/data \
-            --workdir /data \
-            $IMAGE \
-            bash -c "mkdir -p dist && pdflatex -jobname=kieran-potts-cv -output-directory dist '\\def\\cvVersion{${{ steps.version.outputs.tag }}}\\input{src/kieran-potts-cv.tex}'"
+      # The same install and build scripts as on the host and in the
+      # devcontainer, so the released PDF is identical to a local build.
+      # `run/build` stamps the CV with the latest tag, which is the one being
+      # released, since the full history is checked out at that tag.
+      - name: Install LaTeX packages
+        run: sh run/install
+
+      - name: Build PDF
+        run: sh run/build
 
       - name: Verify artifact was created
         run: |

@@ -9,9 +9,11 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 
 ## Tech stack
 
-- LaTeX (`pdflatex`), compiled inside the [`kieranpotts/latex`](https://hub.docker.com/r/kieranpotts/latex)
-  Docker image — no local LaTeX install is required.
-- Docker, to run the compiler consistently across host systems.
+- LaTeX (`pdflatex`), from [TinyTeX](https://yihui.org/tinytex/) 2023.02
+  (TeX Live 2022), installed by [mise](https://mise.jdx.dev) and pinned in
+  `mise.toml`. LaTeX packages come from the frozen TeX Live 2022 archive, so
+  the build is reproducible, and identical on the host, in the devcontainer,
+  and in CI.
 - GitHub Actions, to build the PDF and attach it to GitHub releases on tag push.
 
 ## Project structure
@@ -19,10 +21,14 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 - **[src/kieran-potts-cv.tex](./src/kieran-potts-cv.tex)** \
   The CV source, compiled by `pdflatex`.
 
-- **[run/start](./run/start)**, **[run/build](./run/build)**, **[run/stop](./run/stop)** \
-  Dev scripts. `start` launches a persistent `latex_daemon` container;
-  `build` runs `pdflatex` inside it, outputting to `dist/`; `stop` tears the
-  container down.
+- **[mise.toml](./mise.toml)** \
+  Pins TinyTeX. Do not bump it without comparing the PDF: later TeX Live
+  releases change the CV's layout.
+
+- **[run/install](./run/install)**, **[run/build](./run/build)** \
+  Dev scripts, also run by CI. `install` installs TinyTeX and the LaTeX
+  packages the CV uses; `build` runs `pdflatex` (via `mise exec`), outputting
+  to `dist/`.
 
 - **[dist/](./dist)** \
   Build output, including `kieran-potts-cv.pdf` and other compiler artifacts.
@@ -33,10 +39,12 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 
 ## Tools
 
-- `./run/start` to start the persistent LaTeX container.
+- `make install` (or `sh run/install`) to install the LaTeX toolchain. Run it
+  once on a new machine or devcontainer, and again after `mise.toml` or the
+  package list in `run/install` changes.
 - `./run/build` to compile `src/kieran-potts-cv.tex` to
-  `dist/kieran-potts-cv.pdf`.
-- `./run/stop` to stop the container.
+  `dist/kieran-potts-cv.pdf`. It stops at the first LaTeX error, rather than
+  prompting, so it runs unattended.
 
 ## Rules
 
@@ -63,10 +71,6 @@ the relevant standards as-and-when required for the task at hand.
 - [**TS-11: Versioning**](https://kieranpotts.com/standards/011) \
   Use when choosing a versioning scheme, formatting version strings, or tagging
   releases (SemVer, CalVer).
-
-- [**TS-58: Docker**](https://kieranpotts.com/standards/058) \
-  Use when designing Dockerfiles, building Docker images, or running Docker
-  containers.
 
 - [**TS-60: GitHub Actions**](https://kieranpotts.com/standards/060) \
   Use when designing, authoring, reviewing, or securing GitHub Actions workflows

@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# Install the build toolchain: the TinyTeX pinned in mise.toml, and the LaTeX
+# packages that the CV uses. Run this once on a new machine or devcontainer, and
+# again whenever mise.toml or the package list below changes.
+
+set -eu
+
+# mise.toml is in the project root, so run from there, wherever the script was
+# invoked from.
+cd "$(dirname "$0")/.."
+
+if ! command -v mise >/dev/null 2>&1; then
+  echo "mise is required to install this project's toolchain." >&2
+  echo "Install it from https://mise.jdx.dev, then re-run this script." >&2
+  exit 1
+fi
+
+# mise refuses to read a project's `mise.toml` until it has been trusted.
+# Running this script is already a decision to trust this repository, so trust
+# its `mise.toml` here, rather than as a separate manual step. This is
+# idempotent.
+mise trust
+mise install
+
+# Install packages from the frozen TeX Live 2022 archive, which matches the
+# TinyTeX version pinned in mise.toml, rather than from the live TeX Live
+# repository, which has moved on to a later release. A frozen archive also pins
+# every package's version, so the build is reproducible.
+mise exec -- tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2022/tlnet-final
+
+# The packages that `src/kieran-potts-cv.tex` loads, and that TinyTeX does not
+# include. `fontaxes` and `mweights` are dependencies of `sourceserifpro`.
+# Packages that are already installed are skipped.
+mise exec -- tlmgr install \
+  enumitem \
+  fontaxes \
+  hyperref \
+  microtype \
+  mweights \
+  sourceserifpro \
+  titlesec \
+  ulem \
+  xcolor
