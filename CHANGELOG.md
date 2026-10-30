@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Build with TinyTeX (TeX Live 2022), installed by mise, instead of in the
+  `kieranpotts/latex` Docker image. The PDF is unchanged.
+
 ## [2.28.0] - 2026-10-27
 
 - Add React GUI for LexisNexis.
