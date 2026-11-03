@@ -6,7 +6,7 @@
 
 ## 💾 Releases
 
-The latest version of my xxxx is available to download from the GitHub releases page,
+The latest version of my résumé is available to download from the GitHub releases page,
 <https://github.com/kieranpotts/resume/releases>.
 
 ## 📓 Developer documentation
