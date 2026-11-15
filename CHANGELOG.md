@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.29.0] - 2026-11-15
+
 - Build with TinyTeX (TeX Live 2022), installed by mise, instead of in the
   `kieranpotts/latex` Docker image. The PDF is unchanged.
 - Refresh tagline and intro text.
