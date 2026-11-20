@@ -1,0 +1,27 @@
+%%  Macro overrides for the Word (.docx) build, read by Pandoc only — never by pdflatex.
+%%
+%%  `run/build-docx` inserts this file into the CV source, straight after `\begin{document}`. It
+%%  replaces the CV's custom commands, and some typesetting commands, with simpler versions that
+%%  Pandoc's LaTeX reader can parse. Without them, Pandoc drops much of the text, including every
+%%  bullet item, because it does not know microtype's `\textls`.
+%%
+%%  These carry content only. The Word styles come from `reference.docx`, which `filter.lua`
+%%  applies.
+
+%%  Typesetting commands Pandoc can't parse, or parses badly. Horizontal space becomes a plain
+%%  space, and colour switches are dropped. `filter.lua` widens the spaces around the `·`
+%%  separators, and greys them out, instead.
+\renewcommand{\textls}[2][]{#2}
+\renewcommand{\hspace}[1]{ }
+\renewcommand{\color}[1]{}
+\renewcommand{\colorlet}[2]{}
+\renewcommand{\hypersetup}[1]{}
+
+%%  The CV's custom commands.
+\renewcommand{\link}[2]{\href{#1}{#2}}
+\renewcommand{\resumeItem}[1]{\item #1}
+
+%%  Engagement headings, as a level-2 heading: "Company  Role (employment type) · dates". The
+%%  company must stay the first element, in small caps, which `filter.lua` relies on. The filter
+%%  also drops the "()" when the employment type is empty.
+\renewcommand{\resumeSubheading}[5][]{\subsection*{\textsc{#2} #3 (#4)\hspace{0.5em}·\hspace{0.5em}#5}}

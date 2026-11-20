@@ -243,6 +243,19 @@
 %%
 \providecommand{\cvVersion}{}
 
+%%  \cvVersionPrefix
+%%  ------------------------------------------------------------------------------------------------
+%%  Prints `\cvVersion` followed by a separator, eg. "v2.9.0 · ", or nothing when `\cvVersion` is
+%%  empty. Used in the footer. It's a command, rather than inline in the footer, so the Word build
+%%  can replace it: Pandoc can't evaluate `\ifx`.
+%%
+%%  Example:
+%%    \cvVersionPrefix\monthYear
+%%
+\newcommand{\cvVersionPrefix}{%
+  \ifx\cvVersion\empty\else\cvVersion\hspace{0.5em}·\hspace{0.5em}\fi%
+}
+
 %%  ==== DOCUMENT ==================================================================================
 
 \begin{document}
@@ -324,8 +337,9 @@
   \begin{minipage}{\textwidth}
     \resumeHeading{Selected Engagements}
 
-    \resumeSubheading
-      [0pt]  %%  First section under the heading has no vertical space above it.
+    %%  The first section under the heading has no vertical space above it. Keep the `[0pt]` on the
+    %%  same line as the command, otherwise Pandoc, which builds the Word version, misreads it.
+    \resumeSubheading[0pt]
       {R\&D Project}
       {Architect \& Developer}
       {freelance}
@@ -623,7 +637,7 @@
     \vspace{18pt}
 
     \begin{center}
-      \scriptsize\color{quiet}\textls[\trackingBody]{\ifx\cvVersion\empty\else\cvVersion\hspace{0.5em}·\hspace{0.5em}\fi\monthYear\hspace{0.5em}·\hspace{0.5em}}
+      \scriptsize\color{quiet}\textls[\trackingBody]{\cvVersionPrefix\monthYear\hspace{0.5em}·\hspace{0.5em}}
       {\hypersetup{urlcolor=quiet}\colorlet{link}{quiet}\link{https://kieranpotts.com/cv}{\scriptsize{kieranpotts.com/cv}}}
     \end{center}
   \end{minipage}

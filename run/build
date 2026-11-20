@@ -1,6 +1,8 @@
 #!/bin/sh
 
+#
 # Build the CV to dist/kieran-potts-cv.pdf. Run ./run/install first.
+#
 
 set -eu
 
@@ -12,7 +14,6 @@ mkdir -p dist
 
 # The latest Git tag is injected as \cvVersion, to be printed in the CV footer. Falls back to empty
 # if there are no tags.
-#
 VERSION=$(git describe --tags --abbrev=0 2>/dev/null || true)
 
 # Run `pdflatex` under the TinyTeX pinned in mise.toml, via `mise exec`. This is the same on the
@@ -22,7 +23,7 @@ VERSION=$(git describe --tags --abbrev=0 2>/dev/null || true)
 #
 # `-interaction=nonstopmode` and `-halt-on-error` stop at the first error, rather than waiting for
 # input, so the build works with no terminal attached too, eg. in CI or under a coding agent.
-#
+
 exec mise exec -- pdflatex \
   -interaction=nonstopmode \
   -halt-on-error \

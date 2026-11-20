@@ -1,0 +1,58 @@
+#!/bin/sh
+
+#
+# Build the CV to dist/kieran-potts-cv.docx, a Word version of the PDF, from
+# the same LaTeX source. Run ./run/install first.
+#
+# Uses Pandoc, pinned in mise.toml, in three steps.
+#
+# 1. src/docx/macros.tex is inserted into the source, straight after
+#    `\begin{document}`. It replaces the CV's custom commands with versions
+#    Pandoc's LaTeX reader can parse.
+#
+# 2. src/docx/filter.lua maps the document's structure onto custom Word styles.
+#
+# 3. Those styles, and the page setup, come from src/docx/reference.docx.
+#
+# The Word version follows the PDF's design, but not exactly: Word has no
+# equivalent of some of the LaTeX typesetting, and it substitutes Cambria for
+# Source Serif Pro, which recipients are unlikely to have installed.
+#
+
+set -eu
+
+# All the paths below are relative to the project root, so run from there, wherever the script was
+# invoked from.
+cd "$(dirname "$0")/.."
+
+mkdir -p dist
+
+# The same version and date as the PDF footer. See run/build.
+VERSION=$(git describe --tags --abbrev=0 2>/dev/null || true)
+MONTH_YEAR=$(LC_ALL=C date +'%B %Y')
+
+macros=$(mktemp)
+trap 'rm -f "${macros}"' EXIT
+
+{
+  cat src/docx/macros.tex
+  printf '\n%%%%  Added by run/build-docx.\n'
+  if [ -n "${VERSION}" ]; then
+    printf '\\renewcommand{\\cvVersionPrefix}{%s · }\n' "${VERSION}"
+  else
+    printf '\\renewcommand{\\cvVersionPrefix}{}\n'
+  fi
+  printf '\\renewcommand{\\monthYear}{%s}\n' "${MONTH_YEAR}"
+} > "${macros}"
+
+# `sed 'r'` appends the macros file after the `\begin{document}` line. Redefining commands in the
+# document body works as well as in the preamble.
+sed "/^[[:space:]]*\\\\begin{document}/r ${macros}" src/kieran-potts-cv.tex \
+    | mise exec -- pandoc \
+        --from latex \
+        --to docx \
+        --lua-filter src/docx/filter.lua \
+        --reference-doc src/docx/reference.docx \
+        --output dist/kieran-potts-cv.docx
+
+echo "Built dist/kieran-potts-cv.docx"

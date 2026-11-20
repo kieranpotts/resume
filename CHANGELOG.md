@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add a local build of the CV in Word (.docx) format using Pandoc.
+
 ## [2.29.0] - 2026-11-15
 
 - Build with TinyTeX (TeX Live 2022), installed by mise, instead of in the

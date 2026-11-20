@@ -1,8 +1,10 @@
 #!/bin/sh
 
-# Install the build toolchain: the TinyTeX pinned in mise.toml, and the LaTeX
-# packages that the CV uses. Run this once on a new machine or devcontainer, and
-# again whenever mise.toml or the package list below changes.
+#
+# Install the build toolchain: the TinyTeX and Pandoc pinned in mise.toml, and
+# the LaTeX packages that the CV uses. Run this once on a new machine or
+# devcontainer, and again whenever mise.toml or the package list below changes.
+#
 
 set -eu
 

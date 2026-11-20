@@ -12,6 +12,12 @@
 # CV's layout: TeX Live 2024 pushes it onto three pages, and TeX Live 2025
 # replaces Source Serif Pro with Source Serif 4.
 #
+#
+# Pandoc builds the Word version of the CV, from the same LaTeX source. See
+# `run/build-docx`. Compare the .docx before and after bumping it. Pandoc's
+# LaTeX reader and Word writer change between releases.
+#
 
 [tools]
 tinytex = "2023.02"
+pandoc = "3.13"
