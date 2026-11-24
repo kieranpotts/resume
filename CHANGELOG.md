@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [2.30.0] - 2026-11-24
+
 - Add a local build of the CV in Word (.docx) format using Pandoc.
 - New tagline: "Freelance product engineer and technical lead, AI-accelerated."
 
